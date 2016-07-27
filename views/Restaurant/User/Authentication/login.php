@@ -20,7 +20,7 @@ if($status){
 
 }else{
     Message::message("Wrong username or password");
-    return Utility::redirect($_SERVER['HTTP_REFERER']);
+    return Utility::redirect('../Profile/signup.php');
 
 }
 
