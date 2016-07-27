@@ -1,0 +1,31 @@
+
+
+==============================================
+git commit -m "AbuZayedHanainMasum-Commit#1"
+==============================================
+What's New:
+
+1. Updated the DB-->restaurant.sql  file   with a new table named [users]
+
+2. Added [User][Authentication] Folders. Restaurant_Management_System-->views-->Restaurant->User-->Authentication
+   updated files: login.php,   logout.php  and  also created forgotten.php
+
+3. Updated   src-->User   Auth.php and User.php
+
+4. updated header.php  [ Added small login form at the right side and also Welcome Greetings with Logout option if login success ]
+
+
+5. Added [Profile] Folder. Restaurant_Management_System-->views-->Restaurant->User-->Profile and
+added   registration.php  ,  edit.php ,  update.php ,   change_password.php,    signup.php
+
+6. Added [login-signup-assests] Folder.  Restaurant_Management_System-->resource-->login-signup-assests
+
+7. Modify the database name labxm9b22 to restaurant  at  Restaurant_Management_System-->src-->Model->Database.php
+
+
+8. Updated cart.php      if(!isset($_SESSION))      instead of   if(!isset($_SESSION['message']))    at line 3
+
+
+
+
+========================================================================================================================
