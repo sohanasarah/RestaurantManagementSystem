@@ -1,3 +1,11 @@
+<?php
+include_once('../../../../vendor/autoload.php');
+
+   if(!isset($_SESSION) )session_start();
+use App\GlobalClasses\Message;
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +46,44 @@
 <div class="top-content">
 
         <div class="container">
+
+
+
+
+
+
+            <table>
+                <tr>
+                    <td width='230' >
+
+                    <td width='600' height="50" >
+
+
+                        <?php if($_SESSION['message']!=""){ ?>
+
+                            <div  id="message" class="form button"   style="font-size: smaller  " >
+                                <center>
+                                    <?php if((array_key_exists('message',$_SESSION)&& (!empty($_SESSION['message'])))) {
+                                        echo "&nbsp;".Message::message();
+                                    }
+                                    Message::message(NULL);
+
+                                    ?></center>
+                            </div>
+
+
+                        <?php } ?>
+
+
+                    </td>
+                </tr>
+            </table>
+
+
+
+
+
+
 
 
 
@@ -155,3 +201,5 @@
 </body>
 
 </html>
+
+<?php  include('../../footer.php')?>
