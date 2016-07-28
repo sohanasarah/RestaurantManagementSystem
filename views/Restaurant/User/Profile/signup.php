@@ -45,8 +45,7 @@ use App\GlobalClasses\Message;
 <!-- Top content -->
 <div class="top-content">
 
-        <div class="container">
-
+        <div class="container" >
 
 
 
@@ -87,10 +86,17 @@ use App\GlobalClasses\Message;
 
 
 
-            <div class="row">
+            <div class="row" >
                 <div class="col-sm-5">
 
-                    <div class="form-box">
+                    <div class="grid_12">
+                        <h1>
+                            <a href="index.php">
+                                <img src="../../../../resource/images/logo.png" alt="Logo alt" >
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="form-box" style="margin-top: 0%">
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>Login to our site</h3>
@@ -137,7 +143,7 @@ use App\GlobalClasses\Message;
 
                 <div class="col-sm-5">
 
-                    <div class="form-box">
+                    <div class="form-box" style="margin-top: 0%">
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>Sign up now</h3>

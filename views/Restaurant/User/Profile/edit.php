@@ -78,6 +78,21 @@ if($singleItem==NULL)   return Utility::redirect('../../index.php');
 
     <div class="container">
 
+
+
+        <div class="grid_12">
+            <h1>
+                <a href="index.php">
+                    <img src="../../../../resource/images/logo.png" alt="Logo alt" >
+                </a>
+            </h1>
+        </div>
+
+
+
+
+
+
         <table>
             <tr>
                 <td width='230' >
