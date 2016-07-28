@@ -13,7 +13,6 @@ if(!isset($_SESSION)){
 
 $newMenu = new Admin();
 $singleItem = $newMenu->prepare($_REQUEST);
-
 $productByCode = $newMenu->view();
 
 
@@ -22,20 +21,22 @@ if(!empty($_REQUEST["action"])) {
         case "add":
             if(!empty($_REQUEST["quantity"])) {
 
-                $itemArray = array($productByCode['food_code']=>array('name'=>$productByCode['food_name'], 'code'=>$productByCode['food_code'], 'quantity'=>$_REQUEST["quantity"], 'price'=>$productByCode['price']));
+                $itemArray = array($productByCode["food_code"]=>array('name'=>$productByCode["food_name"], 'code'=>$productByCode["food_code"], 'quantity'=>$_REQUEST["quantity"], 'price'=>$productByCode["price"]));
 
                 if(!empty($_SESSION["cart_list"])) {
 
 
-                    if(array_key_exists($productByCode['food_code'],$_SESSION["cart_list"])) {
+                    if(array_key_exists($productByCode["food_code"],$_SESSION["cart_list"])) {
                         foreach($_SESSION["cart_list"] as $k => $v) {
-                            if($productByCode['food_code'] == $k)
+                            if($productByCode["food_code"] == $k)
                                 $_SESSION["cart_list"][$k]["quantity"] += $_REQUEST["quantity"];
 
 
                         }
+
                     } else {
-                        $_SESSION["cart_list"] = array_merge($_SESSION["cart_list"],$itemArray);
+                        $_SESSION["cart_list"] = $_SESSION["cart_list"]+$itemArray;
+                        
                     }
                 } else {
                     $_SESSION["cart_list"] = $itemArray;
@@ -49,6 +50,7 @@ if(!empty($_REQUEST["action"])) {
 </div>");
                 
             }
+
             break;
         case "remove":
             if(!empty($_SESSION["cart_list"])) {
