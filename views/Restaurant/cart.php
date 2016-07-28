@@ -4,6 +4,7 @@ include_once ('../../vendor/autoload.php');
 use App\User\Auth;
 use App\Restaurant\Restaurant;
 use App\User\User;
+use App\Admin\Admin;
 
 if(!isset($_SESSION)){
     session_start();
@@ -12,9 +13,9 @@ $auth = new Auth();
 $loggedIn = $auth->logged_in();
 
 
-$newMenu = new Restaurant();
+$newMenu = new Admin();
 $singleItem = $newMenu->prepare($_REQUEST);
-$productByCode = $newMenu->getItem();
+$productByCode = $newMenu->getTotalMenue();
 
 
 if($loggedIn){
@@ -39,14 +40,14 @@ if(!empty($_REQUEST["action"])) {
             if(!empty($_REQUEST["quantity"])) {
 
                 //var_dump($productByCode);
-                $itemArray = array($productByCode->code=>array('name'=>$productByCode->name, 'code'=>$productByCode->code,'id'=>$productByCode->id, 'quantity'=>$_REQUEST["quantity"], 'price'=>$productByCode->price));
+                $itemArray = array($productByCode['food_code']=>array('name'=>$productByCode['food_name'], 'code'=>$productByCode['food_code'],'id'=>$productByCode['id'], 'quantity'=>$_REQUEST["quantity"], 'price'=>$productByCode['price']));
 
                 if(!empty($_SESSION["cart_list"])) {
                     //var_dump($_SESSION['cart_list']);
 
-                    if(array_key_exists($productByCode->code,$_SESSION["cart_list"])) {
+                    if(array_key_exists($productByCode['food_code'],$_SESSION["cart_list"])) {
                         foreach($_SESSION["cart_list"] as $k => $v) {
-                            if($productByCode->code == $k)
+                            if($productByCode['food_code'] == $k)
                                 $_SESSION["cart_list"][$k]["quantity"] += $_REQUEST["quantity"];
 
 
@@ -64,14 +65,14 @@ if(!empty($_REQUEST["action"])) {
             if(!empty($_REQUEST["quantity"])) {
 
                 //var_dump($productByCode);
-                $itemArray = array($productByCode->code=>array('name'=>$productByCode->name, 'code'=>$productByCode->code,'id'=>$productByCode->id, 'quantity'=>$_REQUEST["quantity"], 'price'=>$productByCode->price));
+                $itemArray = array($productByCode['food_code']=>array('name'=>$productByCode['food_name'], 'code'=>$productByCode['food_code'],'id'=>$productByCode['id'], 'quantity'=>$_REQUEST["quantity"], 'price'=>$productByCode['price']));
 
                 if(!empty($_SESSION["cart_list"])) {
                     //var_dump($_SESSION['cart_list']);
 
                     if(array_key_exists($productByCode->code,$_SESSION["cart_list"])) {
                         foreach($_SESSION["cart_list"] as $k => $v) {
-                            if($productByCode->code == $k)
+                            if($productByCode['food_code'] == $k)
                                 $_SESSION["cart_list"][$k]["quantity"] -= $_REQUEST["quantity"];
 
 
@@ -250,7 +251,7 @@ include ('header.php');
 
               <a href="#" class="btn" id="checkoutback"><< Checkout</a>
               <?php if ($loggedIn) { ?>
-              <a href="#" class="btn" id="proceedbutton">Proceed >></a>
+              <a href="invoice.php" class="btn" id="proceedbutton">Proceed >></a>
               <?php }}?>
           </div>
 

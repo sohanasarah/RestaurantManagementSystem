@@ -3,6 +3,7 @@ include_once ('../../vendor/autoload.php');
 
 use App\Restaurant\Restaurant;
 use App\GlobalClasses\Message;
+use App\Admin\Admin;
 
 
 if(!isset($_SESSION)){
@@ -10,10 +11,10 @@ if(!isset($_SESSION)){
 }
 
 
-$newMenu = new Restaurant();
+$newMenu = new Admin();
 $singleItem = $newMenu->prepare($_REQUEST);
 
-$productByCode = $newMenu->getItem();
+$productByCode = $newMenu->view();
 
 
 if(!empty($_REQUEST["action"])) {
@@ -21,14 +22,14 @@ if(!empty($_REQUEST["action"])) {
         case "add":
             if(!empty($_REQUEST["quantity"])) {
 
-                $itemArray = array($productByCode->code=>array('name'=>$productByCode->name, 'code'=>$productByCode->code, 'quantity'=>$_REQUEST["quantity"], 'price'=>$productByCode->price));
+                $itemArray = array($productByCode['food_code']=>array('name'=>$productByCode['food_name'], 'code'=>$productByCode['food_code'], 'quantity'=>$_REQUEST["quantity"], 'price'=>$productByCode['price']));
 
                 if(!empty($_SESSION["cart_list"])) {
 
 
-                    if(array_key_exists($productByCode->code,$_SESSION["cart_list"])) {
+                    if(array_key_exists($productByCode['food_code'],$_SESSION["cart_list"])) {
                         foreach($_SESSION["cart_list"] as $k => $v) {
-                            if($productByCode->code == $k)
+                            if($productByCode['food_code'] == $k)
                                 $_SESSION["cart_list"][$k]["quantity"] += $_REQUEST["quantity"];
 
 
@@ -64,8 +65,8 @@ if(!empty($_REQUEST["action"])) {
             break;
     }
 }
-$newMenu = new Restaurant();
-$menuItems = $newMenu->getAllItems();
+$newMenu = new Admin();
+$menuItems = $newMenu->getTotalMenue();
 include ('header.php');
 ?>
 
@@ -85,14 +86,14 @@ include ('header.php');
       <div class="grid_4">
         <div class="gall_block">
           <div class="maxheight">
-            <a href="../../resource/images/<?php echo $item->image?>" class="gall_item"><img src="../../resource/images/<?php echo $item->image?>" alt=""></a>
+            <a href="../../resource/FoodImage/<?php echo $item['food_image']?>" class="gall_item"><img src="../../resource/FoodImage/<?php echo $item['food_image']?>" alt="" height="300" width="150"></a>
             <div class="gall_bot">
                 <input hidden type="text" name="action" value="add">
-                <input hidden type="text" name="id" value="<?php echo $item->id ?>">
+                <input hidden type="text" name="id" value="<?php echo $item['id'] ?>">
                 <input hidden type="number" name="quantity" value="1"  />
-                <label><?php echo "৳".$item->price ?></label><button class="btn" id="addToCart" type="submit" style="margin-left: 100px">Add To Cart</button>
-            <div class="text1"><a href="#"><?php echo $item->name ?></a></div>
-                <?php echo $item->description ?>
+                <label><?php echo "৳".$item['price'] ?></label><button class="btn" id="addToCart" type="submit" style="margin-left: 120px; margin-bottom: 20px ">Add To Cart</button>
+            <div class="text1"><a href="#"><?php echo $item['food_name'] ?></a></div>
+                <?php echo $item['category'] ?>
             <br>
 
             </div>

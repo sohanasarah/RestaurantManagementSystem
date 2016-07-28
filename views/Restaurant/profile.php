@@ -145,7 +145,7 @@ if(!empty($_REQUEST["action"])) {
                         <strong class="dt">Address</strong>
                         <div class="clear"></div>
                         <div class="tmInput">
-                            <input type="text" name="address" value="<?php echo $singleUser->address?>"></input>
+                            <input type="text" name="address" value="<?php echo $singleUser->address?>" >
                         </div>
 
                         <div class="tmInput">
