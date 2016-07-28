@@ -118,7 +118,7 @@ if(isset($_SESSION["cart_list"])){
          <td width='500' height="25">
 
 
-                                <?php if($_SESSION['message']!=""){ ?>
+                                <?php  if(isset($_SESSION['message']) )  if($_SESSION['message']!=""){ ?>
 
                                     <div  id="message" class="form button"   style="font-size: smaller  " >
                                         <center>
