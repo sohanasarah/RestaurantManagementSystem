@@ -85,21 +85,20 @@ INSERT INTO `product` (`id`, `name`, `description`, `code`, `image`, `price`) VA
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+`id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `phone` text NOT NULL,
-  `address` varchar(255) NOT NULL,
+  `phone` varchar(222) NOT NULL,
+  `address` varchar(555) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
 
 --
 -- Dumping data for table `users`
 --
-
-INSERT INTO `users` (`id`, `name`, `email`, `phone`, `address`, `password`) VALUES
-(7, 'Shibli', 'shibli.emon@gmail.com', '01822666893', 'CUET', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
