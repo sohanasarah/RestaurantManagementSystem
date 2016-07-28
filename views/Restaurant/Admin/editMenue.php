@@ -1,7 +1,20 @@
+<?php
+
+include_once('../../../vendor/autoload.php');
+
+use App\Admin\Admin;
+use App\GlobalClasses\Message;
+use App\GlobalClasses\Utility;
+//Utility::d($_GET);
+$food_item=new Admin();
+$food_item->prepare($_GET);
+$singleItem=$food_item->view();
+//Utility::dd($singleItem);
+?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>Menue-Category</title>
+    <title>Create Menue</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -11,26 +24,16 @@
     <style>
         h2 {
             font-family: "Baskerville Old Face", Times, serif;
-            position: absolute;
-            top: 100px;
-            width: 100%;
-        }
-        h2 span {
-            color: white;
-            font: bold 24px/45px "Baskerville Old Face", Times, serif;
-            letter-spacing: 0px;
-            background: rgb(0, 0, 0); /* fallback color */
-            background: rgba(0, 0, 0, 0.6);
-            padding: 10px;
-            max-width : 100%;
-        }
-        h2 span.spacer {
-            padding:0 5px;
         }
         #color
         {
             color: brown;
-            font: bold 24px/45px "Baskerville Old Face", Times, serif;
+        }
+        #style
+        {
+            font-family: "fantasy", Times, serif;
+            font-size: 150%;
+            color: darkcyan;
         }
 
         #pic {
@@ -41,42 +44,20 @@
             overflow-y: hidden;
             overflow-x: hidden;
         }
-
-        .image {
-            position: relative;
-            width: 100%; /* for IE 6 */
-
-        }
-        #wrapper .text {
-            position:relative;
-            bottom:30px;
-            left:0px;
-            visibility:hidden;
-        }
-
-        #wrapper:hover .text {
-            visibility:visible;
-        }
-
     </style>
 </head>
 
 
 
 <body>
-<div class="image">
 
-    <img id="pic" src="../../../resource/FoodImage/entry pic.jpg" height="250" width="900">
-    <center><h2><span>Welcome Admin<span class='spacer'></span></h2></center>
 
-</div>
-
+<img id="pic" src="../../../resource/FoodImage/entry pic.jpg" height="300" width="1000">
+<center><h2 id="color">Welcome Admin</h2></center>
 
 <div class="container">
-
-        <center><h3 id="color">Food Category</h3></center>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top navbar-right" role="navigation">
+    <center><h2>Update Food Item</h2></center>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -100,11 +81,9 @@
                     <li>
                         <a href="#">Order List</a>
                     </li>
-
                     <li>
                         <a href="totalMenue.php">View All Item</a>
                     </li>
-
                     <li>
                         <a href="#">Log Out</a>
                     </li>
@@ -114,31 +93,39 @@
         </div>
         <!-- /.container -->
     </nav>
+    <form role="form" method="post" action="updateMenue.php" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?php echo $singleItem['id']?>">
+        <div class="form-group">
+            <label id="style">Food Category:Select One</label>
+            <select name ="category" class="form-control">
+                <option <?php if($singleItem['category']=="Appetizer"){?> selected="selected" <?php }?>>APPTIZER</option>
+                <option <?php if($singleItem['category']=="Main Course"){?> selected="selected" <?php }?>>MAIN COURSE</option>
+                <option <?php if($singleItem['category']=="DESSERTS or DRINKS"){?> selected="selected" <?php }?>>DESSERTS or DRINKS</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label id="style">Item Name</label>
+            <input type="text" name ="food_name" class="form-control" value="<?php echo $singleItem['food_name']?>">
+        </div>
 
-<div class="row">
-    <div id="wrapper">
-    <div class="col-lg-4 col-md-4 col-xs-4 thumb">
+        <div class="form-group">
+            <label id="style">Item price</label>
+            <input type="text" name ="price" class="form-control" value="<?php echo $singleItem['price']?>">
+        </div>
 
-        <a class="thumbnail" href="appetizer.php">
-            <img class="img-responsive img-thumbnai" src="../../../resource/FoodImage/appetizer.jpg" alt="" height="220">
-            <center><h3 id="color">Appetizer</h3></center>
-        </a>
+        <div class="form-group">
+            <label id="style">Picture of the Food Item</label>
+            <input type="file" name ="food_image" class="form-control">
+            <img src="../../../resource/FoodImage/<?php echo $singleItem['food_image']?>" alt="image" height="100" width="100" class="img-responsive">
 
-    </div>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-4 thumb">
-        <a class="thumbnail" href="mainCourse.php">
-            <img class="img-responsive img-thumbnai" src="../../../resource/FoodImage/main_course.jpg" alt="" height="220">
-            <center><h3 id="color">Main Course</h3></center>
-        </a>
-    </div>
-    <div class="col-lg-4 col-md-4 col-xs-4 thumb">
-        <a class="thumbnail" href="desserts_drinks.php">
-            <img class="img-responsive img-thumbnai" src="../../../resource/FoodImage/drinks.jpg" alt="" height="220">
-            <center><h3 id="color">Drinks & Desserts</h3></center>
-        </a>
-    </div>
-    </div>
-    </div>
+        </div>
+
+        <center><button type="submit" class="btn btn-primary btn-lg">Update</button></center>
+    </form>
+
+</div>
+
 </body>
 </html>
+
+
