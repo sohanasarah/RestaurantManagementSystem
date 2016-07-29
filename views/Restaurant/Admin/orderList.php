@@ -40,8 +40,8 @@ for($i=1;$i<=$totalPage;$i++){
 $pageStartFrom=$itemPerPage*($pageNumber-1);
 $prev=$pageNumber-1;
 $next=$pageNumber+1;
-$previous="<li><a href='index.php?pageNumber=$prev'>Prev</a></li>";
-$next="<li><a href='index.php?pageNumber=$next'>Next</a></li>";
+$previous="<li><a href='orderList.php?pageNumber=$prev'>Prev</a></li>";
+$next="<li><a href='orderList.php?pageNumber=$next'>Next</a></li>";
 
 $allOrder=$order->orderPaginator($pageStartFrom,$itemPerPage);
 

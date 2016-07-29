@@ -103,7 +103,7 @@ $allFood=$food_item->paginator($pageStartFrom,$itemPerPage);
                     <a href="insertMenue.php">Insert Menue</a>
                 </li>
                 <li>
-                    <a href="#">Order List</a>
+                    <a href="orderList.php">Order List</a>
                 </li>
 
                 <li>
@@ -169,7 +169,6 @@ $allFood=$food_item->paginator($pageStartFrom,$itemPerPage);
 
 
 
-    <?php if(strtoupper($_SERVER['REQUEST_METHOD'] == "GET")) {?>
         <div>
             <center><ul class="pagination">
                     <?php if($pageNumber>1){?>
@@ -181,7 +180,6 @@ $allFood=$food_item->paginator($pageStartFrom,$itemPerPage);
                     <?php }?>
                 </ul></center>
         </div>
-    <?php } ?>
     <hr>
     <!-- Footer -->
     <footer>

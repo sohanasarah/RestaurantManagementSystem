@@ -117,7 +117,7 @@ $allFood=$food_item->getMenueByCategory('Main Course');
                         <a href="insertMenue.php">Insert Menue</a>
                     </li>
                     <li>
-                        <a href="#">Order List</a>
+                        <a href="orderList.php">Order List</a>
                     </li>
 
                     <li>
