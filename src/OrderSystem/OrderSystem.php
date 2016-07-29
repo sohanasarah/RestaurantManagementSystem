@@ -83,16 +83,17 @@ class OrderSystem extends DB
         $foodCodeArray=explode(',',$foodCodeString['food_code']);
         $field=count($foodCodeArray);
 
-        $orderID=100+$id;
-
         for($i=0;$i<$field;$i++)
         {
             $quantity=($_SESSION['cart_list'][$foodCodeArray[$i]]['quantity']);
-            $query = "INSERT INTO `mappingorder`(`order_id`, `food_code`,`quantity`) VALUE ($orderID,$foodCodeArray[$i],$quantity)";
+            $query = "INSERT INTO `mappingorder`(`order_id`, `food_code`,`quantity`) VALUE ($id,$foodCodeArray[$i],$quantity)";
 
             $result=mysqli_query($this->conn,$query);
 
         }
+
+
+        $result=mysqli_query($this->conn,$query);
 
         if($result)
         {
