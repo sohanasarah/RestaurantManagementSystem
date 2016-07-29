@@ -36,14 +36,14 @@ if(array_key_exists('pageNumber',$_GET)){
 }
 for($i=1;$i<=$totalPage;$i++){
     $class=($pageNumber==$i)?"active":"";
-    $pagination.="<li class='$class'><a href='index.php?pageNumber=$i'>$i</a></li>";
+    $pagination.="<li class='$class'><a href='totalMenue.php?pageNumber=$i'>$i</a></li>";
 }
 
 $pageStartFrom=$itemPerPage*($pageNumber-1);
 $prevPage=$pageNumber-1;
 $nextPage=$pageNumber+1;
 
-    $allFood=$food_item->paginator($pageStartFrom,$itemPerPage);
+$allFood=$food_item->paginator($pageStartFrom,$itemPerPage);
 
 ?>
 
@@ -64,17 +64,17 @@ $nextPage=$pageNumber+1;
     <!-- Custom CSS -->
     <link href="../../../resource/Admin/css/thumbnail-gallery.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../../resource/bootstrap-3.3.6/css/bootstrap.min.css">
+    <script src="../../../resource/jquery/1.12.0/jquery.min.js"></script>
+    <script src="../../../resource/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <style>
-        th,td
+        center
         {
             color: black;
             font-family:bold,"Baskerville Old Face", Times, serif;
             font-size: medium;
         }
-        </style>
+    </style>
 
 </head>
 
@@ -122,66 +122,65 @@ $nextPage=$pageNumber+1;
 
 <!-- Page Content -->
 <div class="container">
-    <form role="form">
-        <div class="form-group">
-            <label>How many items per page? (select one):</label>
-            <select class="form-control" name="itemPerPage">
-                <option<?php if($itemPerPage==5){?> selected <?php }?>>5</option>
-                <option<?php if($itemPerPage==10){?> selected <?php }?>>10</option>
-                <option<?php if($itemPerPage==15){?> selected <?php }?>>15</option>
-                <option<?php if($itemPerPage==20){?> selected <?php }?>>20</option>
-                <option<?php if($itemPerPage==25){?> selected <?php }?>>25</option>
-            </select>
-            <br>
-            <button type="submit">Go!</button>
-        </div>
-    </form>
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-            <tr>
-                <th><center>Item no.</center></th>
-                <th><center>Item Name</center></th>
-                <th><center>Item Code</center></th>
-                <th><center>Price</center></th>
-                <th><center>Item Picture</center></th>
-                <th><center>Action</center></th>
-
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-
-                <?php
-                $sl=0;
-                foreach($allFood as $food) {
-                $sl++; ?>
-                <td><center><?php echo $sl;?></center></td>
-                <td><center>Item Name:<?php echo " ".$food['food_name']?></center></td>
-                <td><center>Item Code:<?php echo " ".$food['food_code']?></center></td>
-                <td><center>Price: <?php echo " ".$food['price']?></center></td>
-                <td><img src="../../../resource/FoodImage/<?php echo $food['food_image']?>" alt="image" height="100" width="100" class="img-responsive"></td>
-
-            <td><center><a href="editMenue.php?id=<?php echo $food['id']?>" class="btn btn-success" role="button">Edit</a>
-                    <a href="deleteItem.php?id=<?php echo $food['id']?>" class="btn btn-danger" role="button" >Delete</a></center></td>
-    </tr>
-        <?php } ?>
+    <div>
+        <form role="form">
+            <div class="form-group">
+                <label>How many items per page? (select one):</label>
+                <select class="form-control" name="itemPerPage">
+                    <option<?php if($itemPerPage==5){?> selected <?php }?>>5</option>
+                    <option<?php if($itemPerPage==10){?> selected <?php }?>>10</option>
+                    <option<?php if($itemPerPage==15){?> selected <?php }?>>15</option>
+                    <option<?php if($itemPerPage==20){?> selected <?php }?>>20</option>
+                    <option<?php if($itemPerPage==25){?> selected <?php }?>>25</option>
+                </select>
+                <br>
+                <button type="submit">Go!</button>
+            </div>
+        </form>
     </div>
-    </tbody>
-            </table>
+
+    <div class="row">
+        <?php
+        $sl=0; ?>
+
+
+        <?php foreach($allFood as $food) {
+
+            $sl++; ?>
+            <div class="col-lg-4 col-md-4 col-xs-12 thumb">
+
+
+                <a class="thumbnail" href="../../../resource/FoodImage/<?php echo $food['food_image']?>">
+                    <img src="../../../resource/FoodImage/<?php echo $food['food_image']?>" alt="image" height="100" width="100" class="img-responsive ">
+                    <center><?php echo " ".$food['food_name']?></center>
+                    <center>Item Code:<?php echo " ".$food['food_code']?></center>
+                    <center>Price: <?php echo " ".$food['price']?></center>
+                </a>
+                <center><a href="editMenue.php?id=<?php echo $food['id']?>" class="btn btn-primary" role="button">Edit</a>
+                    <a href="deleteItem.php?id=<?php echo $food['id']?>" class="btn btn-danger" role="button">Delete</a></center>
+            </div>
+
+            <?php
+            if ( $sl % 3 === 0 ) { echo '</div><div class="row">'; }
+        }?>
+
+
+    </div>
 
 
 
     <?php if(strtoupper($_SERVER['REQUEST_METHOD'] == "GET")) {?>
-        <center><ul class="pagination">
-                <?php if($pageNumber>1){?>
-                    <li><a href="totalMenue.php?pageNumber=<?php echo $prevPage?>">Prev</a></li>
-                <?php }?>
-                <?php echo $pagination?>
-                <?php if($pageNumber<$totalPage){?>
-                    <li><a href="totalMenue.php?pageNumber=<?php echo $nextPage?>">Next</a></li>
-                <?php }?>
-            </ul></center>
+        <div>
+            <center><ul class="pagination">
+                    <?php if($pageNumber>1){?>
+                        <li><a href="totalMenue.php?pageNumber=<?php echo $prevPage?>">Prev</a></li>
+                    <?php }?>
+                    <?php echo $pagination?>
+                    <?php if($pageNumber<$totalPage){?>
+                        <li><a href="totalMenue.php?pageNumber=<?php echo $nextPage?>">Next</a></li>
+                    <?php }?>
+                </ul></center>
+        </div>
     <?php } ?>
     <hr>
     <!-- Footer -->

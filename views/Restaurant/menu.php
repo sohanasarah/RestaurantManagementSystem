@@ -3,6 +3,7 @@ include_once ('../../vendor/autoload.php');
 
 use App\Restaurant\Restaurant;
 use App\GlobalClasses\Message;
+use App\GlobalClasses\Utility;
 use App\Admin\Admin;
 
 
@@ -11,6 +12,7 @@ if(!isset($_SESSION)){
 }
 
 
+//Utility::dd($_SESSION);
 $newMenu = new Admin();
 $singleItem = $newMenu->prepare($_REQUEST);
 
@@ -68,6 +70,7 @@ if(!empty($_REQUEST["action"])) {
 $newMenu = new Admin();
 $menuItems = $newMenu->getTotalMenue();
 include ('header.php');
+
 ?>
 
 <!--=====================

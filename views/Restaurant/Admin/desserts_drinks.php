@@ -9,7 +9,7 @@ use App\GlobalClasses\Utility;
 $food_item=new Admin();
 $allFood=$food_item->getMenueByCategory('DESSERTS or DRINKS');
 
-Utility::d($allFood);
+//Utility::d($allFood);
 //Utility::d($_FILES);
 
 
@@ -32,9 +32,17 @@ Utility::d($allFood);
     <!-- Custom CSS -->
     <link href="../../../resource/Admin/css/thumbnail-gallery.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../../resource/bootstrap-3.3.6/css/bootstrap.min.css">
+    <script src="../../../resource/jquery/1.12.0/jquery.min.js"></script>
+    <script src="../../../resource/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <style>
+        center
+        {
+            color: black;
+            font-family:bold,"Baskerville Old Face", Times, serif;
+            font-size: medium;
+        }
+    </style>
 
 </head>
 
@@ -82,77 +90,65 @@ Utility::d($allFood);
 
 <!-- Page Content -->
 <div class="container">
-
-    <div class="row">
-
-        <div class="col-lg-12">
-            <h1 class="page-header">Thumbnail Gallery</h1>
-        </div>
-
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-        </div>
-        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-            <a class="thumbnail" href="#">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-            </a>
-        </div>
+    <div>
+        <form role="form">
+            <div class="form-group">
+                <label>How many items per page? (select one):</label>
+                <select class="form-control" name="itemPerPage">
+                    <option<?php if($itemPerPage==5){?> selected <?php }?>>5</option>
+                    <option<?php if($itemPerPage==10){?> selected <?php }?>>10</option>
+                    <option<?php if($itemPerPage==15){?> selected <?php }?>>15</option>
+                    <option<?php if($itemPerPage==20){?> selected <?php }?>>20</option>
+                    <option<?php if($itemPerPage==25){?> selected <?php }?>>25</option>
+                </select>
+                <br>
+                <button type="submit">Go!</button>
+            </div>
+        </form>
     </div>
 
-    <hr>
+    <div class="row">
+        <?php
+        $sl=0; ?>
 
+
+        <?php foreach($allFood as $food) {
+
+            $sl++; ?>
+            <div class="col-lg-4 col-md-4 col-xs-12 thumb">
+
+
+                <a class="thumbnail" href="../../../resource/FoodImage/<?php echo $food['food_image']?>">
+                    <img src="../../../resource/FoodImage/<?php echo $food['food_image']?>" alt="image" height="100" width="100" class="img-responsive ">
+                    <center><?php echo " ".$food['food_name']?></center>
+                    <center>Item Code:<?php echo " ".$food['food_code']?></center>
+                    <center>Price: <?php echo " ".$food['price']?></center>
+                </a>
+                <center><a href="editMenue.php?id=<?php echo $food['id']?>" class="btn btn-primary" role="button">Edit</a>
+                    <a href="deleteItem.php?id=<?php echo $food['id']?>" class="btn btn-danger" role="button">Delete</a></center>
+            </div>
+
+            <?php
+            if ( $sl % 3 === 0 ) { echo '</div><div class="row">'; }
+        }?>
+
+
+    </div>
+
+
+
+    <!--        <div>-->
+    <!--            <center><ul class="pagination">-->
+    <!--                    --><?php //if($pageNumber>1){?>
+    <!--                        <li><a href="totalMenue.php?pageNumber=--><?php //echo $prevPage?><!--">Prev</a></li>-->
+    <!--                    --><?php //}?>
+    <!--                    --><?php //echo $pagination?>
+    <!--                    --><?php //if($pageNumber<$totalPage){?>
+    <!--                        <li><a href="totalMenue.php?pageNumber=--><?php //echo $nextPage?><!--">Next</a></li>-->
+    <!--                </ul></center>-->
+    <!--        </div>-->
+    <!--    --><?php //} ?>
+    <hr>
     <!-- Footer -->
     <footer>
         <div class="row">
