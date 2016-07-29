@@ -149,6 +149,7 @@ class Admin extends DB
         if(!empty($this->foodCode)){
             $query="SELECT * FROM `fooditem` WHERE `food_code`=".$this->foodCode;
         }
+
         
 
         $result=mysqli_query($this->conn,$query);
@@ -188,4 +189,29 @@ class Admin extends DB
             echo "Error!!!";
         }
     }
+
+    public function orderCount()
+    {
+        $query="SELECT COUNT(*) AS totalItem FROM `mappingorder`";
+        $result=mysqli_query($this->conn,$query);
+        $row= mysqli_fetch_assoc($result);
+        return $row['totalItem'];
+    }
+
+    public function orderPaginator($pageStartFrom=0,$Limit=10)
+    {
+        $_allInfo = array();
+        $query = "SELECT `mappingorder`.`id`,`mappingorder`.`order_id`,`mappingorder`.`food_code`,`mappingorder`.`quantity`,`fooditem`.`food_name`,`orderfood`.`user_id`, `orderfood`.`current_date`
+                  FROM `mappingorder` INNER JOIN `fooditem` ON `mappingorder`.`food_code`=`fooditem`.`food_code`
+                  INNER JOIN `orderfood` ON `mappingorder`.`order_id`=`orderfood`.`id`
+                  LIMIT " . $pageStartFrom . "," . $Limit;
+        $result = mysqli_query($this->conn, $query);
+        while ($row = mysqli_fetch_assoc($result)) {
+            $_allInfo[] = $row;
+        }
+        return $_allInfo;
+    }
+
+
+
 }

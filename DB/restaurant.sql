@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2016 at 03:52 PM
--- Server version: 5.6.16
--- PHP Version: 5.5.9
+-- Generation Time: Jul 29, 2016 at 06:44 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `restaurant`
@@ -25,19 +25,16 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `fooditem`
 --
--- Creation: Jul 29, 2016 at 01:22 PM
---
 
-CREATE TABLE IF NOT EXISTS `fooditem` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `fooditem` (
+  `id` int(11) NOT NULL,
   `category` varchar(300) NOT NULL,
   `food_name` varchar(300) NOT NULL,
   `food_image` varchar(300) NOT NULL,
   `food_code` int(255) NOT NULL,
   `price` int(255) NOT NULL,
-  `deleted_at` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+  `deleted_at` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fooditem`
@@ -53,24 +50,13 @@ INSERT INTO `fooditem` (`id`, `category`, `food_name`, `food_image`, `food_code`
 --
 -- Table structure for table `mappingorder`
 --
--- Creation: Jul 29, 2016 at 01:22 PM
---
 
-CREATE TABLE IF NOT EXISTS `mappingorder` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `mappingorder` (
+  `id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
   `food_code` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
-
---
--- RELATIONS FOR TABLE `mappingorder`:
---   `food_code`
---       `fooditem` -> `id`
---   `order_id`
---       `orderfood` -> `id`
---
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `mappingorder`
@@ -87,42 +73,27 @@ INSERT INTO `mappingorder` (`id`, `order_id`, `food_code`, `quantity`) VALUES
 (12, 136, 1013, 1),
 (13, 137, 1014, 1),
 (14, 137, 1013, 1),
-(15, 139, 1014, 2),
-(16, 139, 1009, 3),
-(17, 140, 1014, 4),
-(18, 140, 1009, 3),
-(19, 141, 1014, 4),
-(20, 141, 1009, 3),
-(21, 142, 1010, 3),
-(22, 142, 1013, 1),
-(23, 142, 1014, 1),
-(24, 143, 1010, 1),
-(25, 143, 1013, 2),
-(26, 143, 1014, 1);
+(15, 39, 1013, 1),
+(16, 39, 1014, 1),
+(17, 39, 1014, 1),
+(18, 40, 1014, 1),
+(19, 40, 1010, 2),
+(20, 40, 1010, 2);
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `orderfood`
 --
--- Creation: Jul 29, 2016 at 01:22 PM
---
 
-CREATE TABLE IF NOT EXISTS `orderfood` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `orderfood` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `invoice_id` varchar(255) NOT NULL,
   `food_code` varchar(255) NOT NULL,
   `total` int(255) NOT NULL,
-  `current_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=44 ;
-
---
--- RELATIONS FOR TABLE `orderfood`:
---   `user_id`
---       `users` -> `id`
---
+  `current_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orderfood`
@@ -151,39 +122,120 @@ INSERT INTO `orderfood` (`id`, `user_id`, `invoice_id`, `food_code`, `total`, `c
 (35, 8, 'inv35_8', '1014,1013', 270, '2016-07-29 11:07:09'),
 (36, 8, 'inv36_8', '1014,1013', 270, '2016-07-29 11:08:33'),
 (37, 8, 'inv37_8', '1014,1013', 270, '2016-07-29 11:13:03'),
-(39, 0, 'inv39_', '1014,1009', 1110, '2016-07-29 13:23:24'),
-(40, 9, 'inv40_9', '1014,1009', 1470, '2016-07-29 13:37:17'),
-(41, 9, 'inv41_9', '1014,1009', 1470, '2016-07-29 13:46:02'),
-(42, 9, 'inv42_9', '1010,1013,1014', 1140, '2016-07-29 13:49:47'),
-(43, 9, 'inv43_9', '1010,1013,1014', 650, '2016-07-29 13:50:44');
+(39, 8, 'inv39_8', '1013,1014', 270, '2016-07-29 15:33:02'),
+(40, 8, 'inv40_8', '1014,1010', 760, '2016-07-29 15:40:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `price` double(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `description`, `code`, `image`, `price`) VALUES
+(1, 'Vivamus at magna non nunc', 'desrip1', 'BQX1', 'page2_img1.jpg', 100.00),
+(2, 'sffdc', 'descrip2', 'BX2', 'page2_img2.jpg', 120.50),
+(3, 'ggeg', 'descrip3', 'BX3', 'page2_img3.jpg', 130.00),
+(4, 'dsrgrht', 'descrip4', 'BX4', 'page2_img4.jpg', 150.00);
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
 --
--- Creation: Jul 29, 2016 at 01:22 PM
---
 
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(222) NOT NULL,
   `address` varchar(555) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `address`, `password`) VALUES
-(8, 'Afiya', 'Ayman', 'aa@gmail.com', '012364478', 'Chittagong', '8b430bbcb360b07417150b7916cfb860'),
-(9, 'Shibli', 'Emon', 'shibli.emon@gmail.com', '01822666893', 'CUET', '202cb962ac59075b964b07152d234b70');
+(8, 'Afiya', 'Ayman', 'aa@gmail.com', '012364478', 'Chittagong', '8b430bbcb360b07417150b7916cfb860');
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `fooditem`
+--
+ALTER TABLE `fooditem`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mappingorder`
+--
+ALTER TABLE `mappingorder`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orderfood`
+--
+ALTER TABLE `orderfood`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `fooditem`
+--
+ALTER TABLE `fooditem`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT for table `mappingorder`
+--
+ALTER TABLE `mappingorder`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT for table `orderfood`
+--
+ALTER TABLE `orderfood`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
