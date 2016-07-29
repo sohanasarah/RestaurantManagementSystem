@@ -15,97 +15,124 @@ $allFood=$food_item->getMenueByCategory('DESSERTS or DRINKS');
 
 ?>
 
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Menue-Admin</title>
+    <title>Menue-Desserts & Drinks</title>
     <!-- Custom CSS -->
-    <link href="../../../resource/Admin/css/thumbnail-gallery.css" rel="stylesheet">
-
     <link rel="stylesheet" href="../../../resource/bootstrap-3.3.6/css/bootstrap.min.css">
     <script src="../../../resource/jquery/1.12.0/jquery.min.js"></script>
     <script src="../../../resource/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+
+<!--    <link href="../../../resource/Admin/css/thumbnail-gallery.css" rel="stylesheet">-->
     <style>
+
+        h2 {
+            font-family: "Baskerville Old Face", Times, serif;
+            position: absolute;
+            top: 100px;
+            width: 100%;
+        }
+        h2 span {
+            color: white;
+            font: bold 24px/45px "Baskerville Old Face", Times, serif;
+            letter-spacing: 0px;
+            background: rgb(0, 0, 0); /* fallback color */
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            max-width : 100%;
+        }
+        h2 span.spacer {
+            padding:0 5px;
+        }
+        #color
+        {
+            color: brown;
+            font: bold 24px/45px "Baskerville Old Face", Times, serif;
+        }
+
+        #pic {
+            min-height : 100%;
+            min-width : 100%;
+            background-size:100% 100%;
+            background-repeat:no-repeat;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+        .image {
+            position: relative;
+            width: 100%; /* for IE 6 */
+
+        }
         center
         {
             color: black;
             font-family:bold,"Baskerville Old Face", Times, serif;
             font-size: medium;
         }
+
     </style>
 
 </head>
 
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top navbar-right" role="navigation">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.php">Home</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">Food Reviews</a>
-                </li>
-                <li>
-                    <a href="insertMenue.php">Insert Menue</a>
-                </li>
-                <li>
-                    <a href="#">Order List</a>
-                </li>
+    <div class="image">
 
-                <li>
-                    <a href="totalMenue.php">View All Item</a>
-                </li>
-
-                <li>
-                    <a href="#">Log Out</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+        <img id="pic" src="../../../resource/FoodImage/entry pic.jpg" height="250" width="900">
+        <center><h2><span>Welcome Admin<span class='spacer'></span></h2></center>
     </div>
-    <!-- /.container -->
-</nav>
+
+<div class="container">
+
+    <center><h3 id="color">Desserts & Drinks</h3></center>
+
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-right" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Food Reviews</a>
+                    </li>
+                    <li>
+                        <a href="insertMenue.php">Insert Menue</a>
+                    </li>
+                    <li>
+                        <a href="#">Order List</a>
+                    </li>
+
+                    <li>
+                        <a href="totalMenue.php">View All Item</a>
+                    </li>
+                    <li>
+                        <a href="#">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
 <!-- Page Content -->
-<div class="container">
-    <div>
-        <form role="form">
-            <div class="form-group">
-                <label>How many items per page? (select one):</label>
-                <select class="form-control" name="itemPerPage">
-                    <option<?php if($itemPerPage==5){?> selected <?php }?>>5</option>
-                    <option<?php if($itemPerPage==10){?> selected <?php }?>>10</option>
-                    <option<?php if($itemPerPage==15){?> selected <?php }?>>15</option>
-                    <option<?php if($itemPerPage==20){?> selected <?php }?>>20</option>
-                    <option<?php if($itemPerPage==25){?> selected <?php }?>>25</option>
-                </select>
-                <br>
-                <button type="submit">Go!</button>
-            </div>
-        </form>
-    </div>
 
     <div class="row">
         <?php
@@ -135,19 +162,6 @@ $allFood=$food_item->getMenueByCategory('DESSERTS or DRINKS');
 
     </div>
 
-
-
-    <!--        <div>-->
-    <!--            <center><ul class="pagination">-->
-    <!--                    --><?php //if($pageNumber>1){?>
-    <!--                        <li><a href="totalMenue.php?pageNumber=--><?php //echo $prevPage?><!--">Prev</a></li>-->
-    <!--                    --><?php //}?>
-    <!--                    --><?php //echo $pagination?>
-    <!--                    --><?php //if($pageNumber<$totalPage){?>
-    <!--                        <li><a href="totalMenue.php?pageNumber=--><?php //echo $nextPage?><!--">Next</a></li>-->
-    <!--                </ul></center>-->
-    <!--        </div>-->
-    <!--    --><?php //} ?>
     <hr>
     <!-- Footer -->
     <footer>

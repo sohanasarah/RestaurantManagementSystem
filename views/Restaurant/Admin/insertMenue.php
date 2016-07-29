@@ -11,6 +11,21 @@
     <style>
         h2 {
             font-family: "Baskerville Old Face", Times, serif;
+            position: absolute;
+            top: 100px;
+            width: 100%;
+        }
+        h2 span {
+            color: white;
+            font: bold 24px/45px "Baskerville Old Face", Times, serif;
+            letter-spacing: 0px;
+            background: rgb(0, 0, 0); /* fallback color */
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            max-width : 100%;
+        }
+        h2 span.spacer {
+            padding:0 5px;
         }
         #color
         {
@@ -31,6 +46,21 @@
             overflow-y: hidden;
             overflow-x: hidden;
         }
+        .image {
+            position: relative;
+            width: 100%; /* for IE 6 */
+
+        }
+        #wrapper .text {
+            position:relative;
+            bottom:30px;
+            left:0px;
+            visibility:hidden;
+        }
+
+        #wrapper:hover .text {
+            visibility:visible;
+        }
     </style>
 </head>
 
@@ -38,12 +68,17 @@
 
 <body>
 
+<div class="image">
 
-    <img id="pic" src="../../../resource/FoodImage/entry pic.jpg" height="300" width="1000">
-    <center><h2 id="color">Welcome Admin</h2></center>
+    <img id="pic" src="../../../resource/FoodImage/entry pic.jpg" height="250" width="900">
+    <center><h2><span>Welcome Admin<span class='spacer'></span></h2></center>
+
+</div>
 
 <div class="container">
-    <center><h2>Insert Food Item</h2></center>
+
+    <center><h3 id="color">Insert Food Item</h3></center>
+
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
