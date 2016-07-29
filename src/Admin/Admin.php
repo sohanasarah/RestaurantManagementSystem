@@ -28,6 +28,10 @@ class Admin extends DB
         {
             $this->id=$data['id'];
         }
+        if(array_key_exists('code',$data))
+        {
+            $this->foodCode=$data['code'];
+        }
         if(array_key_exists('category',$data))
         {
             $this->category=$data['category'];
@@ -136,9 +140,19 @@ class Admin extends DB
 
     public function view()
     {
-        $query="SELECT * FROM `fooditem` WHERE `id`=".$this->id;
+        $row = array();
+        $query = "1 = 1";
+
+        if(!empty($this->id)){
+            $query="SELECT * FROM `fooditem` WHERE `id`=".$this->id;
+        }
+        if(!empty($this->foodCode)){
+            $query="SELECT * FROM `fooditem` WHERE `food_code`=".$this->foodCode;
+        }
+        
+
         $result=mysqli_query($this->conn,$query);
-        $row=mysqli_fetch_assoc($result);
+        if($result) $row=mysqli_fetch_assoc($result);
         return $row;
     }
 

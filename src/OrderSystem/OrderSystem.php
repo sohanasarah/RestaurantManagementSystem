@@ -14,6 +14,8 @@ class OrderSystem extends DB
     public $userID;
     public $quantity;
     public $orderID;
+    public $userEmail;
+    public $total;
 
 
     public function __construct()
@@ -31,6 +33,15 @@ class OrderSystem extends DB
         {
             $this->userID=$data['user_id'];
         }
+        if(array_key_exists('user_email',$data))
+        {
+            $this->userEmail=$data['user_email'];
+        }
+
+        if(array_key_exists('code',$data['cart_list']))
+        {
+            $this->foodCode=$data['cart_list']['code'];
+        }
         if(array_key_exists('food_code',$data))
         {
             $this->foodCode=$data['food_code'];
@@ -39,27 +50,55 @@ class OrderSystem extends DB
         {
             $this->price=$data['price'];
         }
+        if(array_key_exists('total',$data))
+        {
+            $this->total=$data['total'];
+        }
 
         return $this;
     }
 
+
+    public function getUserID()
+    {
+        $query="SELECT `id` FROM `users` WHERE `email`='".$this->userEmail."'";
+        $result=mysqli_query($this->conn,$query);
+        $id=mysqli_fetch_assoc($result);
+        return $id;
+    }
+
     public function storeOrder()
     {
-        $query="INSERT INTO `orderfood`(`user_id`, `food_code`) VALUES ('".$this->userID."', '".$this->foodCode."')";
+        $query="INSERT INTO `orderfood`(`user_id`, `food_code`, `total`) VALUES ('$this->userID' , '$this->foodCode', '$this->total')";
         $result=mysqli_query($this->conn,$query);
         $id = mysqli_insert_id($this->conn);
-        $invoiceID=$id."".$this->userID;
+        $invoiceID="inv".$id."_".$this->userID;
 
-        $query="UPDATE `orderfood` SET `invoice-id`=$invoiceID WHERE `user_id`=".$this->userID;
+        $query="UPDATE `orderfood` SET `invoice_id`='$invoiceID' WHERE `id`=$id";
         $result=mysqli_query($this->conn,$query);
+
+        $query = "SELECT `food_code` FROM `orderfood` WHERE `id`=$id";
+        $result=mysqli_query($this->conn,$query);
+        $foodCodeString=mysqli_fetch_assoc($result);
+        $foodCodeArray=explode(',',$foodCodeString['food_code']);
+        $field=count($foodCodeArray);
 
         $orderID=100+$id;
 
-        $query = "INSERT INTO `mappingorder`(`order_id`,) VALUE ($orderID)";
-        $result=mysqli_query($this->conn,$query);
+        for($i=0;$i<$field;$i++)
+        {
+            $quantity=($_SESSION['cart_list'][$foodCodeArray[$i]]['quantity']);
+            $query = "INSERT INTO `mappingorder`(`order_id`, `food_code`,`quantity`) VALUE ($orderID,$foodCodeArray[$i],$quantity)";
+
+            $result=mysqli_query($this->conn,$query);
+
+        }
+
         if($result)
         {
-            Utility::redirect('index.php');
+           echo "Yes!";
+
+          // Utility::redirect('index.php');
         }
     }
 }

@@ -5,6 +5,7 @@ use App\User\Auth;
 use App\Restaurant\Restaurant;
 use App\User\User;
 use App\Admin\Admin;
+use App\GlobalClasses\Utility;
 
 if(!isset($_SESSION)){
     session_start();
@@ -14,8 +15,8 @@ $loggedIn = $auth->logged_in();
 
 
 $newMenu = new Admin();
-$singleItem = $newMenu->prepare($_REQUEST);
-$productByCode = $newMenu->getTotalMenue();
+$productByCode = $newMenu->prepare($_REQUEST);
+$productByCode = $newMenu->view();
 
 
 if($loggedIn){
@@ -25,11 +26,7 @@ if($loggedIn){
     $userInfo=$user->view();
     if($userInfo==NULL)   return Utility::redirect('../../index.php');
 
-
-
-
 }
-
 
 
 
@@ -43,7 +40,7 @@ if(!empty($_REQUEST["action"])) {
                 $itemArray = array($productByCode['food_code']=>array('name'=>$productByCode['food_name'], 'code'=>$productByCode['food_code'],'id'=>$productByCode['id'], 'quantity'=>$_REQUEST["quantity"], 'price'=>$productByCode['price']));
 
                 if(!empty($_SESSION["cart_list"])) {
-                    //var_dump($_SESSION['cart_list']);
+//                   var_dump($_SESSION['cart_list']);
 
                     if(array_key_exists($productByCode['food_code'],$_SESSION["cart_list"])) {
                         foreach($_SESSION["cart_list"] as $k => $v) {
@@ -70,7 +67,7 @@ if(!empty($_REQUEST["action"])) {
                 if(!empty($_SESSION["cart_list"])) {
                     //var_dump($_SESSION['cart_list']);
 
-                    if(array_key_exists($productByCode->code,$_SESSION["cart_list"])) {
+                    if(array_key_exists($productByCode['food_code'],$_SESSION["cart_list"])) {
                         foreach($_SESSION["cart_list"] as $k => $v) {
                             if($productByCode['food_code'] == $k)
                                 $_SESSION["cart_list"][$k]["quantity"] -= $_REQUEST["quantity"];
@@ -120,7 +117,7 @@ include ('header.php');
                 <h5 >Your Cart</h5>
             <div class="cart-navigation">
             <a href="menu.php" class="btn" ><< Back to Menu</a>
-            <a href="#" class="btn" id="checkoutbutton">Check Out >></a>
+            <a href="OrderSystem/orderFinal.php" class="btn" id="checkoutbutton">Check Out >></a>
             </div>
 
                 <table cellpadding="10" cellspacing="1">
@@ -157,6 +154,7 @@ include ('header.php');
                         </tr>
                         <?php
                         $item_total += ($item["price"]*$item["quantity"]);
+                        $_SESSION['total']=$item_total;
                     }
                     ?>
 
