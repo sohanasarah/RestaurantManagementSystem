@@ -58,7 +58,7 @@ use App\GlobalClasses\Message;
                     <td width='600' height="50" >
 
 
-                        <?php if($_SESSION['message']!=""){ ?>
+                        <?php  if(isset($_SESSION['message']) )if($_SESSION['message']!=""){ ?>
 
                             <div  id="message" class="form button"   style="font-size: smaller  " >
                                 <center>
