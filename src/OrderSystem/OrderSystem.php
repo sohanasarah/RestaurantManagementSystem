@@ -96,9 +96,9 @@ class OrderSystem extends DB
 
         if($result)
         {
-           echo "Yes!";
+           $_SESSION['cart_list']="";
+            Utility::redirect('../profile.php');
 
-          // Utility::redirect('index.php');
         }
     }
 }

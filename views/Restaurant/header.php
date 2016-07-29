@@ -28,7 +28,7 @@ function getActiveCurrent($data = ""){
 
 //Get total items in cart start
 $total = 0;
-if(isset($_SESSION["cart_list"])){
+if(isset($_SESSION["cart_list"]) && !empty($_SESSION['cart_list'])){
     foreach($_SESSION["cart_list"] as $k => $v) {
         $total = $total+ $_SESSION["cart_list"][$k]["quantity"];
     }

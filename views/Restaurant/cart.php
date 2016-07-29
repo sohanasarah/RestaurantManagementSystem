@@ -112,12 +112,12 @@ include ('header.php');
 
 
             <?php
-            if(isset($_SESSION["cart_list"])){
+            if(isset($_SESSION["cart_list"]) && !empty($_SESSION['cart_list'])){
                 $item_total = 0; ?>
                 <h5 >Your Cart</h5>
             <div class="cart-navigation">
             <a href="menu.php" class="btn" ><< Back to Menu</a>
-            <a href="OrderSystem/orderFinal.php" class="btn" id="checkoutbutton">Check Out >></a>
+            <a href="#" class="btn" id="checkoutbutton">Check Out >></a>
             </div>
 
                 <table cellpadding="10" cellspacing="1">
@@ -249,7 +249,7 @@ include ('header.php');
 
               <a href="#" class="btn" id="checkoutback"><< Checkout</a>
               <?php if ($loggedIn) { ?>
-              <a href="invoice.php" class="btn" id="proceedbutton">Proceed >></a>
+              <a href="OrderSystem/orderFinal.php" class="btn" id="proceedbutton">Proceed >></a>
               <?php }}?>
           </div>
 
