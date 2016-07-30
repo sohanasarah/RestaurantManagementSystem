@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2016 at 06:44 PM
+-- Generation Time: Jul 30, 2016 at 06:09 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -63,22 +63,22 @@ CREATE TABLE `mappingorder` (
 --
 
 INSERT INTO `mappingorder` (`id`, `order_id`, `food_code`, `quantity`) VALUES
-(5, 128, 1014, 0),
-(6, 128, 1010, 0),
-(7, 134, 1014, 2),
-(8, 134, 1010, 1),
-(9, 135, 1014, 1),
-(10, 135, 1013, 1),
-(11, 136, 1014, 1),
-(12, 136, 1013, 1),
-(13, 137, 1014, 1),
-(14, 137, 1013, 1),
-(15, 39, 1013, 1),
-(16, 39, 1014, 1),
-(17, 39, 1014, 1),
-(18, 40, 1014, 1),
-(19, 40, 1010, 2),
-(20, 40, 1010, 2);
+(21, 41, 1010, 3),
+(22, 41, 1013, 2),
+(23, 41, 1014, 2),
+(24, 41, 1014, 2),
+(25, 42, 1013, 1),
+(26, 42, 1010, 1),
+(31, 44, 1014, 2),
+(34, 45, 1014, 1),
+(35, 45, 1014, 1),
+(36, 46, 1013, 1),
+(37, 46, 1014, 1),
+(38, 46, 1014, 1),
+(39, 47, 1014, 1),
+(40, 47, 1014, 1),
+(41, 48, 1014, 4),
+(42, 48, 1014, 4);
 
 -- --------------------------------------------------------
 
@@ -100,9 +100,6 @@ CREATE TABLE `orderfood` (
 --
 
 INSERT INTO `orderfood` (`id`, `user_id`, `invoice_id`, `food_code`, `total`, `current_date`) VALUES
-(16, 8, 'inv16_8', '1014,1010', 470, '2016-07-29 10:38:57'),
-(17, 8, 'inv17_8', '1014,1010', 650, '2016-07-29 10:40:25'),
-(18, 8, 'inv18_8', '1014,1010', 650, '2016-07-29 10:40:53'),
 (19, 8, 'inv19_8', '1014,1010', 650, '2016-07-29 10:43:14'),
 (20, 8, 'inv20_8', '1014,1010', 650, '2016-07-29 10:43:47'),
 (21, 8, 'inv21_8', '1014,1010', 650, '2016-07-29 10:47:36'),
@@ -123,7 +120,15 @@ INSERT INTO `orderfood` (`id`, `user_id`, `invoice_id`, `food_code`, `total`, `c
 (36, 8, 'inv36_8', '1014,1013', 270, '2016-07-29 11:08:33'),
 (37, 8, 'inv37_8', '1014,1013', 270, '2016-07-29 11:13:03'),
 (39, 8, 'inv39_8', '1013,1014', 270, '2016-07-29 15:33:02'),
-(40, 8, 'inv40_8', '1014,1010', 760, '2016-07-29 15:40:22');
+(40, 8, 'inv40_8', '1014,1010', 760, '2016-07-29 15:40:22'),
+(41, 8, 'inv41_8', '1010,1013,1014', 1410, '2016-07-29 21:18:32'),
+(42, 8, 'inv42_8', '1013,1010', 380, '2016-07-29 21:18:45'),
+(43, 8, 'inv43_8', '1014', 360, '2016-07-29 21:19:01'),
+(44, 8, 'inv44_8', '1014', 360, '2016-07-29 21:21:34'),
+(45, 9, 'inv45_9', '1013,1010,1014', 560, '2016-07-29 21:29:17'),
+(46, 9, 'inv46_9', '1013,1014', 270, '2016-07-29 21:52:01'),
+(47, 9, 'inv47_9', '1014', 180, '2016-07-30 04:06:56'),
+(48, 9, 'inv48_9', '1014', 720, '2016-07-30 04:07:24');
 
 -- --------------------------------------------------------
 
@@ -171,7 +176,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `address`, `password`) VALUES
-(8, 'Afiya', 'Ayman', 'aa@gmail.com', '012364478', 'Chittagong', '8b430bbcb360b07417150b7916cfb860');
+(8, 'Afiya', 'Ayman', 'aa@gmail.com', '012364478', 'Chittagong', '8b430bbcb360b07417150b7916cfb860'),
+(9, 'SS', 'SS', 'sohana_a27@yahoo.com', '123', '123', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -220,12 +226,12 @@ ALTER TABLE `fooditem`
 -- AUTO_INCREMENT for table `mappingorder`
 --
 ALTER TABLE `mappingorder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT for table `orderfood`
 --
 ALTER TABLE `orderfood`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `product`
 --
@@ -235,7 +241,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

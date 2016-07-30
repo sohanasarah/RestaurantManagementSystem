@@ -45,7 +45,13 @@ $next="<li><a href='orderList.php?pageNumber=$next'>Next</a></li>";
 
 $allOrder=$order->orderPaginator($pageStartFrom,$itemPerPage);
 
+if(count($_POST) > 0) {
+    //Utility::dd($_POST['status']);
+    $status = $_POST['status'];
+    $order2=new Admin();
+    $allOrder=$order2->orderDelete($status);
 
+}
 
 ?>
 
@@ -125,7 +131,7 @@ $allOrder=$order->orderPaginator($pageStartFrom,$itemPerPage);
 
         </div>
     </form>
-
+    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
     <div class="table-responsive">
         <table class="table">
             <thead>
@@ -157,7 +163,7 @@ $allOrder=$order->orderPaginator($pageStartFrom,$itemPerPage);
                 <td><?php echo $order['quantity']?></td>
                 <td><?php echo $order['user_id']?></td>
                 <td><?php echo $order['current_date']?></td>
-                <td><input type="checkbox"  name="status" id="status" value="checked"></td>
+                <td align="center"><input type="checkbox" name="status[]" value="<?php echo $order['id'] ?>" </td>
 
             </tr>
             <?php }?>
@@ -166,6 +172,8 @@ $allOrder=$order->orderPaginator($pageStartFrom,$itemPerPage);
             </tbody>
         </table>
     </div>
+        <center><input  type="submit" name="submit" value="Update Status" class="btn btn-primary"></center>
+    </form>
 
     <div class="text-center">
 
@@ -176,6 +184,15 @@ $allOrder=$order->orderPaginator($pageStartFrom,$itemPerPage);
         </ul>
 
     </div>
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Your Website 2014</p>
+            </div>
+        </div>
+    </footer>
 
 
 </div>

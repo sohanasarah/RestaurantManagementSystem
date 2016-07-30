@@ -204,12 +204,32 @@ class Admin extends DB
         $query = "SELECT `mappingorder`.`id`,`mappingorder`.`order_id`,`mappingorder`.`food_code`,`mappingorder`.`quantity`,`fooditem`.`food_name`,`orderfood`.`user_id`, `orderfood`.`current_date`
                   FROM `mappingorder` INNER JOIN `fooditem` ON `mappingorder`.`food_code`=`fooditem`.`food_code`
                   INNER JOIN `orderfood` ON `mappingorder`.`order_id`=`orderfood`.`id`
+                  ORDER BY `orderfood`.`current_date` DESC
                   LIMIT " . $pageStartFrom . "," . $Limit;
         $result = mysqli_query($this->conn, $query);
         while ($row = mysqli_fetch_assoc($result)) {
             $_allInfo[] = $row;
         }
         return $_allInfo;
+    }
+
+    public function orderDelete($status=array())
+    {
+        if(is_array($status)){
+            $sts= implode(",",$status);
+            $query="DELETE FROM `mappingorder`  WHERE `mappingorder`.`id` IN(".$sts.")";
+//            echo $query;
+//            die();
+            $result= mysqli_query($this->conn,$query);
+            if($result){
+                //echo "success";
+                Utility::redirect("../../../views/Restaurant/Admin/orderList.php");
+            }
+            else{
+                echo "error";
+            }
+        }
+
     }
 
 
