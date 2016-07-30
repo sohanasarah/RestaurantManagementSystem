@@ -2,7 +2,7 @@
 
 namespace App\GlobalClasses; //Declared project namespace
 
-if (!isset($_SESSION['message'])){
+if( (!isset($_SESSION)) && (!isset($_SESSION['message'])) ){
     session_start();
     
 }
