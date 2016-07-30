@@ -213,16 +213,34 @@ class Admin extends DB
         return $_allInfo;
     }
 
+
     public function orderDelete($status=array())
     {
         if(is_array($status)){
             $sts= implode(",",$status);
-            $query="DELETE FROM `mappingorder`  WHERE `mappingorder`.`id` IN(".$sts.")";
-//            echo $query;
-//            die();
+            $query="SELECT `order_id` FROM `mappingorder` WHERE `mappingorder`.`id` IN(".$sts.")";
             $result= mysqli_query($this->conn,$query);
+            while($row=mysqli_fetch_assoc($result))
+            {
+                $_OrderID[]=$row['order_id'];
+            }
+            //Utility::d($_OrderID);
+
+            $query="DELETE FROM `mappingorder`  WHERE `mappingorder`.`id` IN(".$sts.")";
+            echo $query;
+
+            $result= mysqli_query($this->conn,$query);
+
+            if(is_array($_OrderID)) {
+                $sts = implode(",", $_OrderID);
+                $STATUS="DELIVERED";
+
+                $query = "UPDATE `orderfood` SET `orderfood`.`delivery_status`='".$STATUS."'
+                     WHERE `orderfood`.`id` IN(" . $sts . ")";
+                $result = mysqli_query($this->conn, $query);
+            }
+
             if($result){
-                //echo "success";
                 Utility::redirect("../../../views/Restaurant/Admin/orderList.php");
             }
             else{

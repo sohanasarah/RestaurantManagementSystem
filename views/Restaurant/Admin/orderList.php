@@ -44,13 +44,13 @@ $previous="<li><a href='orderList.php?pageNumber=$prev'>Prev</a></li>";
 $next="<li><a href='orderList.php?pageNumber=$next'>Next</a></li>";
 
 $allOrder=$order->orderPaginator($pageStartFrom,$itemPerPage);
+//Utility::d($allOrder);
 
 if(count($_POST) > 0) {
     //Utility::dd($_POST['status']);
     $status = $_POST['status'];
     $order2=new Admin();
     $allOrder=$order2->orderDelete($status);
-
 }
 
 ?>
@@ -119,7 +119,7 @@ if(count($_POST) > 0) {
     <h2 align="center">Order List</h2>
     <form role="form">
         <div class="form-group">
-            <label for="sel1">Select items per page:</label>
+            <label for="sel1">Select Orders per page:</label>
             <select class="form-control" id="sel1" name="itemPerPage">
                 <option <?php if($itemPerPage==5){?> selected="selected" <?php } ?> >5</option>
                 <option <?php if($itemPerPage==10){?> selected="selected" <?php } ?>>10</option>
@@ -136,8 +136,7 @@ if(count($_POST) > 0) {
         <table class="table">
             <thead>
             <tr>
-                <th>#</th>
-                <th>ID</th>
+                <th>Serial No</th>
                 <th>Order ID</th>
                 <th>Food Code</th>
                 <th>Food Item</th>
@@ -156,7 +155,6 @@ if(count($_POST) > 0) {
                 foreach($allOrder as $order){
                 $sl++; ?>
                 <td><?php echo $sl+$pageStartFrom?></td>
-                <td><?php echo $order['id'] ?></td>
                 <td><?php echo $order['order_id']?></td>
                 <td><?php echo $order['food_code']?></td>
                 <td><?php echo $order['food_name']?></td>

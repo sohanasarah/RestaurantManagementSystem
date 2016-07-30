@@ -128,13 +128,13 @@
     </div>
     <div class="col-lg-4 col-md-4 col-xs-4 thumb">
         <a class="thumbnail" href="mainCourse.php">
-            <img class="img-responsive img-thumbnai" src="../../../resource/FoodImage/main_course.jpg" alt="" height="220">
+            <img class="img-responsive img-thumbnai" src="../../../resource/FoodImage/main_course%20(2).jpg" alt="" height="220">
             <center><h3 id="color">Main Course</h3></center>
         </a>
     </div>
     <div class="col-lg-4 col-md-4 col-xs-4 thumb">
         <a class="thumbnail" href="desserts_drinks.php">
-            <img class="img-responsive img-thumbnai" src="../../../resource/FoodImage/drinks.jpg" alt="" height="220">
+            <img class="img-responsive img-thumbnai" src="../../../resource/FoodImage/dessertDrink.jpg" alt="" height="220">
             <center><h3 id="color">Drinks & Desserts</h3></center>
         </a>
     </div>

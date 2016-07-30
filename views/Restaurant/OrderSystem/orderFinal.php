@@ -19,7 +19,7 @@ $id=$order->prepare($_SESSION)->getUserID();
 
 $_SESSION['user_id']=$id['id'];
 
-
+Utility::d($_SESSION['cart_list']);
 
 $orderedItem=count($_SESSION['cart_list']);
 //Utility::d($_SESSION['cart_list']);
@@ -27,6 +27,7 @@ $itemCodeArray=array_keys($_SESSION['cart_list']);
 
 $_SESSION['food_code']=implode(',',$itemCodeArray);
 
+Utility::d($_SESSION['food_code']);
 
     $OrderList=$order->prepare($_SESSION)->storeOrder();
 

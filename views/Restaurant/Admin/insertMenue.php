@@ -119,7 +119,7 @@
         <div class="form-group">
             <label id="style">Food Category:Select One</label>
             <select name ="category" class="form-control">
-                <option value="Appetizer">APPTIZER</option>
+                <option value="Appetizer">APPETIZER</option>
                 <option value="Main Course">MAIN COURSE</option>
                 <option value="DESSERTS or DRINKS">DESSERTS or DRINKS</option>
                 </select>
