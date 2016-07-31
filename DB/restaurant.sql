@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2016 at 01:25 PM
+-- Generation Time: Jul 31, 2016 at 07:25 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -41,7 +41,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `first_name`, `last_name`, `email`, `phone`, `address`, `password`) VALUES
-(1, 'TUSHAR1', 'ADMIN', 'tusharadmin@gmail.com', '248774', '485 fdhdkfjkejr', '202cb962ac59075b964b07152d234b70');
+(1, 'TUSHAR1', 'ADMIN', 'tusharadmin@gmail.com', '248774', '485 fdhdkfjkejr', '202cb962ac59075b964b07152d234b70'),
+(2, 'Test', 'Admin', 'test@admin.com', '53647436352', 'sdfsf klsfj klsfj slkfjs lksfjlskf', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -65,7 +66,7 @@ CREATE TABLE `fooditem` (
 
 INSERT INTO `fooditem` (`id`, `category`, `food_name`, `food_image`, `food_code`, `price`, `deleted_at`) VALUES
 (14, 'DESSERTS or DRINKS', 'Coffee-Regular', 'Coffee-Regular_drinks.jpg', 1014, 180, NULL),
-(15, 'Appetizer', 'Saslik', 'Saslik_DSC_0964_800x533.JPG', 1015, 180, NULL),
+(15, 'APPTIZER', 'Saslik', 'Saslik_appetizer.jpg', 1015, 180, NULL),
 (16, 'Appetizer', 'Nachos', 'Nachos_Edited-2643_800x533.jpg', 1016, 280, NULL),
 (17, 'Main Course', 'Chicken Steak Meal', 'Chicken Steak Meal_DSC_7319_800x533.JPG', 1017, 290, NULL),
 (18, 'Main Course', 'Chicken Peri Peri', 'Chicken Peri Peri_Edited-7322_800x533.jpg', 1018, 400, NULL),
@@ -78,9 +79,8 @@ INSERT INTO `fooditem` (`id`, `category`, `food_name`, `food_image`, `food_code`
 (25, 'DESSERTS or DRINKS', 'Coffee Tiramisu', 'Coffee Tiramisu_Edited-4379_800x429.jpg', 1025, 200, NULL),
 (26, 'Main Course', 'Butter Chicken Roast', 'Butter Chicken Roast_Edited-7320_800x458.jpg', 1026, 300, NULL),
 (27, 'DESSERTS or DRINKS', 'Mango Lemon Mint', 'Mango Lemon Mint_aaas.jpg', 1027, 350, NULL),
-(28, 'Appetizer', '', '', 1030, 0, NULL),
-(29, 'Appetizer', '', '', 1030, 0, NULL),
-(30, 'Appetizer', '', '', 1030, 0, NULL);
+(28, 'APPTIZER', 'test', 'test_appetizer.jpg', 1031, 120, NULL),
+(31, 'Appetizer', 'test', 'test_appetizer.jpg', 1031, 324, NULL);
 
 -- --------------------------------------------------------
 
@@ -273,12 +273,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `fooditem`
 --
 ALTER TABLE `fooditem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `mappingorder`
 --
