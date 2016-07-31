@@ -15,7 +15,7 @@ use App\GlobalClasses\Message;
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Signing up as customer!</title>
+        <title>Login as an Admin!</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -99,8 +99,8 @@ use App\GlobalClasses\Message;
                     <div class="form-box" style="margin-top: 0%">
                         <div class="form-top">
                             <div class="form-top-left">
-                                <h3>Login to our site</h3>
-                                <p>Enter username and password to log on:</p>
+                                <h3>Login as an Admin</h3>
+                                <p>Enter email and password to log on:</p>
                             </div>
                             <div class="form-top-right">
                                 <i class="fa fa-key"></i>

@@ -1,11 +1,32 @@
 <?php
-session_start();
 include_once('../../../vendor/autoload.php');
 
 use App\Admin\Admin;
 use App\GlobalClasses\Message;
 use App\GlobalClasses\Utility;
 //Utility::dd($_GET);
+
+
+
+if(!isset($_SESSION) )session_start();
+
+use App\Admin\Auth;
+
+
+$auth = new Auth();
+$loggedIn = $auth->logged_in();
+
+if(!$loggedIn) {
+    return Utility::redirect('Profile/admin-login.php');
+}
+
+
+
+
+
+
+
+
 
 $order=new Admin();
 

@@ -2,11 +2,25 @@
 
 include_once('../../../vendor/autoload.php');
 
-use App\Admin\Admin;
 use App\GlobalClasses\Message;
 use App\GlobalClasses\Utility;
-//Utility::d($_POST);
-//Utility::d($_FILES);
+
+
+
+if(!isset($_SESSION) )session_start();
+
+use App\Admin\Auth;
+use App\Admin\Admin;
+
+
+$auth = new Auth();
+$loggedIn = $auth->logged_in();
+
+if(!$loggedIn) {
+    return Utility::redirect('Profile/admin-login.php');
+}
+
+
 
 
 if(isset($_FILES['food_image']) && !empty($_FILES['food_image']['name']))
