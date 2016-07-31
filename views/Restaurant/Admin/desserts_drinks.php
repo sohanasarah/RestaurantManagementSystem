@@ -1,10 +1,27 @@
 <?php
-
 include_once('../../../vendor/autoload.php');
 
-use App\Admin\Admin;
 use App\GlobalClasses\Message;
 use App\GlobalClasses\Utility;
+
+use App\Admin\Auth;
+use App\Admin\Admin;
+
+if(!isset($_SESSION) )session_start();
+
+
+
+
+$auth = new Auth();
+$loggedIn = $auth->logged_in();
+
+if(!$loggedIn) {
+    return Utility::redirect('Profile/admin-login.php');
+}
+
+
+
+
 //
 $food_item=new Admin();
 $allFood=$food_item->getMenueByCategory('DESSERTS or DRINKS');
@@ -86,7 +103,7 @@ $allFood=$food_item->getMenueByCategory('DESSERTS or DRINKS');
     <div class="image">
 
         <img id="pic" src="../../../resource/FoodImage/entry pic.jpg" height="250" width="900">
-        <center><h2><span>Welcome Admin<span class='spacer'></span></h2></center>
+        <?php include("messageBox.php"); ?>
     </div>
 
 <div class="container">
@@ -94,43 +111,7 @@ $allFood=$food_item->getMenueByCategory('DESSERTS or DRINKS');
     <center><h3 id="color">Desserts & Drinks</h3></center>
 
 <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top navbar-right" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">Home</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Food Reviews</a>
-                    </li>
-                    <li>
-                        <a href="insertMenue.php">Insert Menue</a>
-                    </li>
-                    <li>
-                        <a href="orderList.php">Order List</a>
-                    </li>
-
-                    <li>
-                        <a href="totalMenue.php">View All Item</a>
-                    </li>
-                    <li>
-                        <a href="#">Log Out</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    <?php include("topNavigation.php"); ?>
 
 <!-- Page Content -->
 

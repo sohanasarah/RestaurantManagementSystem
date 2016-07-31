@@ -1,10 +1,27 @@
 <?php
-session_start();
+
 include_once('../../../vendor/autoload.php');
 
-use App\Admin\Admin;
 use App\GlobalClasses\Message;
 use App\GlobalClasses\Utility;
+
+
+
+if(!isset($_SESSION) )session_start();
+
+use App\Admin\Auth;
+use App\Admin\Admin;
+
+
+$auth = new Auth();
+$loggedIn = $auth->logged_in();
+
+if(!$loggedIn) {
+    return Utility::redirect('Profile/admin-login.php');
+}
+
+
+
 //Utility::d($_GET);
 $food_item=new Admin();
 //$allFood=$food_item->getTotalMenue();
@@ -65,6 +82,8 @@ $allFood=$food_item->paginator($pageStartFrom,$itemPerPage);
     <link href="../../../resource/Admin/css/thumbnail-gallery.css" rel="stylesheet">
 
     <link rel="stylesheet" href="../../../resource/bootstrap-3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../resource/font-awesome-4.6.3/css/font-awesome.css"/>
+
     <script src="../../../resource/jquery/1.12.0/jquery.min.js"></script>
     <script src="../../../resource/bootstrap-3.3.6/js/bootstrap.min.js"></script>
     <style>
@@ -81,47 +100,13 @@ $allFood=$food_item->paginator($pageStartFrom,$itemPerPage);
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top navbar-right" role="navigation">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.php">Home</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">Food Reviews</a>
-                </li>
-                <li>
-                    <a href="insertMenue.php">Insert Menue</a>
-                </li>
-                <li>
-                    <a href="orderList.php">Order List</a>
-                </li>
-
-                <li>
-                    <a href="totalMenue.php">View All Item</a>
-                </li>
-
-                <li>
-                    <a href="#">Log Out</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
+<?php include("topNavigation.php"); ?>
 
 <!-- Page Content -->
 <div class="container">
+
+    <?php include("messageBox.php"); ?>
+
     <div>
         <form role="form">
             <div class="form-group">

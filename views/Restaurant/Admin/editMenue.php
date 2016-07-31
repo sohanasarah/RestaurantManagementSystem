@@ -1,16 +1,30 @@
 <?php
-
 include_once('../../../vendor/autoload.php');
 
-use App\Admin\Admin;
+if(!isset($_SESSION) )session_start();
 use App\GlobalClasses\Message;
 use App\GlobalClasses\Utility;
+
+use App\Admin\Auth;
+use App\Admin\Admin;
+
+
+$auth = new Auth();
+$loggedIn = $auth->logged_in();
+
+if(!$loggedIn) {
+    return Utility::redirect('Profile/admin-login.php');
+}
+
 //Utility::d($_GET);
 $food_item=new Admin();
 $food_item->prepare($_GET);
 $singleItem=$food_item->view();
 //Utility::dd($singleItem);
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -53,46 +67,15 @@ $singleItem=$food_item->view();
 
 
 <img id="pic" src="../../../resource/FoodImage/entry pic.jpg" height="300" width="1000">
-<center><h2 id="color">Welcome Admin</h2></center>
+<?php include("messageBox.php"); ?>
 
 <div class="container">
     <center><h2>Update Food Item</h2></center>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">Home</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Food Reviews</a>
-                    </li>
-                    <li>
-                        <a href="insertMenue.php">Insert Menue</a>
-                    </li>
-                    <li>
-                        <a href="orderList.php">Order List</a>
-                    </li>
-                    <li>
-                        <a href="totalMenue.php">View All Item</a>
-                    </li>
-                    <li>
-                        <a href="#">Log Out</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+    
+    
+    <?php include("topNavigation.php"); ?>
+    
+    
     <form role="form" method="post" action="updateMenue.php" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $singleItem['id']?>">
         <div class="form-group">

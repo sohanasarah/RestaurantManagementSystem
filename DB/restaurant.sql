@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 30, 2016 at 09:09 AM
+-- Generation Time: Jul 31, 2016 at 01:25 PM
 -- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `restaurant`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone` varchar(222) NOT NULL,
+  `address` varchar(555) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `first_name`, `last_name`, `email`, `phone`, `address`, `password`) VALUES
+(1, 'TUSHAR1', 'ADMIN', 'tusharadmin@gmail.com', '248774', '485 fdhdkfjkejr', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -54,7 +77,10 @@ INSERT INTO `fooditem` (`id`, `category`, `food_name`, `food_image`, `food_code`
 (24, 'Main Course', 'Lemon Butter Chicken Meal', 'Lemon Butter Chicken Meal_DSC_7316_798x532.JPG', 1024, 350, NULL),
 (25, 'DESSERTS or DRINKS', 'Coffee Tiramisu', 'Coffee Tiramisu_Edited-4379_800x429.jpg', 1025, 200, NULL),
 (26, 'Main Course', 'Butter Chicken Roast', 'Butter Chicken Roast_Edited-7320_800x458.jpg', 1026, 300, NULL),
-(27, 'DESSERTS or DRINKS', 'Mango Lemon Mint', 'Mango Lemon Mint_aaas.jpg', 1027, 350, NULL);
+(27, 'DESSERTS or DRINKS', 'Mango Lemon Mint', 'Mango Lemon Mint_aaas.jpg', 1027, 350, NULL),
+(28, 'Appetizer', '', '', 1030, 0, NULL),
+(29, 'Appetizer', '', '', 1030, 0, NULL),
+(30, 'Appetizer', '', '', 1030, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -84,7 +110,11 @@ INSERT INTO `mappingorder` (`id`, `order_id`, `food_code`, `quantity`) VALUES
 (34, 45, 1014, 1),
 (35, 45, 1014, 1),
 (41, 48, 1014, 4),
-(46, 55, 1014, 2);
+(46, 55, 1014, 2),
+(47, 56, 1018, 13),
+(48, 56, 1017, 1),
+(49, 56, 1019, 1),
+(50, 56, 1023, 1);
 
 -- --------------------------------------------------------
 
@@ -142,7 +172,8 @@ INSERT INTO `orderfood` (`id`, `user_id`, `invoice_id`, `food_code`, `total`, `c
 (52, 8, 'inv52_8', '1014', 360, '2016-07-30 05:14:46', ''),
 (53, 8, 'inv53_8', '1014', 360, '2016-07-30 05:14:49', ''),
 (54, 8, 'inv54_8', '1014', 360, '2016-07-30 05:15:42', 'DELIVERED'),
-(55, 8, 'inv55_8', '1014', 360, '2016-07-30 05:17:12', '');
+(55, 8, 'inv55_8', '1014', 360, '2016-07-30 05:17:12', ''),
+(56, 10, 'inv56_10', '1018,1017,1019,1023', 6840, '2016-07-30 08:49:58', NULL);
 
 -- --------------------------------------------------------
 
@@ -191,11 +222,18 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `address`, `password`) VALUES
 (8, 'Afiya', 'Ayman', 'aa@gmail.com', '012364478', 'Chittagong', '8b430bbcb360b07417150b7916cfb860'),
-(9, 'SS', 'SS', 'sohana_a27@yahoo.com', '123', '123', '202cb962ac59075b964b07152d234b70');
+(9, 'SS', 'SS', 'sohana_a27@yahoo.com', '123', '123', '202cb962ac59075b964b07152d234b70'),
+(10, 'tusharbd', 'tusharbd', 'tusharbd@gmail.com', '864827', 'sdif jfskfj slkjfksf', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `fooditem`
@@ -232,20 +270,25 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `fooditem`
 --
 ALTER TABLE `fooditem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `mappingorder`
 --
 ALTER TABLE `mappingorder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `orderfood`
 --
 ALTER TABLE `orderfood`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT for table `product`
 --
@@ -255,7 +298,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

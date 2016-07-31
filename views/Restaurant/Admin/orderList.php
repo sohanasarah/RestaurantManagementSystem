@@ -76,47 +76,18 @@ if(count($_POST) > 0) {
     </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top navbar-right" role="navigation">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.php">Home</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">Food Reviews</a>
-                </li>
-                <li>
-                    <a href="insertMenue.php">Insert Menue</a>
-                </li>
-                <li>
-                    <a href="orderList.php">Order List</a>
-                </li>
 
-                <li>
-                    <a href="totalMenue.php">View All Item</a>
-                </li>
 
-                <li>
-                    <a href="#">Log Out</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
+<?php include("topNavigation.php"); ?>
 
 <div class="container">
+
+    <?php include("messageBox.php"); ?>
+
+
     <h2 align="center">Order List</h2>
+    
+    
     <form role="form">
         <div class="form-group">
             <label for="sel1">Select Orders per page:</label>
