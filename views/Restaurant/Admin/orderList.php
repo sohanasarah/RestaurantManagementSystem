@@ -107,7 +107,8 @@ if(count($_POST) > 0) {
 
 
     <h2 align="center">Order List</h2>
-    
+
+
     
     <form role="form">
         <div class="form-group">
@@ -123,6 +124,9 @@ if(count($_POST) > 0) {
 
         </div>
     </form>
+
+   
+
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
     <div class="table-responsive">
         <table class="table">
