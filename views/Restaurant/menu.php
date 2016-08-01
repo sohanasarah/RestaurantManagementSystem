@@ -95,6 +95,20 @@ include ('header.php');
     <section class="content gallery pad1" >
         <div class="ic"></div>
         <div class="container">
+            <div class="row" style="margin-left: 350px; margin-bottom: 50px;">
+                <div class="btn-group">
+                    <a href="menu.php?category=Appetizer" class="btn <?php if($_REQUEST['category'] == 'Appetizer')  echo 'current';?>" >
+                        Appetizer
+                    </a>
+                    <a href="menu.php?category=Main%20Course" class="btn <?php if($_REQUEST['category'] == 'Main Course')  echo 'current';?>" >
+                        Main Course
+                    </a>
+                    <a href="menu.php?category=DESSERTS%20or%20DRINKS" class="btn <?php if($_REQUEST['category'] == 'DESSERTS or DRINKS')  echo 'current';?>" >
+                        Desserts & Drinks
+                    </a>
+
+                </div>
+            </div>
             <div class="row" id="menuItemRow">
             <?php
             $sl = 0;

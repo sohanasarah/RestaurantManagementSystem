@@ -36,14 +36,21 @@ if(isset($_SESSION["cart_list"]) && !empty($_SESSION['cart_list'])){
 }
 
 //Get total items end
+// Current page title
+$end = basename($_SERVER['SCRIPT_FILENAME']);
 
+$title = substr($end, 0, -4);
+$title = strtoupper($title)."-RESTAURANT";
+
+
+//
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>Blog</title>
+    <title><?php echo $title?></title>
     <meta charset="utf-8">
     <meta name = "format-detection" content = "telephone=no" />
     <link rel="icon" href="../../resource/images/favicon.ico">
@@ -217,7 +224,7 @@ if(isset($_SESSION["cart_list"]) && !empty($_SESSION['cart_list'])){
                                 <li class= "<?php getActiveCurrent("index.php") ?>"><a href="index.php">home</a></li>
                                 <li class="<?php getActiveCurrent("menu.php") ?>"><a href="menu.php">menu</a></li>
                                 <li class="<?php getActiveCurrent("reservation.php") ?>"><a href="reservation.php">reservation</a></li>
-                                <li class="<?php getActiveCurrent("blog.php") ?>"><a href="blog.php">blog</a></li>
+<!--                                <li class="--><?php //getActiveCurrent("blog.php") ?><!--"><a href="blog.php">blog</a></li>-->
                                 <li class="<?php getActiveCurrent("contact.php") ?>"><a href="contact.php">contacts</a></li>
 
                                 <li id="refreshCart" class="<?php getActiveCurrent("cart.php") ?>"><a href="cart.php" type="button" class="badge1" data-badge=" <?php echo $total?>">Cart</a></li>

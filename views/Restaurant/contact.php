@@ -16,31 +16,27 @@ include ('header.php');
           <div class="row">
             <div class="grid_9">
               <figure class="">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d24214.807650104907!2d-73.94846048422478!3d40.65521573400813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1395650655094" style="border:0"></iframe>
-              </figure>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.8303319013057!2d91.82574481490147!3d22.360034446374467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acd883461bf913%3A0x59b6e2e5c729313b!2sGolpahar+More%2C+Chittagong!5e0!3m2!1sen!2sbd!4v1470063182334" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>              </figure>
             </div>
             <div class="grid_3">
               <div class="map_block">
                 <div class="map_title">Address:</div>
-                9870 St Vincent Place, <br> Glasgow, DC 45 Fr 45.
+                Golpahar More, <br> Chittagong, Bangladesh.
               </div>
               <div class="map_block">
                 <div class="map_title">Phones:</div>
-                +1 800 559 6580 <br>+1 800 603 6035
+                +88 018000000 <br>+88 017000000
               </div>
               <div class="map_block">
                 <div class="map_title">Email:</div>
-                <a href="#">mail@demolink.org</a>
+                <a href="#">abc@something.org</a>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="grid_8">
-        <p>24/7 support is on for all <span class="color1 fw"><a href="http://www.templatemonster.com/" rel="nofollow">premium themes</a></span>. <br>
-          Guys from <span class="color1 fw"><a href="http://www.templatetuning.com/" rel="nofollow">Template Tuning</a></span> are always ready to help you with customization of the chosen theme.</p>
-        Kas facilisis, nulla vel viverra auctor, leo magna sodales felis, quis malesuada nibh odio ut velitoin pharetra luctus diama scelerisque eros convallis accumsan. 
-      </div>
+        <p>24/7 support is on for all <span class="color1 fw"></div>
     </div>
   </div>
 </section>
