@@ -102,7 +102,7 @@ include ('header.php');
                 $sl++;
 
                 ?>
-                <form action="<?php echo  $actual_link ?>" method="post">
+                <form action="<?php echo  $actual_link ?> " method="post">
                     <div class="grid_4" id="menuItems" hidden>
                         <div class="gall_block">
                             <div class="maxheight">
@@ -223,12 +223,12 @@ include ('header.php');
 
 
     if(value){
-        $('div#allmenu').hide();
+
 
         $(document).ready(function(){
-
+            //$('div#menuItemRow').slideDown();
             $('div#menuItems').show();
-
+            $('div#allmenu').hide();
 
 
 

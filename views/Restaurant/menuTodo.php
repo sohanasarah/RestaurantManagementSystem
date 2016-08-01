@@ -94,7 +94,7 @@ include ('header.php');
     <section class="content gallery pad1" >
         <div class="ic"></div>
         <div class="container">
-            <div class="row" id="menuItemRow"
+            <div class="row" id="menuItemRow">
             <?php
             $sl = 0;
 
@@ -102,7 +102,7 @@ include ('header.php');
                 $sl++;
 
                 ?>
-                <form action="<?php echo  $actual_link ?>" method="post">
+                <form action="<?php $actual_link ?>" method="post" id="form_<?php echo $item['id']?>">
                     <div class="grid_4" id="menuItems" hidden>
                         <div class="gall_block">
                             <div class="maxheight">
@@ -117,7 +117,7 @@ include ('header.php');
                                     <input hidden type="text" name="category"
                                            value="<?php echo $item['category'] ?>"/>
                                     <label><?php echo "৳" . $item['price'] ?></label>
-                                    <button class="btn" id="addToCart" type="submit"
+                                    <button class="btn" id="addToCart" type="submit" onclick="addFun(<?php echo $item['id']?>)"
                                             style="margin-left: 120px; margin-bottom: 20px ">Add To Cart
                                     </button>
                                     <div class="text1"><a href="#"><?php echo $item['food_name'] ?></a></div>
@@ -136,6 +136,7 @@ include ('header.php');
 
 
             }?>
+            </div>
         </div>
 
     </section>
@@ -152,7 +153,7 @@ include ('header.php');
                 <div class="grid_4">
                     <div class="gall_block">
                         <div class="maxheight">
-                            <a class="thumbnail" href="menuCategory.php?category=Appetizer" type="submit" id="menu1">
+                            <a class="thumbnail" href="menuTodo.php?category=Appetizer" type="submit" id="menu1">
                                 <img class="img-responsive img-thumbnail" src="../../resource/FoodImage/appetizer.jpg" alt="" height="220">
                                 <center><h3 id="color">Appetizer</h3></center>
                             </a>
@@ -163,7 +164,7 @@ include ('header.php');
                 <div class="grid_4">
                     <div class="gall_block">
                         <div class="maxheight">
-                            <a class="thumbnail" href="menuCategory.php?category=Main Course" id="menu">
+                            <a class="thumbnail" href="menuTodo.php?category=Main Course" id="menu">
                                 <img class="img-responsive img-thumbnail" src="../../resource/FoodImage/main_course%20(2).jpg" alt="" height="220">
                                 <center><h3 id="color">Main Course</h3></center>
                             </a>
@@ -174,7 +175,7 @@ include ('header.php');
                 <div class="grid_4">
                     <div class="gall_block">
                         <div class="maxheight">
-                            <a class="thumbnail" href="menuCategory.php?category=DESSERTS or DRINKS" id="menu">
+                            <a class="thumbnail" href="menuTodo.php?category=DESSERTS or DRINKS" id="menu">
                                 <img class="img-responsive img-thumbnail" src="../../resource/FoodImage/dessertDrink.jpg" alt="" height="220">
                                 <center><h3 id="color">Drinks & Desserts</h3></center>
                             </a>
@@ -190,6 +191,34 @@ include ('header.php');
 
 <script>
 
+    $(document).ready(function () {
+
+        $("button#addToCart").click(function(){
+
+            //$(this).toggleClass('active');
+//            function addFun(id) {
+//                var formName = document.getElementById('form_'+id);
+//
+//            }
+            $.ajax({
+                type: "POST",
+                url: "updateCart.php", //process to mail
+                data: $(this.form).serialize(),
+
+                success: function(){
+                    $('#message').show().delay(2000).fadeOut();
+                    $("#refreshCart").load(window.location + " #refreshCart");
+
+                },
+
+                error: function(){
+                    $('#message').show().delay(2000).fadeOut();
+
+                }
+            });
+
+        });
+    });
     function parseURLParams(url) {
         var queryStart = url.indexOf("?") + 1,
             queryEnd   = url.indexOf("#") + 1 || url.length + 1,
@@ -226,9 +255,8 @@ include ('header.php');
         $('div#allmenu').hide();
 
         $(document).ready(function(){
-
-            $('div#menuItems').show();
-
+            //$('div#menuItemRow').slideDown();
+            $('div#menuItems').slideDown(2000);
 
 
 
@@ -239,11 +267,11 @@ include ('header.php');
 
 
             $("a#menu1").click(function() {
-                $('div#allmenu').hide();
+                $('div#allmenu').slideUp(slow);
 
             });
         });
-
+        $('div#menuItems').hide(1000);
     }
 
 

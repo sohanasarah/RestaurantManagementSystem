@@ -13,6 +13,7 @@ $singleUser= $user->view();
 
 }
 
+
 if(!isset($_SESSION)){
     session_start();
 }
