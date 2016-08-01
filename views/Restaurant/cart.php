@@ -116,7 +116,7 @@ include ('header.php');
                 $item_total = 0; ?>
                 <h5 >Your Cart</h5>
             <div class="cart-navigation">
-            <a href="menuCategory.php" class="btn" ><< Back to Menu</a>
+            <a href="menu.php" class="btn" ><< Back to Menu</a>
             <a href="#" class="btn" id="checkoutbutton">Check Out >></a>
             </div>
 

@@ -152,7 +152,7 @@ include ('header.php');
                 <div class="grid_4">
                     <div class="gall_block">
                         <div class="maxheight">
-                            <a class="thumbnail" href="menuCategory.php?category=Appetizer" type="submit" id="menu1">
+                            <a class="thumbnail" href="menu.php?category=Appetizer" type="submit" id="menu1">
                                 <img class="img-responsive img-thumbnail" src="../../resource/FoodImage/appetizer.jpg" alt="" height="220">
                                 <center><h3 id="color">Appetizer</h3></center>
                             </a>
@@ -163,7 +163,7 @@ include ('header.php');
                 <div class="grid_4">
                     <div class="gall_block">
                         <div class="maxheight">
-                            <a class="thumbnail" href="menuCategory.php?category=Main Course" id="menu">
+                            <a class="thumbnail" href="menu.php?category=Main Course" id="menu">
                                 <img class="img-responsive img-thumbnail" src="../../resource/FoodImage/main_course%20(2).jpg" alt="" height="220">
                                 <center><h3 id="color">Main Course</h3></center>
                             </a>
@@ -174,7 +174,7 @@ include ('header.php');
                 <div class="grid_4">
                     <div class="gall_block">
                         <div class="maxheight">
-                            <a class="thumbnail" href="menuCategory.php?category=DESSERTS or DRINKS" id="menu">
+                            <a class="thumbnail" href="menu.php?category=DESSERTS or DRINKS" id="menu">
                                 <img class="img-responsive img-thumbnail" src="../../resource/FoodImage/dessertDrink.jpg" alt="" height="220">
                                 <center><h3 id="color">Drinks & Desserts</h3></center>
                             </a>

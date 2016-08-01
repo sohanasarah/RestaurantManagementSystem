@@ -215,7 +215,7 @@ if(isset($_SESSION["cart_list"]) && !empty($_SESSION['cart_list'])){
                         <nav>
                             <ul class="sf-menu">
                                 <li class= "<?php getActiveCurrent("index.php") ?>"><a href="index.php">home</a></li>
-                                <li class="<?php getActiveCurrent("menuCategory.php") ?>"><a href="menuCategory.php">menu</a></li>
+                                <li class="<?php getActiveCurrent("menu.php") ?>"><a href="menu.php">menu</a></li>
                                 <li class="<?php getActiveCurrent("reservation.php") ?>"><a href="reservation.php">reservation</a></li>
                                 <li class="<?php getActiveCurrent("blog.php") ?>"><a href="blog.php">blog</a></li>
                                 <li class="<?php getActiveCurrent("contact.php") ?>"><a href="contact.php">contacts</a></li>
