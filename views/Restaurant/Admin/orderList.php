@@ -125,7 +125,8 @@ if(count($_POST) > 0) {
         </div>
     </form>
 
-   
+    <a href="pdf.php" class="btn btn-primary" role="button">Download Order List as PDF</a>
+    <a href="xl.php" class="btn btn-primary" role="button">Download Order List as XL</a>
 
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
     <div class="table-responsive">

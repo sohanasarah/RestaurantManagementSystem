@@ -81,7 +81,7 @@ $singleItem=$food_item->view();
         <div class="form-group">
             <label id="style">Food Category:Select One</label>
             <select name ="category" class="form-control">
-                <option <?php if($singleItem['category']=="Appetizer"){?> selected="selected" <?php }?>>APPTIZER</option>
+                <option <?php if($singleItem['category']=="Appetizer"){?> selected="selected" <?php }?>>APPETIZER</option>
                 <option <?php if($singleItem['category']=="Main Course"){?> selected="selected" <?php }?>>MAIN COURSE</option>
                 <option <?php if($singleItem['category']=="DESSERTS or DRINKS"){?> selected="selected" <?php }?>>DESSERTS or DRINKS</option>
             </select>
