@@ -248,6 +248,42 @@ include ('header.php');
                       </tr>
                       </tbody>
                   </table>
+                  <div class="blog_title"><a href="#">Payment Method</a></div>
+
+                  <table cellpadding="10" cellspacing="1" style="margin-top: 50px" id="payment">
+                      <tbody>
+                      <tr>
+                          <th>Bkash  or DBBL Mobile</th>
+                          <th>Card</th>
+                      </tr>
+                      <tr>
+                          <td><strong>Please give your payment to this number first</strong>
+                              <img src="../../resource/payment/payment.png ?>" alt=""
+                                   height="300" width="600">
+
+                              <button  class="btn" id="mobile" type="submit"
+                                      style="margin-left: 30px; margin-bottom: 20px ">Enter Transaction ID
+                              </button>
+                          </td>
+                          <td><strong>Please take your card on your hand<br><br></strong>
+                              <img src="../../resource/payment/card.jpg ?>" alt=""
+                                   height="300" width="600">
+
+                              <button  class="btn" id="card" type="submit"
+                                       style="margin-left: 30px; margin-bottom: 20px ">Go to Payment Gateway
+                              </button>
+                          </td>
+                      </tr>
+
+                      </tbody>
+
+
+
+
+                  </table>
+
+
+
 
               <a type="button" href="#" class="btn" id="checkoutback"><< Checkout</a>
               <?php if ($loggedIn) { ?>
@@ -266,6 +302,17 @@ include ('header.php');
               =================================-->
 <?php include ('footer.php');?>
 <script>
+    $("button#mobile").click(function() {
+        $('table#payment').slideUp(1000);
+        
+    });
+    $("button#card").click(function() {
+        $('div#proceed').hide(1000);
+        $('div#checkout').show(2000);
+    });
+
+
+
     $("a#checkoutback").click(function() {
         $('div#proceed').hide(1000);
         $('div#checkout').show(2000);
