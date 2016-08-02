@@ -132,7 +132,7 @@ $allFood=$food_item->getMenueByCategory('DESSERTS or DRINKS');
                     <center>Item Code:<?php echo " ".$food['food_code']?></center>
                     <center>Price: <?php echo " ".$food['price']?></center>
                 </a>
-                <center><a href="editMenue.php?id=<?php echo $food['id']?>" class="btn btn-primary" role="button">Edit</a>
+                <center><a href="editMenu.php?id=<?php echo $food['id']?>" class="btn btn-primary" role="button">Edit</a>
                     <a href="deleteItem.php?id=<?php echo $food['id']?>" class="btn btn-danger" role="button">Delete</a></center>
             </div>
 

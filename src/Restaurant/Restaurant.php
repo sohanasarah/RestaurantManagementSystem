@@ -83,7 +83,16 @@ class Restaurant
     public function userOrders($data = "")
     {
         $_data = array();
-        $query = "SELECT users.first_name, orderfood.invoice_id,orderfood.current_date,orderfood.total, orderfood.delivery_status, mappingorder.quantity ,fooditem.food_name,fooditem.price, fooditem.category FROM users JOIN orderfood ON orderfood.user_id = users.id JOIN mappingorder ON mappingorder.order_id = orderfood.id Left JOIN fooditem ON mappingorder.food_code = fooditem.food_code WHERE users.email ="."'$data'"."order by orderfood.invoice_id desc";
+        $query = "SELECT users.first_name,
+                  orderfood.invoice_id,orderfood.current_date,orderfood.total, orderfood.delivery_status,
+                  mappingorder.quantity ,
+                  fooditem.food_name,fooditem.price, fooditem.category
+                  FROM users
+                  JOIN orderfood ON orderfood.user_id = users.id
+                  JOIN mappingorder ON mappingorder.order_id = orderfood.id
+                  Left JOIN fooditem ON mappingorder.food_code = fooditem.food_code
+                  WHERE users.email ="."'$data'"."order by orderfood.invoice_id desc";
+        
         $result = mysqli_query($this->conn,$query);
         if($result){
             while ($row = mysqli_fetch_assoc($result)){

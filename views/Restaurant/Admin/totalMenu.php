@@ -53,7 +53,7 @@ if(array_key_exists('pageNumber',$_GET)){
 }
 for($i=1;$i<=$totalPage;$i++){
     $class=($pageNumber==$i)?"active":"";
-    $pagination.="<li class='$class'><a href='totalMenue.php?pageNumber=$i'>$i</a></li>";
+    $pagination.= "<li class='$class'><a href='totalMenu.php?pageNumber=$i'>$i</a></li>";
 }
 
 $pageStartFrom=$itemPerPage*($pageNumber-1);
@@ -119,7 +119,7 @@ $allFood=$food_item->paginator($pageStartFrom,$itemPerPage);
                     <option<?php if($itemPerPage==25){?> selected <?php }?>>25</option>
                 </select>
                 <br>
-                <button type="submit">Go!</button>
+                <button type="submit" class="btn btn-primary">Go!</button>
             </div>
         </form>
     </div>
@@ -141,7 +141,7 @@ $allFood=$food_item->paginator($pageStartFrom,$itemPerPage);
                     <center>Item Code:<?php echo " ".$food['food_code']?></center>
                     <center>Price: <?php echo " ".$food['price']?></center>
                 </a>
-                <center><a href="editMenue.php?id=<?php echo $food['id']?>" class="btn btn-primary" role="button">Edit</a>
+                <center><a href="editMenu.php?id=<?php echo $food['id']?>" class="btn btn-primary" role="button">Edit</a>
                     <a href="deleteItem.php?id=<?php echo $food['id']?>" class="btn btn-danger" role="button">Delete</a></center>
             </div>
 
@@ -157,11 +157,11 @@ $allFood=$food_item->paginator($pageStartFrom,$itemPerPage);
         <div>
             <center><ul class="pagination">
                     <?php if($pageNumber>1){?>
-                        <li><a href="totalMenue.php?pageNumber=<?php echo $prevPage?>">Prev</a></li>
+                        <li><a href="totalMenu.php?pageNumber=<?php echo $prevPage?>">Prev</a></li>
                     <?php }?>
                     <?php echo $pagination?>
                     <?php if($pageNumber<$totalPage){?>
-                        <li><a href="totalMenue.php?pageNumber=<?php echo $nextPage?>">Next</a></li>
+                        <li><a href="totalMenu.php?pageNumber=<?php echo $nextPage?>">Next</a></li>
                     <?php }?>
                 </ul></center>
         </div>

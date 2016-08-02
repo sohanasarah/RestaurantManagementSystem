@@ -1,10 +1,10 @@
 <?php
+session_start();
 include_once('../../../vendor/autoload.php');
 
 use App\Admin\Admin;
 use App\GlobalClasses\Message;
 use App\GlobalClasses\Utility;
-//Utility::dd($_GET);
 
 
 
@@ -42,6 +42,7 @@ else{
 $itemPerPage=$_SESSION['itemPerPage'];
 //Utility::d($itemPerPage);
 $totalItem=$order->orderCount();
+//Utility::dd($totalItem);
 
 $totalPage=ceil($totalItem/$itemPerPage);
 
@@ -66,6 +67,15 @@ $next="<li><a href='orderList.php?pageNumber=$next'>Next</a></li>";
 
 $allOrder=$order->orderPaginator($pageStartFrom,$itemPerPage);
 //Utility::d($allOrder);
+foreach ($allOrder as $order){
+    $singleOrder[] = $order["order_id"];
+    $date[] = $order["current_date"];
+}
+$singleOrder = array_unique($singleOrder);
+$date = array_unique($date);
+$combinedOrderSingle=array_combine($singleOrder,$date);
+//Utility::d($combinedOrderSingle);
+
 
 if(count($_POST) > 0) {
     //Utility::dd($_POST['status']);
@@ -90,26 +100,46 @@ if(count($_POST) > 0) {
     <style>
         center
         {
-            color: black;
+            color: #112e31;
             font-family:bold,"Baskerville Old Face", Times, serif;
             font-size: medium;
         }
+
+        th {
+            background-color: #08a6af;
+            color: white;
+        }
+
+        tr:hover{background-color: #e7faec
+        }
+
+        #detail
+        {
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        }
     </style>
 </head>
+
 <body>
 
-
 <?php include("topNavigation.php"); ?>
+
 
 <div class="container">
 
     <?php include("messageBox.php"); ?>
 
+    <center><h2>Order List</h2></center>
 
-    <h2 align="center">Order List</h2>
 
-
-    
+    <a href="pdf.php" class="btn btn-primary" role="button">Download Order List as PDF</a>
+    <a href="xl.php" class="btn btn-primary" role="button">Download Order List as XL</a>
+    <br><br>
     <form role="form">
         <div class="form-group">
             <label for="sel1">Select Orders per page:</label>
@@ -120,26 +150,25 @@ if(count($_POST) > 0) {
                 <option <?php if($itemPerPage==20){?> selected="selected" <?php } ?>>20</option>
                 <option <?php if($itemPerPage==25){?> selected="selected" <?php } ?>>25</option>
             </select>
+
             <button type="submit" class="btn btn-primary btn-sm">Go</button>
 
         </div>
     </form>
+    <br>
 
-    <a href="pdf.php" class="btn btn-primary" role="button">Download Order List as PDF</a>
-    <a href="xl.php" class="btn btn-primary" role="button">Download Order List as XL</a>
 
     <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
-    <div class="table-responsive">
+        <input  type="submit" name="submit" value="Update Status" class="btn btn-warning">
+        <br> <br>
+    <div class="table-responsive table-hover">
         <table class="table">
             <thead>
             <tr>
-                <th>Serial No</th>
                 <th>Order ID</th>
-                <th>Food Code</th>
-                <th>Food Item</th>
-                <th>Quantity</th>
-                <th>User ID</th>
+
                 <th>Order Date</th>
+<!--                <th>View/Hide</th>-->
                 <th>Delivery Status</th>
 
 
@@ -148,26 +177,59 @@ if(count($_POST) > 0) {
             <tbody>
             <tr>
                 <?php
-                $sl=0;
-                foreach($allOrder as $order){
-                $sl++; ?>
-                <td><?php echo $sl+$pageStartFrom?></td>
-                <td><?php echo $order['order_id']?></td>
-                <td><?php echo $order['food_code']?></td>
-                <td><?php echo $order['food_name']?></td>
-                <td><?php echo $order['quantity']?></td>
-                <td><?php echo $order['user_id']?></td>
-                <td><?php echo $order['current_date']?></td>
-                <td align="center"><input type="checkbox" name="status[]" value="<?php echo $order['id'] ?>" </td>
 
+                foreach($combinedOrderSingle as $order_id=>$date){
+                 ?>
+
+                <td><?php echo $order_id ?></td>
+                <td><?php echo $date?></td>
+<!--                <td><button type="submit" id="expand" class="btn btn-success">Expand</button></td>-->
+                <td align="center"><input type="checkbox" name="status[]" value="<?php echo $order_id ?>" </td>
+                <td>
+                <div class="table-responsive" >
+                    <table class="table"  id="detail">
+                        <thead>
+                        <tr>
+
+                            <th>Food Code</th>
+                            <th>Food Item</th>
+                            <th>Quantity</th>
+                            <th>User Name</th>
+                            <th>Address</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php
+                            $count = 0;
+                            foreach($allOrder as $order){
+
+                                if($order['order_id']==$order_id){ ?>
+                            <tr>
+
+                                    <td><?php echo $order['food_code']?></td>
+                                    <td><?php echo $order['food_name']?></td>
+                                    <td><?php echo $order['quantity']?></td>
+                                <?php if($count == 0) {?>
+                                    <td><?php echo $order['first_name']?></td>
+                                    <td><?php echo $order['address']?></td>
+                                        <?php }
+                                $count++?>
+
+                            </tr>
+                            <?php } }?>
+
+
+                        </tbody>
+                    </table>
+                    </div></td>
             </tr>
             <?php }?>
-
-
             </tbody>
         </table>
     </div>
-        <center><input  type="submit" name="submit" value="Update Status" class="btn btn-primary"></center>
+
     </form>
 
     <div class="text-center">
@@ -192,6 +254,10 @@ if(count($_POST) > 0) {
 
 </div>
 
-
+<script>
+    $("button#expand").click(function() {
+        $('td#expansion').show();
+    });
+</script>
 </body>
 </html>

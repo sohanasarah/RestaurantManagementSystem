@@ -76,7 +76,7 @@ $singleItem=$food_item->view();
     <?php include("topNavigation.php"); ?>
     
     
-    <form role="form" method="post" action="updateMenue.php" enctype="multipart/form-data">
+    <form role="form" method="post" action="updateMenu.php" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $singleItem['id']?>">
         <div class="form-group">
             <label id="style">Food Category:Select One</label>

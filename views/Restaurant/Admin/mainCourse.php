@@ -24,7 +24,7 @@ $allFood=$food_item->getMenueByCategory('Main Course');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Menue-Main Course</title>
+    <title>Menu-Main Course</title>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../../resource/bootstrap-3.3.6/css/bootstrap.min.css">
     <script src="../../../resource/jquery/1.12.0/jquery.min.js"></script>
@@ -116,7 +116,7 @@ $allFood=$food_item->getMenueByCategory('Main Course');
                     <center>Item Code:<?php echo " ".$food['food_code']?></center>
                     <center>Price: <?php echo " ".$food['price']?></center>
                 </a>
-                <center><a href="editMenue.php?id=<?php echo $food['id']?>" class="btn btn-primary" role="button">Edit</a>
+                <center><a href="editMenu.php?id=<?php echo $food['id']?>" class="btn btn-primary" role="button">Edit</a>
                     <a href="deleteItem.php?id=<?php echo $food['id']?>" class="btn btn-danger" role="button">Delete</a></center>
             </div>
 

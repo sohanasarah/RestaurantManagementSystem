@@ -13,6 +13,8 @@ $loggedIn = $auth->logged_in();
 $admin = new Admin();
 $singleAdmin= $admin->viewAdmin();
 
+$total = $admin->orderCount();
+
 
     //grettings and logout option
 
@@ -21,7 +23,51 @@ $singleAdmin= $admin->viewAdmin();
 <link rel="stylesheet" href="../../../resource/bootstrap-3.3.6/css/bootstrap.css">
 <link rel="stylesheet" href="../../../resource/Custom/style.css">
 <link rel="stylesheet" href="../../../resource/font-awesome-4.6.3/css/font-awesome.css"/>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<style>
+    li a, .dropbtn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
 
+    li a:hover, .dropdown:hover .dropbtn {
+        background-color: red;
+    }
+
+    li.dropdown {
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    .show {display:block;}
+
+    #notification
+    {
+        background-color: red;
+        color: white;
+    }
+</style>
+<meta http-equiv="refresh" content="300" >
 
 <nav class="navbar navbar-inverse navbar-fixed-top navbar-right" role="navigation">
     <div class="container">
@@ -38,16 +84,17 @@ $singleAdmin= $admin->viewAdmin();
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                
                 <li>
-                    <a href="insertMenue.php">Insert Menue</a>
+                    <a  href="../index.php">View Website</a>
                 </li>
                 <li>
-                    <a href="orderList.php">Order List</a>
+                    <a href="insertMenu.php">Insert Menu</a>
                 </li>
-
                 <li>
-                    <a href="totalMenue.php">View All Item</a>
+                    <a href="orderList.php" type="button">Order List<span class="badge" id="notification"><?php echo $total?></span> </a>
+                </li>
+                <li>
+                    <a href="totalMenu.php">View All Item</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -55,22 +102,20 @@ $singleAdmin= $admin->viewAdmin();
                 <?php if($loggedIn){ ?>
 
                     <li>
-                    <a class=""  href="#">Welcome Admin, <?php echo $singleAdmin->first_name." ". $singleAdmin->last_name?>!</a>
+                    <a class=""  href="#">Welcome <?php echo $singleAdmin->first_name." ". $singleAdmin->last_name?>!</a>
                 </li>
 
-                <li>
-                    <a class="btn btn-info" href='../Admin/Profile/edit.php'>Edit</a>
-                </li>
-                <li>
-                    <a class="btn btn-info" href='../Admin/Profile/signup.php'>Add Admin</a>
-                </li>
-                <li>
-                    <a class="btn btn-danger" href='../Admin/Authentication/logout.php'>Logout</a>
-                </li>
 
-                <li>
+                    <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()"><i class="fa fa-cog" style="font-size:24px"></i></a>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href='../Admin/Profile/edit.php'>Edit</a>
+                        <a href='../Admin/Profile/signup.php'>Add Admin</a>
+                        <a href='../Admin/Authentication/logout.php'>Logout</a>
+                    </div>
+          </li>
 
-                </li>
+
 
 
                 <?php }?>
@@ -85,3 +130,25 @@ $singleAdmin= $admin->viewAdmin();
     </div>
     <!-- /.container -->
 </nav>
+
+<script>
+    /* When the user clicks on the button,
+     toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var d = 0; d < dropdowns.length; d++) {
+                var openDropdown = dropdowns[d];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
