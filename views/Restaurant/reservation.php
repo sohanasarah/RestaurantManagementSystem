@@ -110,7 +110,7 @@ if(!isset($_SESSION)){
 
                 </select>
                 </div>
-                <div class="clear"></div>
+                <div class="clear"></div> 
 
         <div class="ta__left">
         <a href="" class="btn" data-type="reset">clear</a>
