@@ -26,9 +26,17 @@ $userOrders = $user->userOrders($_SESSION['user_email']);
 
 foreach ($userOrders as $orders){
     $invoices[] = $orders["invoice_id"];
+    $dates[]  = $orders["current_date"];
+
+
 }
 $invoices = array_unique($invoices);
-var_dump($invoices);
+$dates = array_unique($dates);
+//var_dump($invoices);
+//var_dump($dates);
+$invoiceInfo = array_combine($invoices,$dates);
+//var_dump($invoiceInfo);
+
 
 
 
@@ -38,7 +46,8 @@ $user->prepare($_SESSION);
 $singleUser=$user->view();
 if($singleUser==NULL)   return Utility::redirect('../../index.php');
 
-
+$sl = 1;
+$item_total = 0;
 ?>
 <!--=====================
           Content
@@ -129,47 +138,65 @@ if($singleUser==NULL)   return Utility::redirect('../../index.php');
 
                     </form>
                     <div class="blog_title"><a href="#">Your Orders </a></div>
-                    <?php foreach ($invoices as $invoice){
+                    <?php foreach ($invoiceInfo as $invoice => $date ){
+
+                        echo "<div class=\"blog_title\">SL: ".$sl++."</div>";
+
                     ?>
                     <table cellpadding="10" cellspacing="1">
                         <tbody>
                         <tr>
-                            <th colspan="6" align=left><strong>Invoice Id: <?php echo $invoice; ?> </strong></th>
+                            <th colspan="2" align=center ><strong>Invoice Id: <?php echo $invoice; ?> </strong></th>
+                            <th colspan="2" align=center ><strong>Date: <?php
+                                    $date = explode(" ",$date);
+
+                                    echo $date[0]; ?> </strong></th>
+                            <th colspan="2" align=center ><strong>Time: <?php echo $date[1]; ?> </strong></th>
                         </tr>
                         <tr>
-                            <th><strong>Food Name</strong></th>
+                            <th colspan="2"><strong>Food Name</strong></th>
                             <th><strong>Quantity</strong></th>
-                            <th><strong>Unit Price</strong></th>
-                            <th><strong>Subtotal</strong></th>
+                            <th align=center><strong>Unit Price</strong></th>
+                            <th align=center><strong>Subtotal</strong></th>
 
                         </tr>
                         <?php
-                        foreach ($userOrders as $item){
-                            if($item['current_date'] == $invoice){
+                        foreach ($userOrders as $item ){
+
+                            if($item['invoice_id'] == $invoice){
 
                             ?>
 
                             <tr>
 
-                                    <td><?php echo $item["food_name"]; ?></td>
-                                    <td class="cart_quantity">
+                                    <td colspan="2"><?php echo $item["food_name"]; ?></td>
+                                    <td align=center id="price">
                                         <label name="quantity" ><?php echo $item["quantity"]; ?></label>
                                     </td>
-                                    <td align=right id="price"><?php echo "৳".$item["price"]; ?></td>
-                                    <td align=right id="price"><?php echo "৳".$item["price"]*$item["quantity"]; ?></td>
+                                    <td align=center id="price"><?php echo "৳".$item["price"]; ?></td>
+                                    <td align=center id="price"><?php echo "৳".$item["price"]*$item["quantity"]; ?></td>
                             </tr>
                             <?php
+
                             $item_total += ($item["price"]*$item["quantity"]);
                         }
                         ?>
 
+
+                        <?php } ?>
                         <tr>
                             <td colspan="6" align=right><strong>Total:</strong> <?php echo "৳".$item_total;
                                 $item_total = 0;?></td>
                         </tr>
-                        <?php } ?>
                         </tbody>
                     </table>
+                        <div class="clear f_sep1"></div>
+                        <div class="clear f_sep1"></div>
+                        <div class="clear f_sep1"></div>
+                        <div class="clear f_sep1"></div>
+                        <div class="clear f_sep1"></div>
+
+
                     <?php } ?>
 
 
