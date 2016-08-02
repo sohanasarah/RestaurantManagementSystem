@@ -87,7 +87,7 @@ if(isset($_REQUEST['reservationTable']))
 
             <input  <?php if(isset($_GET['reservationDate'])&& isset($_GET['reservationTimeSlot']) && ($_GET['reservationDate']!="") ) echo "hidden" ?> type="submit" value="Search For Available Tables">
 
-            <div class="clear height1"></div>
+            <div class="clear"></div>
 
 
 
@@ -105,7 +105,6 @@ if(isset($_GET['reservationDate'])&& isset($_GET['reservationTimeSlot']) && ($_G
         <input type="hidden" name="reservationDate" value="<?php echo $_REQUEST['reservationDate'] ?>">
         <input type="hidden" name="reservationTimeSlot" value="<?php echo $_REQUEST['reservationTimeSlot'] ?>">
 
-        <div class="clear"></div>
         <div class="fl1 ">
             <em style="width:159px">Please choose your table</em>
             <select name="reservationTable" style="width: auto" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
@@ -141,13 +140,15 @@ if(isset($_GET['reservationDate'])&& isset($_GET['reservationTimeSlot']) && ($_G
 
             </select>
         </div>
-        <div class="clear"></div>
 
         <div class="ta__left">
-            <a href="../Restaurant/reservation.php" class="btn" data-type="reset">clear</a>
-            <a href="" class="btn" data-type="submit">send</a>
+            <input type="submit" value="Book Now!">
+            <div class="clear height1"></div>
+
+            <input type="reset" value="Reset">
+
+
         </div>
-           <input type="submit" value="Book Now!">
 
     </form>
 
