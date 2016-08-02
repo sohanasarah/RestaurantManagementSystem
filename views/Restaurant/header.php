@@ -124,7 +124,7 @@ $title = strtoupper($title)."-RESTAURANT";
     <tr>
 
 
-         <td width='500' height="45">
+         <td width='500' height="5">
 
 
                                 <?php  if(isset($_SESSION['message']) )  if($_SESSION['message']!=""){ ?>

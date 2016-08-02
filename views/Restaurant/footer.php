@@ -23,11 +23,7 @@
 
 
 <script>
-    $('#message').show().delay(10).fadeOut();
-    $('#message').show().delay(10).fadeIn();
-    $('#message').show().delay(10).fadeOut();
-    $('#message').show().delay(10).fadeIn();
-    $('#message').show().delay(1200).fadeOut();
+    $('#message').show().delay(1500).fadeOut();
 </script>
 
 
