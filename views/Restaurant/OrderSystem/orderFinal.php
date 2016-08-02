@@ -31,6 +31,9 @@ Utility::d($_SESSION['food_code']);
 
     $OrderList=$order->prepare($_SESSION)->storeOrder();
 
+
+
+
 //
 //for($i=1;$i<=$orderedItem;$i++)
 //{

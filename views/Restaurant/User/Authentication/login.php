@@ -15,8 +15,15 @@ $status= $auth->prepare($_POST)->is_registered();
 if($status){
     $_SESSION['user_email']=$_POST['email'];
     Message::message("Login Successfull!");
+    if(isset($_SESSION['fromCart']) && $_SESSION['fromCart']== true ){
+        unset($_SESSION['fromCart']);
+        return Utility::redirect('../../cart.php');
 
-    return Utility::redirect('../../index.php');
+    }
+    else{
+        return Utility::redirect('../../index.php');
+    }
+
 
 }else{
     Message::message("Wrong username or password");

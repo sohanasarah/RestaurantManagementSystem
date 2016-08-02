@@ -1,15 +1,11 @@
 <div class="grid_4 preffix_1">
     <h2>Categories</h2>
     <ul class="list">
-        <li><a href="#">Herem ipsum dolor </a></li>
-        <li><a href="#">sit Komet,tetur </a></li>
-        <li><a href="#">Odipiscingt</a></li>
-        <li><a href="#">In mollis eratttis </a></li>
-        <li><a href="#">Neque Loacilisis, sit </a></li>
-        <li><a href="#">Amet ultret</a></li>
-        <li><a href="#">Icies erat rutrums </a></li>
+        <li><a href="menu.php?category=Appetizer">Appetizer</a></li>
+        <li><a href="menu.php?category=Main%20Course">Main Course</a></li>
+        <li><a href="menu.php?category=DESSERTS%20or%20DRINKS">Dessert & Drinks</a></li>
     </ul>
-    <h2>Recent Posts</h2>
+    <h2>Recent Orders</h2>
     <div class="block3">
         <img src="../../resource/images/page4_img4.jpg" alt="" class="img_inner noresize fleft">
         <div class="extra_wrapper">

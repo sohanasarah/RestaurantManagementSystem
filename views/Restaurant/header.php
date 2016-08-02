@@ -58,7 +58,7 @@ $title = strtoupper($title)."-RESTAURANT";
     <link rel="stylesheet" href="../../resource/css/form.css">
     <link rel="stylesheet" href="../../resource/css/stuck.css">
     <link rel="stylesheet" href="../../resource/css/style.css">
-    <link rel="stylesheet" href="booking/css/booking.css">
+    <link rel="stylesheet" href="../../resource/formResource/css/booking.css">
     <script src="../../resource/jquery/1.12.0/jquery.min.js"></script>
     <script src="../../resource/js/jquery.js"></script>
     <script src="../../resource/js/jquery-migrate-1.1.1.js"></script>
@@ -74,7 +74,7 @@ $title = strtoupper($title)."-RESTAURANT";
     <script src="../../resource/js/touchTouch.jquery.js"></script>
     
     <link rel="stylesheet" href="../../resource/Custom/style.css">
-    <script src="booking/js/booking.js"></script>
+    <script src="../../resource/formResource/js/booking.js"></script>
 
 
     <script>

@@ -21,7 +21,10 @@ use App\Restaurant\Restaurant;
 
 
 
+$user = new Restaurant();
+$userOrders = $user->userOrders($_SESSION['user_email']);
 
+var_dump($userOrders);
 
 
 
@@ -31,80 +34,6 @@ $user->prepare($_SESSION);
 $singleUser=$user->view();
 if($singleUser==NULL)   return Utility::redirect('../../index.php');
 
-
-
-$newMenu = new Restaurant();
-$singleItem = $newMenu->prepare($_REQUEST);
-$productByCode = $newMenu->getItem();
-
-
-if(!empty($_REQUEST["action"])) {
-    switch($_REQUEST["action"]) {
-        case "add":
-            if(!empty($_REQUEST["quantity"])) {
-
-                //var_dump($productByCode);
-                $itemArray = array($productByCode->code=>array('name'=>$productByCode->name, 'code'=>$productByCode->code,'id'=>$productByCode->id, 'quantity'=>$_REQUEST["quantity"], 'price'=>$productByCode->price));
-
-                if(!empty($_SESSION["cart_list"])) {
-                    //var_dump($_SESSION['cart_list']);
-
-                    if(array_key_exists($productByCode->code,$_SESSION["cart_list"])) {
-                        foreach($_SESSION["cart_list"] as $k => $v) {
-                            if($productByCode->code == $k)
-                                $_SESSION["cart_list"][$k]["quantity"] += $_REQUEST["quantity"];
-
-
-                        }
-                    } else {
-                        $_SESSION["cart_list"] = array_merge($_SESSION["cart_list"],$itemArray);
-                    }
-                } else {
-                    $_SESSION["cart_list"] = $itemArray;
-                }
-
-            }
-            break;
-        case "minus":
-            if(!empty($_REQUEST["quantity"])) {
-
-                //var_dump($productByCode);
-                $itemArray = array($productByCode->code=>array('name'=>$productByCode->name, 'code'=>$productByCode->code,'id'=>$productByCode->id, 'quantity'=>$_REQUEST["quantity"], 'price'=>$productByCode->price));
-
-                if(!empty($_SESSION["cart_list"])) {
-                    //var_dump($_SESSION['cart_list']);
-
-                    if(array_key_exists($productByCode->code,$_SESSION["cart_list"])) {
-                        foreach($_SESSION["cart_list"] as $k => $v) {
-                            if($productByCode->code == $k)
-                                $_SESSION["cart_list"][$k]["quantity"] += $_REQUEST["quantity"];
-
-
-                        }
-                    } else {
-                        $_SESSION["cart_list"] = array_merge($_SESSION["cart_list"],$itemArray);
-                    }
-                } else {
-                    $_SESSION["cart_list"] = $itemArray;
-                }
-
-            }
-            break;
-        case "remove":
-            if(!empty($_SESSION["cart_list"])) {
-                foreach($_SESSION["cart_list"] as $k => $v) {
-                    if($_REQUEST["code"] == $k)
-                        unset($_SESSION["cart_list"][$k]);
-                    if(empty($_SESSION["cart_list"]))
-                        unset($_SESSION["cart_list"]);
-                }
-            }
-            break;
-        case "empty":
-            unset($_SESSION["cart_list"]);
-            break;
-    }
-}
 
 ?>
 <!--=====================
@@ -189,13 +118,50 @@ if(!empty($_REQUEST["action"])) {
 
                         </label>
                         <div class="clear f_sep1"></div>
-                        <strong class="dt">Your Orders :</strong>
                         <label class="tmInput">
 
                         </label>
 
 
                     </form>
+                    <div class="blog_title"><a href="#">Your Orders </a></div>
+                    <table cellpadding="10" cellspacing="1">
+                        <tbody>
+                        <tr>
+                            <th><strong>Invoice Id</strong></th>
+                            <th><strong>Date</strong></th>
+                            <th><strong>Food Name</strong></th>
+                            <th><strong>Quantity</strong></th>
+                            <th><strong>Unit Price</strong></th>
+                            <th><strong>Subtotal</strong></th>
+
+                        </tr>
+                        <?php
+                        foreach ($userOrders as $item){
+                            ?>
+                            <tr>
+                                <form id="formCart" action="#" method="post">
+                                    <td><strong><?php echo $item["invoice_id"]; ?></strong></td>
+                                    <td><?php echo $item["current_date"]; ?></td>
+                                    <td><?php echo $item["food_name"]; ?></td>
+                                    <td class="cart_quantity">
+                                        <label name="quantity" ><?php echo $item["quantity"]; ?></label>
+                                    </td>
+                                    <td align=right id="price"><?php echo "৳".$item["price"]; ?></td>
+                                    <td align=right id="price"><?php echo "৳".$item["price"]*$item["quantity"]; ?></td>
+                                </form>
+                            </tr>
+                            <?php
+                            $item_total += ($item["price"]*$item["quantity"]);
+                        }
+                        ?>
+
+                        <tr>
+                            <td colspan="6" align=right><strong>Total:</strong> <?php echo "৳".$item_total; ?></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
 
                 </div>
 

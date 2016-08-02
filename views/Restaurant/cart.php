@@ -203,7 +203,9 @@ include ('header.php');
 
 
                   </form>
-              <?php } else {?>
+              <?php } else {
+                  $_SESSION['fromCart'] = true;
+                  ?>
               <div class="blog_title"><a href="#">You must Log in first. If you don't have an account sign up then log in</a></div>
                   <a href="User/Profile/signup.php" class="btn" >Login or SignUp</a>
               <?php }?>

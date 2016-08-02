@@ -4,10 +4,10 @@ Author: Smart
 Varsion: 1.1
 */
 
-includeScript ('../booking/js/jquery-ui-1.10.3.custom.min.js');
-includeScript ('../booking/js/jquery.fancyform.js');
-includeScript ('../booking/js/jquery.placeholder.js');
-includeScript ('../booking/js/regula.js');
+includeScript ('../formResource/js/jquery-ui-1.10.3.custom.min.js');
+includeScript ('../formResource/js/jquery.fancyform.js');
+includeScript ('../formResource/js/jquery.placeholder.js');
+includeScript ('../formResource/js/regula.js');
 
 (function($){
 	$.fn.bookingForm=function(options){
@@ -15,7 +15,7 @@ includeScript ('../booking/js/regula.js');
 			var $this = $(this),
 			data = $this.data('bookingForm'),
 			object = {
-				url: 'booking/booking.php', // php-script url
+				url: 'formResource/formResource.php', // php-script url
 				sender: '', // sender for header in e-mail
 				ownerEmail:'support@template-help.com', // destination e-mail, message will be send on this e-mail
 				validate:true, // validate or not
