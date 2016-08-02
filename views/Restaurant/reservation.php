@@ -143,9 +143,9 @@ if(isset($_GET['reservationDate'])&& isset($_GET['reservationTimeSlot']) && ($_G
 
         <div class="ta__left">
             <input type="submit" value="Book Now!">
-            <div class="clear height1"></div>
+            <div class="clear"></div>
+            <a href="../Restaurant/reservation.php" class="btn" data-type="reset">clear</a>
 
-            <input type="reset" value="Reset">
 
 
         </div>
