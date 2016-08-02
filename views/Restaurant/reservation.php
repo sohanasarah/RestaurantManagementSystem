@@ -103,14 +103,14 @@ if(!isset($_SESSION)){
                     <option>Table#12 - 10 Seated</option>
                     <option>Table#13 - 10 Seated</option>
                     <option>Table#14 - 10 Seated</option>
-
+ 
                     <option>Table#15 - 6 Seated</option>
                     <option>Table#16 - 6 Seated</option>
                     <option>Table#17 - 6 Seated</option>
 
                 </select>
                 </div>
-                <div class="clear"></div> 
+                <div class="clear"></div>
 
         <div class="ta__left">
         <a href="" class="btn" data-type="reset">clear</a>
