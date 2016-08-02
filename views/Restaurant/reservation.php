@@ -15,65 +15,92 @@ if(!isset($_SESSION)){
     <div class="row">
       <div class="grid_8">
         <h2>Reserve Your Table</h2>
-        <img src="../../resource/images/page3_img1.jpg" alt="" class="img_inner fleft inn__1">
-        <div class="extra_wrapper">
-          <div class="text1 tx__1"><a href="#">Vivamus at magna non nunc </a></div>
-          <p>Rehoncus. Aliquam nibh antegestas id ictum ado. Praesenterto faucibus maleada faucibusnec laeetert metus id laoreet </p>
-          <p>Nullam consectetur orci sed nulla facilisisequaterto. Curabitur vel lorem sit amet nulla perermentum. Aliquam nibh ante, egestas id dictum a, commodo luctus libero.</p>
-          Praesent faucibus malesuada faucibus. Donecertolin laoreet metus id laoreet malesuada.  orem ipsum dolor sit amet, consectetur adipiscing elit. 
-        </div>
-        <div class="clear"></div>
-        <h2>Useful Information</h2>
-        <div class="text1 tx__1"><a href="#">Hivamus at magna non nuncerto limonit nelowert sedrolino. Integer convallis orci vel miеter laoreet, at ornare lorem consequat. Phasellus erat nisl, auctor vel velit sed.</a></div>
-        <p>Nehoncus. Aliquam nibh antegestas id ictum ado. Praesenterto faucibus maleada faucibusnec laeet metus id laoreet rolito monert dertolimon.</p>
-        <p>Nullam consectetur orci sed nulla facilisisequat. Curabitur vel lorem sit amet nulla perermentum. Aliquam nibh ante, egestas id dictum a, commodo luctus libero. </p>
-        Praesent faucibus malesuada faucibus. Donec laoreet metus id laoreet malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed nulla facilisis consequat. Curabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. <br>
-        <a href="#" class="btn">more</a>
+
+          <p><img src="../../resource/table-chair/restaurant-map.PNG" width="600" height="450" alt="table-chair mapping" /></p>
+
+
+
       </div>
       <div class="grid_4">
         <h2>Our Hours</h2>
         <div class="form_title color1">
         We are open 7 days a week - 8 AM to 12 PM <br>+1 101 889 9898</div>
         <form id="bookingForm">
-          <div class="tmInput">
-              <input name="Name" placeHolder="Name:" type="text" data-constraints='@NotEmpty @Required @AlphaSpecial'>
-          </div>
-        <div class="tmInput">
-          <input name="Email" placeHolder="Email:" type="text" data-constraints="@NotEmpty @Required @Email">
-        </div>     
-         <div class="clear f_sep1"></div>
-          <strong class="dt">Check-in</strong>
-         <label class="tmDatepicker">
-          <input type="text" name="Date"  placeHolder='10/05/2014' data-constraints="@NotEmpty @Required @Date">
-        </label>
-        <div class="clear"></div>
-          <strong class="dt">Check-out</strong>
-        <label class="tmDatepicker">
-          <input type="text" name="Date"  placeHolder='20/05/2014' data-constraints="@NotEmpty @Required @Date">
-        </label>
-        <div class="clear"></div>
-        <div class="fl1 ">
-        <em>Adults</em>
-        <select name="Adults" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
-            <option>1</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-        </select>
-        <div class="clear height1"></div>
-       
-        
-        </div>
-        <div class="fl1">
-        <em>Children</em>
-        <select name="Children" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
-            <option>0</option>
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-        </select>
-        
-        </div>
+
+
+            <div class="clear"></div>
+            <strong class="dt">
+                Reservation Date
+            </strong>
+            <label >
+                <input id="datepicker" type="date" name="reservationDate" >
+            </label>
+            <div class="clear"></div>
+
+
+
+
+
+            <div class="clear"></div>
+            <div class="fl1 ">
+                <em style="width:159px">Reservation Time Slot</em>
+                <select name="reservationTimeSlot" style="width: auto" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+                    <option>10:00am-10:59am</option>
+                    <option>11:00am-11:59am</option>
+                    <option>12:00pm-12:59pm</option>
+                    <option>1:00pm-1:59pm</option>
+                    <option>2:00pm-2:59pm</option>
+                    <option>2:00pm-2:59pm</option>
+                    <option>3:00pm-3:59pm</option>
+                    <option>4:00pm-4:59pm</option>
+                    <option>5:00pm-5:59pm</option>
+                    <option>6:00pm-6:59pm</option>
+                    <option>7:00pm-7:59pm</option>
+                    <option>8:00pm-8:59pm</option>
+                    <option>9:00pm-9:59pm</option>
+                    <option>10:00pm-10:59pm</option>
+                    <option>11:00pm-11:59pm</option>
+
+                </select>
+
+                </div>
+                <div class="clear height1"></div>
+
+
+
+
+
+
+
+                <div class="clear"></div>
+            <div class="fl1 ">
+                <em style="width:159px">Please choose your table</em>
+                <select name="Tables" style="width: auto" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+                    <option>Table#1 - 4 Seated</option>
+                    <option>Table#2 - 4 Seated</option>
+                    <option>Table#3 - 4 Seated</option>
+                    <option>Table#4 - 4 Seated</option>
+                    <option>Table#5 - 4 Seated</option>
+                    <option>Table#6 - 4 Seated</option>
+                    <option>Table#7 - 4 Seated</option>
+                    <option>Table#8 - 4 Seated</option>
+                    <option>Table#9 - 4 Seated</option>
+                    <option>Table#10 - 4 Seated</option>
+
+                    <option>Table#11 - 13 Seated</option>
+
+                    <option>Table#12 - 10 Seated</option>
+                    <option>Table#13 - 10 Seated</option>
+                    <option>Table#14 - 10 Seated</option>
+
+                    <option>Table#15 - 6 Seated</option>
+                    <option>Table#16 - 6 Seated</option>
+                    <option>Table#17 - 6 Seated</option>
+
+                </select>
+                </div>
+                <div class="clear height1"></div>
+
         <div class="clear"></div>
         
         <div class="tmTextarea">
@@ -103,6 +130,17 @@ if(!isset($_SESSION)){
   });
     
   </script>
+
+
+<script>
+    $(function() {
+        $( "#datepicker" ).datepicker({ dateFormat: 'dd-MM-yy', changeMonth: true,
+            changeYear: true, yearRange: "1930:2016"  }).val();
+    });
+</script>
+
+
 </body>
 </html>
+
 
