@@ -74,6 +74,7 @@ $title = strtoupper($title)."-RESTAURANT";
     <script src="../../resource/js/touchTouch.jquery.js"></script>
     
     <link rel="stylesheet" href="../../resource/Custom/style.css">
+    <script src="../../resource/formResource/js/jquery-ui-1.10.3.custom.min.js"></script>
     <script src="../../resource/formResource/js/booking.js"></script>
 
 

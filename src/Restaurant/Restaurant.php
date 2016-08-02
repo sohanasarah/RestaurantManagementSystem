@@ -90,7 +90,7 @@ class Restaurant
                 $_data[] = $row;
             }
         }
-        var_dump($_data);
+        //var_dump($_data);
 
         return $_data;
 

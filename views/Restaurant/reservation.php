@@ -97,7 +97,7 @@ if(!isset($_SESSION)){
         $('#bookingForm').bookingForm({
             ownerEmail: '#'
         });
-    })
+    });
     $(function() {
    $('#bookingForm input, #bookingForm textarea').placeholder();
   });

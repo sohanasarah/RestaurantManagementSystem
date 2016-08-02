@@ -24,7 +24,11 @@ use App\Restaurant\Restaurant;
 $user = new Restaurant();
 $userOrders = $user->userOrders($_SESSION['user_email']);
 
-var_dump($userOrders);
+foreach ($userOrders as $orders){
+    $invoices[] = $orders["invoice_id"];
+}
+$invoices = array_unique($invoices);
+var_dump($invoices);
 
 
 
@@ -125,11 +129,14 @@ if($singleUser==NULL)   return Utility::redirect('../../index.php');
 
                     </form>
                     <div class="blog_title"><a href="#">Your Orders </a></div>
+                    <?php foreach ($invoices as $invoice){
+                    ?>
                     <table cellpadding="10" cellspacing="1">
                         <tbody>
                         <tr>
-                            <th><strong>Invoice Id</strong></th>
-                            <th><strong>Date</strong></th>
+                            <th colspan="6" align=left><strong>Invoice Id: <?php echo $invoice; ?> </strong></th>
+                        </tr>
+                        <tr>
                             <th><strong>Food Name</strong></th>
                             <th><strong>Quantity</strong></th>
                             <th><strong>Unit Price</strong></th>
@@ -138,18 +145,18 @@ if($singleUser==NULL)   return Utility::redirect('../../index.php');
                         </tr>
                         <?php
                         foreach ($userOrders as $item){
+                            if($item['current_date'] == $invoice){
+
                             ?>
+
                             <tr>
-                                <form id="formCart" action="#" method="post">
-                                    <td><strong><?php echo $item["invoice_id"]; ?></strong></td>
-                                    <td><?php echo $item["current_date"]; ?></td>
+
                                     <td><?php echo $item["food_name"]; ?></td>
                                     <td class="cart_quantity">
                                         <label name="quantity" ><?php echo $item["quantity"]; ?></label>
                                     </td>
                                     <td align=right id="price"><?php echo "৳".$item["price"]; ?></td>
                                     <td align=right id="price"><?php echo "৳".$item["price"]*$item["quantity"]; ?></td>
-                                </form>
                             </tr>
                             <?php
                             $item_total += ($item["price"]*$item["quantity"]);
@@ -157,10 +164,13 @@ if($singleUser==NULL)   return Utility::redirect('../../index.php');
                         ?>
 
                         <tr>
-                            <td colspan="6" align=right><strong>Total:</strong> <?php echo "৳".$item_total; ?></td>
+                            <td colspan="6" align=right><strong>Total:</strong> <?php echo "৳".$item_total;
+                                $item_total = 0;?></td>
                         </tr>
+                        <?php } ?>
                         </tbody>
                     </table>
+                    <?php } ?>
 
 
                 </div>
