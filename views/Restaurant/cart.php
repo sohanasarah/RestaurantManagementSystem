@@ -253,6 +253,14 @@ include ('header.php');
                   <table cellpadding="10" cellspacing="1" style="margin-top: 50px" id="payment">
                       <tbody>
                       <tr>
+                          <td>
+                              <strong>Cash On Delivery</strong>
+                              <button  class="btn" id="mobile" type="submit"
+                                       style="margin-left: 30px; margin-bottom: 20px ">Enter Transaction ID
+                              </button>
+                          </td>
+                      </tr>
+                      <tr>
                           <th>Bkash  or DBBL Mobile</th>
                           <th>Card</th>
                       </tr>
@@ -274,6 +282,7 @@ include ('header.php');
                               </button>
                           </td>
                       </tr>
+
 
                       </tbody>
 
@@ -304,7 +313,7 @@ include ('header.php');
 <script>
     $("button#mobile").click(function() {
         $('table#payment').slideUp(1000);
-        
+
     });
     $("button#card").click(function() {
         $('div#proceed').hide(1000);
