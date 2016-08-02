@@ -1,5 +1,9 @@
 <?php
 include_once('../../vendor/autoload.php');
+use App\Reservation\Reservation;
+
+
+
 include ('header.php');
 if(!isset($_SESSION)){
     session_start();
@@ -8,6 +12,16 @@ if(!isset($_SESSION)){
 
 
 
+if(isset($_REQUEST['reservationTable']))
+{
+
+    $reservation = new Reservation();
+
+    $reservation->prepare($_REQUEST);
+
+    $reservation->store();
+
+}
 
 
 ?>
@@ -80,43 +94,66 @@ if(!isset($_SESSION)){
 </form>
 
 
+<?php
+
+if(isset($_GET['reservationDate'])&& isset($_GET['reservationTimeSlot']) && ($_GET['reservationDate']!="") ) {
+
+    ?>
+
+    <form action="" method="post" id="bookingForm">
+
+        <input type="hidden" name="reservationDate" value="<?php echo $_REQUEST['reservationDate'] ?>">
+        <input type="hidden" name="reservationTimeSlot" value="<?php echo $_REQUEST['reservationTimeSlot'] ?>">
+
+        <div class="clear"></div>
+        <div class="fl1 ">
+            <em style="width:159px">Please choose your table</em>
+            <select name="reservationTable" style="width: auto" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
+
+                <?php
+
+                $reservation = new Reservation();
+
+                if (!$reservation->isBooked("Table#1 - 4 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#1 - 4 Seated</option> ";
+                if (!$reservation->isBooked("Table#2 - 4 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#2 - 4 Seated</option> ";
+                if (!$reservation->isBooked("Table#3 - 4 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#3 - 4 Seated</option> ";
+                if (!$reservation->isBooked("Table#4 - 4 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#4 - 4 Seated</option> ";
+                if (!$reservation->isBooked("Table#5 - 4 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#5 - 4 Seated</option> ";
+                if (!$reservation->isBooked("Table#6 - 4 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#6 - 4 Seated</option> ";
+                if (!$reservation->isBooked("Table#7 - 4 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#7 - 4 Seated</option> ";
+                if (!$reservation->isBooked("Table#8 - 4 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#8 - 4 Seated</option> ";
+                if (!$reservation->isBooked("Table#9 - 4 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#9 - 4 Seated</option> ";
+                if (!$reservation->isBooked("Table#10 - 4 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#10 - 4 Seated</option> ";
+
+                if (!$reservation->isBooked("Table#11 - 13 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#11 - 13 Seated</option> ";
+
+                if (!$reservation->isBooked("Table#12 - 10 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#12 - 10 Seated</option> ";
+                if (!$reservation->isBooked("Table#13 - 10 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#13 - 10 Seated</option> ";
+                if (!$reservation->isBooked("Table#14 - 10 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#14 - 10 Seated</option> ";
+
+                if (!$reservation->isBooked("Table#15 - 6 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#15 - 6 Seated</option> ";
+                if (!$reservation->isBooked("Table#16 - 6 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#16 - 6 Seated</option> ";
+                if (!$reservation->isBooked("Table#17 - 6 Seated", $_REQUEST['reservationDate'], $_REQUEST['reservationTimeSlot'])) echo " <option>Table#17 - 6 Seated</option> ";
 
 
-<form>
-                <div class="clear"></div>
-            <div class="fl1 ">
-                <em style="width:159px">Please choose your table</em>
-                <select name="Tables" style="width: auto" class="tmSelect auto" data-class="tmSelect tmSelect2" data-constraints="">
-                    <option>Table#1 - 4 Seated</option>
-                    <option>Table#2 - 4 Seated</option>
-                    <option>Table#3 - 4 Seated</option>
-                    <option>Table#4 - 4 Seated</option>
-                    <option>Table#5 - 4 Seated</option>
-                    <option>Table#6 - 4 Seated</option>
-                    <option>Table#7 - 4 Seated</option>
-                    <option>Table#8 - 4 Seated</option>
-                    <option>Table#9 - 4 Seated</option>
-                    <option>Table#10 - 4 Seated</option>
+                ?>
 
-                    <option>Table#11 - 13 Seated</option>
 
-                    <option>Table#12 - 10 Seated</option>
-                    <option>Table#13 - 10 Seated</option>
-                    <option>Table#14 - 10 Seated</option>
- 
-                    <option>Table#15 - 6 Seated</option>
-                    <option>Table#16 - 6 Seated</option>
-                    <option>Table#17 - 6 Seated</option>
-
-                </select>
-                </div>
-                <div class="clear"></div>
+            </select>
+        </div>
+        <div class="clear"></div>
 
         <div class="ta__left">
-        <a href="" class="btn" data-type="reset">clear</a>
-        <a href="" class="btn" data-type="submit">send</a>
+            <a href="../Restaurant/reservation.php" class="btn" data-type="reset">clear</a>
+            <a href="" class="btn" data-type="submit">send</a>
         </div>
+           <input type="submit" value="Book Now!">
+
     </form>
+
+<?php } ?>
+
+
       </div>
     </div>
   </div>

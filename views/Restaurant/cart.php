@@ -249,14 +249,21 @@ include ('header.php');
                       </tbody>
                   </table>
                   <div class="blog_title"><a href="#">Payment Method</a></div>
+                    <div id="cashOn" hidden>
+                  <table cellpadding="10" cellspacing="1" style="margin-top: 50px">
+                      <tr>
+                          Cash On Delivery
+                      </tr>
+                  </table>
+                    </div>
 
                   <table cellpadding="10" cellspacing="1" style="margin-top: 50px" id="payment">
                       <tbody>
                       <tr>
                           <td>
-                              <strong>Cash On Delivery</strong>
-                              <button  class="btn" id="mobile" type="submit"
-                                       style="margin-left: 30px; margin-bottom: 20px ">Enter Transaction ID
+                              <strong></strong>
+                              <button  class="btn" id="cash" type="submit"
+                                       style="margin-left: 30px; margin-bottom: 20px ">Cash On Delivery
                               </button>
                           </td>
                       </tr>
@@ -311,6 +318,12 @@ include ('header.php');
               =================================-->
 <?php include ('footer.php');?>
 <script>
+
+    $("button#cash").click(function() {
+        $('table#payment').hide(1000);
+        $('div#cashOn').show(1000);
+
+    });
     $("button#mobile").click(function() {
         $('table#payment').slideUp(1000);
 
