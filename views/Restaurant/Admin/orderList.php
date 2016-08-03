@@ -209,7 +209,7 @@ if(count($_POST) > 0) {
                                     <td align="center"><?php echo $order['quantity']?></td>
                                 <?php if($count == 0) {?>
                                     <td align="center"><?php echo $order['first_name']?></td>
-                                    <td><?php echo $order['payment']?></td>
+                                    <td><?php if($order['payment']=="Reserve Table") echo "Card/Bkash (".$order['payment'].")"; else echo $order['payment'];?></td>
                                     <td><?php echo $order['transaction_id']?></td>
                                     <td><?php echo $order['address']?></td>
 
@@ -250,7 +250,7 @@ if(count($_POST) > 0) {
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
+                <p>Copyright &copy; The Entree 2016</p>
             </div>
         </div>
     </footer>

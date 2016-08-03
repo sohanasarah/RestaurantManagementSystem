@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 03, 2016 at 09:29 AM
+-- Generation Time: Aug 03, 2016 at 05:00 PM
 -- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -105,7 +105,17 @@ INSERT INTO `mappingorder` (`id`, `order_id`, `food_code`, `quantity`) VALUES
 (56, 60, 1021, 5),
 (57, 60, 1020, 4),
 (60, 62, 1020, 1),
-(61, 62, 1021, 1);
+(61, 62, 1021, 1),
+(62, 63, 1022, 1),
+(63, 63, 1024, 1),
+(64, 63, 1027, 1),
+(65, 63, 1015, 1),
+(66, 64, 1015, 1),
+(67, 64, 1027, 1),
+(68, 65, 1021, 1),
+(69, 65, 1023, 1),
+(70, 66, 1022, 1),
+(71, 67, 1024, 1);
 
 -- --------------------------------------------------------
 
@@ -141,7 +151,12 @@ INSERT INTO `orderfood` (`id`, `user_id`, `invoice_id`, `food_code`, `total`, `c
 (59, 11, 'inv59_11', '1014,1020', 260, '2016-08-03 04:33:41', 'Card', 'Check Account', NULL),
 (60, 11, 'inv60_11', '1021,1020', 1320, '2016-08-03 04:53:05', 'Cash On delivery', 'N/A', NULL),
 (61, 11, 'inv61_11', '1017,1018', 690, '2016-08-03 04:54:58', '4526436', '6456456', 'DELIVERED'),
-(62, 8, 'inv62_8', '1020,1021', 280, '2016-08-03 07:25:45', 'Cash On delivery', 'N/A', NULL);
+(62, 8, 'inv62_8', '1020,1021', 280, '2016-08-03 07:25:45', 'Cash On delivery', 'N/A', NULL),
+(63, 10, 'inv63_10', '1022,1024,1027,1015', 1180, '2016-08-03 12:43:25', 'Card', 'Check Account', NULL),
+(64, 10, 'inv64_10', '1015,1027', 530, '2016-08-03 13:26:33', 'Reserve Table', 'Successful', NULL),
+(65, 12, 'inv65_12', '1021,1023', 750, '2016-08-03 14:07:06', 'Reserve Table', 'Successful', NULL),
+(66, 12, 'inv66_12', '1022', 300, '2016-08-03 14:49:54', 'Cash On delivery', 'N/A', NULL),
+(67, 12, 'inv67_12', '1024', 350, '2016-08-03 14:53:22', 'Cash On delivery', 'N/A', NULL);
 
 -- --------------------------------------------------------
 
@@ -178,7 +193,7 @@ CREATE TABLE `reservation` (
   `id` int(11) NOT NULL,
   `date` date NOT NULL,
   `time_slot` varchar(222) NOT NULL,
-  `order_id` int(11) NOT NULL,
+  `invoice_id` varchar(11) NOT NULL,
   `table_info` varchar(222) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -186,9 +201,14 @@ CREATE TABLE `reservation` (
 -- Dumping data for table `reservation`
 --
 
-INSERT INTO `reservation` (`id`, `date`, `time_slot`, `order_id`, `table_info`) VALUES
-(1, '2016-08-01', '8:00pm-8:59pm', 12, 'Table#8 - 4 Seated'),
-(2, '2016-08-02', '10:00pm-10:59pm', 24, 'Table#10 - 4 Seated');
+INSERT INTO `reservation` (`id`, `date`, `time_slot`, `invoice_id`, `table_info`) VALUES
+(1, '2016-08-01', '8:00pm-8:59pm', '12', 'Table#8 - 4 Seated'),
+(2, '2016-08-02', '10:00pm-10:59pm', '24', 'Table#10 - 4 Seated'),
+(5, '2016-08-03', '5:00pm-5:59pm', 'inv63_10', 'Table#2 - 4 Seated'),
+(6, '2016-08-10', '10:00pm-10:59pm', 'inv64_10', 'Table#10 - 4 Seated'),
+(7, '2016-08-03', '12:00pm-12:59pm', 'inv65_12', 'Table#5 - 4 Seated'),
+(8, '2016-08-03', '12:00pm-12:59pm', 'inv65_12', 'Table#3 - 4 Seated'),
+(9, '2016-08-15', '7:00pm-7:59pm', 'inv65_12', 'Table#10 - 4 Seated');
 
 -- --------------------------------------------------------
 
@@ -214,7 +234,8 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `address
 (8, 'Afiya', 'Ayman', 'aa@gmail.com', '012364478', 'Chittagong', '8b430bbcb360b07417150b7916cfb860'),
 (9, 'SS', 'SS', 'sohana_a27@yahoo.com', '123', '123', '202cb962ac59075b964b07152d234b70'),
 (10, 'tusharbd', 'tusharbd', 'tusharbd@gmail.com', '864827', 'sdif jfskfj slkjfksf', '202cb962ac59075b964b07152d234b70'),
-(11, 'Shibli', 'Emon', 'shibli.emon@gmail.com', '0155554454554', 'CUET', '202cb962ac59075b964b07152d234b70');
+(11, 'Shibli', 'Emon', 'shibli.emon@gmail.com', '0155554454554', 'CUET', '202cb962ac59075b964b07152d234b70'),
+(12, 'Tushar', 'Chowdhury', 'tushar.chowdhury@gmail.com', '01711666162', 'Chittagong', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Indexes for dumped tables
@@ -280,12 +301,12 @@ ALTER TABLE `fooditem`
 -- AUTO_INCREMENT for table `mappingorder`
 --
 ALTER TABLE `mappingorder`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 --
 -- AUTO_INCREMENT for table `orderfood`
 --
 ALTER TABLE `orderfood`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 --
 -- AUTO_INCREMENT for table `product`
 --
@@ -295,12 +316,12 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
