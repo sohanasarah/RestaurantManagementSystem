@@ -23,7 +23,8 @@ use App\Restaurant\Restaurant;
 
 $user = new Restaurant();
 $userOrders = $user->userOrders($_SESSION['user_email']);
-
+$invoices=array();
+$dates= array();
 foreach ($userOrders as $orders){
     $invoices[] = $orders["invoice_id"];
     $dates[]  = $orders["current_date"];
@@ -143,7 +144,7 @@ $item_total = 0;
                         echo "<div class=\"blog_title\">SL: ".$sl++."</div>";
 
                     ?>
-                    <table cellpadding="10" cellspacing="1">
+                    <table cellpadding="10" cellspacing="1" class="order">
                         <tbody>
                         <tr>
                             <th colspan="2" align=center ><strong>Invoice Id: <?php echo $invoice; ?> </strong>   <a href="reservation.php?invoiceID=<?php echo $invoice; ?>" > <input type="button" value="Reserve Table"> </input</a> </th>
