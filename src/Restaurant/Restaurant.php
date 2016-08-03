@@ -40,7 +40,7 @@ class Restaurant
     public function getAllItems()
     {
         $_allData = array();
-         $query = "SELECT * FROM `product`";
+        $query = "SELECT * FROM `fooditem`";
         $result = mysqli_query($this->conn,$query);
         if($result){
             while($row = mysqli_fetch_object($result)){
