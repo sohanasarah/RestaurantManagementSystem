@@ -105,5 +105,75 @@ class Reservation extends DB{
 
 
 
+    //  if( $reservation->isAlreadyReserved($invoice))  echo $reservation->getTableInfo($invoice)." was reserved on ".$reservation->getReservationDate($invoice) . " between " .$reservation->getReservationTimeSlot($invoice);
+
+
+    public function isInvoiceExits($invoice){
+
+        $query="SELECT * FROM `restaurant`.`reservation` WHERE `invoice_id`='".$invoice."'";
+
+        $result= mysqli_query($this->conn,$query);
+        $countRows= mysqli_num_rows($result);
+
+        if($countRows>0)
+            return True;
+        else
+            return False;
+
+
+
+
+    }
+
+    public function getTableInfo($invoice){
+
+        $query="SELECT * FROM `restaurant`.`reservation` WHERE `invoice_id`='".$invoice."'";
+
+        $result= mysqli_query($this->conn,$query);
+        $row= mysqli_fetch_object($result);
+
+        $countRows= mysqli_num_rows($result);
+
+        if($countRows>0)
+            return $row->table_info;
+        else
+            return "";
+
+
+    }
+
+    public function getReservationDate($invoice){
+
+        $query="SELECT * FROM `restaurant`.`reservation` WHERE `invoice_id`='".$invoice."'";
+
+        $result= mysqli_query($this->conn,$query);
+        $row= mysqli_fetch_object($result);
+
+        $countRows= mysqli_num_rows($result);
+
+        if($countRows>0)
+            return $row->date;
+        else
+            return "";
+
+    }
+
+
+    public function getReservationTimeSlot($invoice){
+
+        $query="SELECT * FROM `restaurant`.`reservation` WHERE `invoice_id`='".$invoice."'";
+
+        $result= mysqli_query($this->conn,$query);
+        $row= mysqli_fetch_object($result);
+
+        $countRows= mysqli_num_rows($result);
+
+        if($countRows>0)
+            return $row->time_slot;
+        else
+            return "";
+
+    }
+
 
 }

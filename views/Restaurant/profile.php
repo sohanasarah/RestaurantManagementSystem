@@ -4,6 +4,7 @@ include_once ('../../vendor/autoload.php');
 use App\User\User;
 use App\User\Auth;
 
+
 use App\GlobalClasses\Message;
 use App\GlobalClasses\Utility;
 
@@ -18,6 +19,9 @@ if($status== FALSE) {
 
 include ('header.php');
 use App\Restaurant\Restaurant;
+use App\Reservation\Reservation;
+
+$reservation = new Reservation();
 
 
 
@@ -199,7 +203,16 @@ $item_total = 0;
                         </tr>
                         <?php if($payment == "Reserve Table"){?>
                         <tr>
-                            <td colspan="6" align=center style="background-color: rgba(193, 189, 183, 0.2); color: white;"> <a class="btn" href="reservation.php?invoiceID=<?php echo $invoice; ?>" >Click here to Reserve Table Now</a></td>
+                            <td colspan="6" align=center style="background-color: rgba(193, 189, 183, 0.2); color: royalblue;">
+
+                              <?php
+                                 if( $reservation->isInvoiceExits($invoice))  echo $reservation->getTableInfo($invoice)." was reserved for this order on ".$reservation->getReservationDate($invoice) . " between " .$reservation->getReservationTimeSlot($invoice);
+                                 else {
+                              ?>
+                                <a class="btn" href="reservation.php?invoiceID=<?php echo $invoice; ?>" >Click here to Reserve Table Now</a>
+                              <?php  } ?>
+
+                            </td>
                         </tr>
                         <?php } ?>
 
