@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once('../../../vendor/autoload.php');
 
 use App\Admin\Admin;
@@ -66,17 +65,31 @@ foreach ($allOrder as $order){
     $singleOrder[] = $order["order_id"];
     $date[] = $order["current_date"];
 }
-$singleOrder = array_unique($singleOrder);
-$date = array_unique($date);
-$combinedOrderSingle=array_combine($singleOrder,$date);
+if(isset($singleOrder) && count($singleOrder)) {
+    $singleOrder = array_unique($singleOrder);
+    $date = array_unique($date);
+    $combinedOrderSingle=array_combine($singleOrder,$date);
+
+}
+else{
+    include("topNavigation.php");
+  echo '<div class="alert alert-info"><strong>SORRY!</strong> right now we don\'t have any order.</div>SORRY WE DON\'T HAVE ANY ORDER TO PROCESS RIGHT NOW...';
+    return;
+
+}
+
 //Utility::d($combinedOrderSingle);
 
 
 if(count($_POST) > 0) {
     //Utility::dd($_POST['status']);
-    $status = $_POST['status'];
+    if(isset($_POST['status'])) $status = $_POST['status'];
     $order2=new Admin();
-    $allOrder=$order2->orderDelete($status);
+    if(isset($_POST['status']))   $order2->orderDelete($status);
+    else $_SESSION['message']="Empty Selection!" ;
+
+    $allOrder=$order2->orderPaginator(0,$itemPerPage);
+
 }
 
 ?>
@@ -171,10 +184,11 @@ if(count($_POST) > 0) {
             <tbody>
             <tr>
                 <?php
-
+                    $objAdmin= new Admin();
                 foreach($combinedOrderSingle as $order_id=>$date){
-                 ?>
+                    if($objAdmin->isExistOnMap($order_id) ) continue;
 
+                ?>
                 <td><?php echo $order_id ?></td>
                 <td><?php echo $date?></td>
 <!--                <td><button type="submit" id="expand" class="btn btn-success">Expand</button></td>-->
@@ -263,5 +277,16 @@ if(count($_POST) > 0) {
         $('td#expansion').show();
     });
 </script>
+
+
+
+<script>
+    $('#message').show().delay(10).fadeOut();
+    $('#message').show().delay(10).fadeIn();
+    $('#message').show().delay(10).fadeOut();
+    $('#message').show().delay(10).fadeIn();
+    $('#message').show().delay(1200).fadeOut();
+</script>
+
 </body>
 </html>

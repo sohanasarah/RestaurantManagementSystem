@@ -63,7 +63,7 @@ use App\GlobalClasses\Utility;
   <div class="grid_4">
     <h2>Opening Hours</h2>
     <ul class="shed">
-      <li><span>Breakfast:</span> 8AM - 12AM</li>
+      <li><span>Breakfast:</span> 10AM - 12AM</li>
       <li><span>Lunch & Dinner:</span> 12PM - 12AM</li>
       <li><span>Live Musiс:</span> 8PM - 11PM</li>
     </ul>
