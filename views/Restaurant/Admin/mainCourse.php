@@ -132,7 +132,7 @@ $allFood=$food_item->getMenueByCategory('Main Course');
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
+                <p>Copyright &copy; The Entree 2016</p>
             </div>
         </div>
     </footer>
