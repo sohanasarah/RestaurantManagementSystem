@@ -213,7 +213,7 @@ if (!$mail->send()) {
     echo Message::message("Mailer Error: " . $mail->ErrorInfo);
     Utility::redirect('../profile.php');
 } else {
-    echo Message::message("Please Check your email for Invoice");
+    echo Message::message("Successfully ordered! Please Check your email for Invoice");
     Utility::redirect('../profile.php');
 }
 ?>
