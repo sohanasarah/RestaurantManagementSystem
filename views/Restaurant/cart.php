@@ -252,6 +252,8 @@ include ('header.php');
                       </tbody>
                   </table>
                   <div class="clear f_sep1"></div><div class="clear f_sep1"></div><div class="clear f_sep1"></div><div class="clear f_sep1"></div>
+
+                  <?php if($loggedIn) { ?>
                   <div class="blog_title"><a href="#">Payment Method</a></div>
 
                   <!--                  Cash Payment Message Form-->
@@ -388,7 +390,7 @@ include ('header.php');
 
 
 
-
+<?php } ?>
                   <a type="button" href="#" class="btn" id="checkoutback"><< Checkout</a>
                   <?php if ($loggedIn) { ?>
                       <button class="btn" type="button" id="proceedbutton">Home Delivery >></button>

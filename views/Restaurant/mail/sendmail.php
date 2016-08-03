@@ -192,7 +192,7 @@ $mail->Password = "abcd#1234";
 //Set who the message is to be sent from
 $mail->setFrom('The Entree', 'The Entree');
 //Set an alternative reply-to address
-$mail->addReplyTo('the.entree.restaurant@gmail.com', 'Admin');
+$mail->addReplyTo('the.entree.restaurant@gmail.com', 'The Entree');
 //Set who the message is to be sent to
 $mail->addAddress($email, $name);
 //Set the subject line
