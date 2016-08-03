@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2016 at 08:37 PM
+-- Generation Time: Aug 03, 2016 at 06:43 AM
 -- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -167,7 +167,7 @@ CREATE TABLE `reservation` (
   `id` int(11) NOT NULL,
   `date` date NOT NULL,
   `time_slot` varchar(222) NOT NULL,
-  `order_id` int(11) NOT NULL,
+  `invoice_id` varchar(111) NOT NULL,
   `table_info` varchar(222) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -175,9 +175,9 @@ CREATE TABLE `reservation` (
 -- Dumping data for table `reservation`
 --
 
-INSERT INTO `reservation` (`id`, `date`, `time_slot`, `order_id`, `table_info`) VALUES
-(1, '2016-08-01', '8:00pm-8:59pm', 12, 'Table#8 - 4 Seated'),
-(2, '2016-08-02', '10:00pm-10:59pm', 24, 'Table#10 - 4 Seated');
+INSERT INTO `reservation` (`id`, `date`, `time_slot`, `invoice_id`, `table_info`) VALUES
+(1, '2016-08-01', '8:00pm-8:59pm', '12', 'Table#8 - 4 Seated'),
+(2, '2016-08-02', '10:00pm-10:59pm', '24', 'Table#10 - 4 Seated');
 
 -- --------------------------------------------------------
 
