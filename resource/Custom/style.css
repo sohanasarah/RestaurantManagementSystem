@@ -1,4 +1,35 @@
+table.order {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: #edeb82 solid;
+}
 
+table.order th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 5px;
+}
+table.order th {
+    background-color: #a9af52;
+    color: white;
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 5px;
+}
+table.order td {
+    border: 1px solid #dddddd;
+    text-align: center;
+}
+table.order tr td:last-child {
+    border: 1px solid #dddddd;
+    text-align: right;
+}
+
+
+table.order tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
 .btn-danger {
 
     color: #ffffff;

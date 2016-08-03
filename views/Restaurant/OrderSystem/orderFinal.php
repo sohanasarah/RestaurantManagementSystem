@@ -9,10 +9,22 @@ use App\GlobalClasses\Utility;
 use App\Admin\Admin;
 use App\OrderSystem\OrderSystem;
 
+
 if(!isset($_SESSION)){
     session_start();
 }
-
+if (!empty($_GET['number']) && isset($_GET['number'] )&& !empty($_GET['tsid']) && isset($_GET['tsid'])){
+    $_SESSION['paymentNumber'] = $_GET['number'];
+    $_SESSION['transactionId'] = $_GET['tsid'];
+}
+if ($_GET['cashOnDelivery'] == true){
+    $_SESSION['paymentNumber'] = "Cash On delivery";
+    $_SESSION['transactionId'] = "N/A";
+}
+if ($_GET['card'] == true){
+    $_SESSION['paymentNumber'] = "Card";
+    $_SESSION['transactionId'] = "Check Account";
+}
 $order=new OrderSystem();
 
 $id=$order->prepare($_SESSION)->getUserID();

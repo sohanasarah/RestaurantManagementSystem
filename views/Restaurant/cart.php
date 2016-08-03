@@ -120,7 +120,7 @@ include ('header.php');
             <a href="#" class="btn" id="checkoutbutton">Check Out >></a>
             </div>
 
-                <table cellpadding="10" cellspacing="1">
+                <table cellpadding="10" cellspacing="1" class="order">
                     <tbody>
                     <tr>
                         <th><strong>Name</strong></th>
@@ -176,7 +176,7 @@ include ('header.php');
         </div>
           <div class="blog" id="proceed" hidden>
               <?php if($loggedIn) {?>
-              <div class="blog_title"><a href="#">Invoice # XXX-XXX-XXX</a></div>
+              <div class="blog_title"><a href="#">Invoice</a></div>
                   <form id="bookingForm">
                       <strong><label for="first_name">First Name :</label></strong>
                       <input id="first_name" class="tmInput" value="<?php echo $userInfo->first_name?>" disabled>
@@ -214,7 +214,7 @@ include ('header.php');
                   $item_total = 0;
                   ?>
                   <div class="blog_title"><a href="#">Order Details </a></div>
-                  <table cellpadding="10" cellspacing="1">
+                  <table cellpadding="10" cellspacing="1" style="border: #edeb82 solid; " class="order">
                       <tbody>
                       <tr>
                           <th><strong>Name</strong></th>
@@ -228,43 +228,65 @@ include ('header.php');
                       foreach ($_SESSION["cart_list"] as $item){
                           ?>
                           <tr>
-                              <form id="formCart" action="#" method="post">
+
                                   <td><strong><?php echo $item["name"]; ?></strong></td>
                                   <td><?php echo $item["code"]; ?></td>
                                   <td class="cart_quantity">
                                       <label name="quantity" ><?php echo $item["quantity"]; ?></label>
                                   </td>
-                                  <td align=right id="price"><?php echo "৳".$item["price"]; ?>*<?php echo $item["quantity"]; ?></td>
+                                  <td align=right id="price"><?php echo "৳".$item["price"]; ?></td>
                                   <td align=right id="price"><?php echo "৳".$item["price"]*$item["quantity"]; ?></td>
-                              </form>
+
                           </tr>
                           <?php
                           $item_total += ($item["price"]*$item["quantity"]);
                       }
                       ?>
+                      <tr>
+                          <td colspan="5" align=right><strong>Flat Service Charge: </strong> <?php echo "৳".'100'; ?></td>
+                      </tr>
 
                       <tr>
-                          <td colspan="5" align=right><strong>Total:</strong> <?php echo "৳".$item_total; ?></td>
+                          <td colspan="5" align=right><strong>Total:</strong> <?php echo "৳".($item_total+100); ?></td>
                       </tr>
                       </tbody>
                   </table>
+                  <div class="clear f_sep1"></div><div class="clear f_sep1"></div><div class="clear f_sep1"></div><div class="clear f_sep1"></div>
                   <div class="blog_title"><a href="#">Payment Method</a></div>
                     <div id="cashOn" hidden>
+                        <form id="bookingForm" class="cash" action="OrderSystem/orderFinal.php">
                   <table cellpadding="10" cellspacing="1" style="margin-top: 50px">
                       <tr>
-                          Cash On Delivery
+                          <td><strong>Cash On Delivery</strong>
+                          <input name="cashOnDelivery" value="true" hidden>
+                          </td>
+
                       </tr>
                   </table>
+                            </form>
                     </div>
+                  <div id="card" hidden>
+                      <form id="bookingForm" class="card" action="OrderSystem/orderFinal.php">
+                          <table cellpadding="10" cellspacing="1" style="margin-top: 50px">
+                              <tr>
+                                  <td><strong>Thank You for your payment. Now Click Proceed.</strong>
+                                      <input name="card" value="true" hidden>
+                                  </td>
 
-                  <table cellpadding="10" cellspacing="1" style="margin-top: 50px" id="payment">
+                              </tr>
+                          </table>
+                      </form>
+                  </div>
+
+                  <table cellpadding="10" cellspacing="1" style="margin-top: 50px" id="payment" class="order">
                       <tbody>
                       <tr>
-                          <td>
-                              <strong></strong>
+                          <td  colspan="2" style="text-align: center" >
+
                               <button  class="btn" id="cash" type="submit"
-                                       style="margin-left: 30px; margin-bottom: 20px ">Cash On Delivery
+                                       style="margin-left: 30px; margin-bottom: 20px;  ">Cash On Delivery
                               </button>
+
                           </td>
                       </tr>
                       <tr>
@@ -272,7 +294,7 @@ include ('header.php');
                           <th>Card</th>
                       </tr>
                       <tr>
-                          <td><strong>Please give your payment to this number first</strong>
+                          <td style="text-align: center"><strong>Please give your payment to this number first</strong>
                               <img src="../../resource/payment/payment.png ?>" alt=""
                                    height="300" width="600">
 
@@ -280,7 +302,7 @@ include ('header.php');
                                       style="margin-left: 30px; margin-bottom: 20px ">Enter Transaction ID
                               </button>
                           </td>
-                          <td><strong>Please take your card on your hand<br><br></strong>
+                          <td style="text-align: center"><strong>Please take your card on your hand<br><br></strong>
                               <img src="../../resource/payment/card.jpg ?>" alt=""
                                    height="300" width="600">
 
@@ -297,18 +319,67 @@ include ('header.php');
 
 
                   </table>
+                  <form id="bookingForm" class="mobileInfos" action="OrderSystem/orderFinal.php">
+                  <table id="mobileInfo" hidden class="order">
+
+
+                      <tbody>
+                      <tr>
+                          <td colspan="2">
+                          <img src="../../resource/payment/payment.png ?>" alt=""
+                               height="300" width="900">
+                          </td>
+                      </tr>
+                      <tr>
+                          <th><strong>Your Mobile Account Number</strong></th>
+                          <th><strong>Transaction ID</strong></th>
+                      </tr>
+                  <tr>
+
+                      <td align="center">
+                          <input type="text" name="number" placeholder="Account Number">
+                      </td>
+                      <td align="center" style="margin-left: 10px">
+                          <input type="text" name="tsid" placeholder="Transaction ID">
+                      </td>
+
+                  </tr>
+<!--                      <tr>-->
+<!--                          <td>-->
+<!--                              <button id="" type="submit" >Sumbit</button>-->
+<!--                          </td>-->
+<!--                      </tr>-->
+
+
+                  </tbody>
 
 
 
 
-              <a type="button" href="#" class="btn" id="checkoutback"><< Checkout</a>
-              <?php if ($loggedIn) { ?>
-              <a href="OrderSystem/orderFinal.php" class="btn" id="proceedbutton">Proceed >></a>
+                  </table>
+
+
+                  </form>
+
+
+
+
+
+                  <a type="button" href="#" class="btn" id="checkoutback"><< Checkout</a>
+                  <?php if ($loggedIn) { ?>
+                      <button class="btn" type="button" id="proceedbutton">Proceed >></button>
+                      <button class="btn" type="button" id="proceedCash">Proceed >></button>
+                      <button class="btn" type="button" id="proceedCard">Proceed >></button>
+
+
+
+
+
               <?php }}?>
           </div>
 
 
-        
+
       </div>
       <?php include ('sidebar.php');?>
   </div>
@@ -318,19 +389,45 @@ include ('header.php');
               =================================-->
 <?php include ('footer.php');?>
 <script>
+    $(document).ready(function () {
+        $('button#proceedbutton').hide();
+        $('button#proceedCash').hide();
+        $('button#proceedCard').hide();
+    });
+    $('#proceedbutton').on('click',function () {
+        document.forms[4].action= "OrderSystem/orderFinal.php";
+        $('.mobileInfos').submit();
+
+    });
+    $('#proceedCash').on('click',function () {
+        document.forms[2].action= "OrderSystem/orderFinal.php";
+        $('.cash').submit();
+    });
+    $('#proceedCard').on('click',function () {
+        document.forms[3].action= "OrderSystem/orderFinal.php";
+        $('.card').submit();
+    });
 
     $("button#cash").click(function() {
         $('table#payment').hide(1000);
         $('div#cashOn').show(1000);
+        $('button#proceedCash').show(1000);
+
+
 
     });
+
     $("button#mobile").click(function() {
-        $('table#payment').slideUp(1000);
+        $('table#payment').hide();
+        $('table#mobileInfo').show(1000);
+        $('button#proceedbutton').show(1000);
+
 
     });
     $("button#card").click(function() {
-        $('div#proceed').hide(1000);
-        $('div#checkout').show(2000);
+        $('table#payment').hide(1000);
+        $('div#card').show(1000);
+        $('button#proceedCard').show(1000);
     });
 
 

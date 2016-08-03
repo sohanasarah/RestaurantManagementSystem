@@ -16,6 +16,8 @@ class OrderSystem extends DB
     public $orderID;
     public $userEmail;
     public $total;
+    public $paymentNumber="";
+    public $transactionId = "-";
 
 
     public function __construct()
@@ -54,6 +56,14 @@ class OrderSystem extends DB
         {
             $this->total=$data['total'];
         }
+        if(array_key_exists('paymentNumber',$data))
+        {
+            $this->paymentNumber=$data['paymentNumber'];
+        }
+        if(array_key_exists('transactionId',$data))
+        {
+            $this->transactionId=$data['transactionId'];
+        }
 
         return $this;
     }
@@ -69,7 +79,7 @@ class OrderSystem extends DB
 
     public function storeOrder()
     {
-        $query="INSERT INTO `orderfood`(`user_id`, `food_code`, `total`) VALUES ('$this->userID' , '$this->foodCode', '$this->total')";
+        $query="INSERT INTO `orderfood`(`user_id`, `food_code`, `total`,`payment`,`transaction_id`) VALUES ('$this->userID' , '$this->foodCode', '$this->total', '$this->paymentNumber', '$this->transactionId')";
         $result=mysqli_query($this->conn,$query);
         $id = mysqli_insert_id($this->conn);
         $invoiceID="inv".$id."_".$this->userID;
