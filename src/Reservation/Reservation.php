@@ -31,8 +31,8 @@ class Reservation extends DB{
         if(array_key_exists('reservationTimeSlot',$data)){
             $this->time_slot=$data['reservationTimeSlot'];
         }
-        if(array_key_exists('test',$data)){
-            $this->invoice_id=$data['test'];
+        if(array_key_exists('invoiceID',$data)){
+            $this->invoice_id=$data['invoiceID'];
         }
         if(array_key_exists('reservationTable',$data)){
             $this->table_info=$data['reservationTable'];
