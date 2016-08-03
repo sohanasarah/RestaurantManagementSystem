@@ -149,7 +149,7 @@ include ('header.php');
                             <td align=right id="price"><?php echo "৳".$item["price"]; ?>*<?php echo $item["quantity"]; ?></td>
                                 <td align=right id="price"><?php echo "৳".$item["price"]*$item["quantity"]; ?></td>
 
-                            <td><a href="cart.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction">Remove Item</a></td>
+                            <td style="background-color: #c12f46; color: white;"><a href="cart.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction">Remove Item</a></td>
                             </form>
                         </tr>
                         <?php
