@@ -186,7 +186,7 @@ $mail->SMTPSecure = 'ssl';
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "sblief.sb@gmail.com";
+$mail->Username = "the.entree.restaurant@gmail.com";
 //Password to use for SMTP authentication
 $mail->Password = "emON#744254";
 //Set who the message is to be sent from
