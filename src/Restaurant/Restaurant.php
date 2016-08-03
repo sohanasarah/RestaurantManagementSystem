@@ -91,7 +91,7 @@ class Restaurant
                   JOIN orderfood ON orderfood.user_id = users.id
                   JOIN mappingorder ON mappingorder.order_id = orderfood.id
                   Left JOIN fooditem ON mappingorder.food_code = fooditem.food_code
-                  WHERE users.email ="."'$data'"."order by orderfood.invoice_id desc";
+                  WHERE users.email ="."'$data'"."order by orderfood.invoice_id desc LIMIT 7";
         
         $result = mysqli_query($this->conn,$query);
         if($result){

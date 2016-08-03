@@ -148,12 +148,12 @@ $item_total = 0;
                         <tbody>
                         <tr >
                             
-                            <th colspan="2" align=center style="background-color: #1cc1bf; color: white;"><strong>Invoice Id: <?php echo $invoice; ?> </strong>   </th>
-                            <th colspan="2"  align=center style="background-color: #1cc1bf; color: white;"><strong>Date: <?php
+                            <th colspan="2" align=center style="background-color: #a0c1bb; color: white;"><strong>Invoice Id: <?php echo $invoice; ?> </strong>   </th>
+                            <th colspan="2"  align=center style="background-color: #a0c1bb; color: white;"><strong>Date: <?php
                                     $date = explode(" ",$date);
 
                                     echo $date[0]; ?> </strong></th>
-                            <th colspan="2" align=center style="background-color: #1cc1bf; color: white;"><strong>Time: <?php echo $date[1]; ?> </strong></th>
+                            <th colspan="2" align=center style="background-color: #a0c1bb; color: white;"><strong>Time: <?php echo $date[1]; ?> </strong></th>
                         </tr>
                         <tr>
                             <th colspan="2"><strong>Food Name</strong></th>
@@ -197,6 +197,11 @@ $item_total = 0;
                             <td colspan="3" align=center style="background-color: #a0c1bb; color: white;"><strong>Payment Method:</strong> <?php if(is_numeric($payment)) echo "Mobile Payment"; else echo $payment?></td>
                             <td colspan="3" align=center style="background-color: #a0c1bb; color: white;"><strong>Delivery Status:</strong> <?php if($deliveryStatus == NULL) echo 'Pending'; else echo $deliveryStatus?></td>
                         </tr>
+                        <?php if($payment == "Reserve Table"){?>
+                        <tr>
+                            <td colspan="6" align=center style="background-color: rgba(193, 189, 183, 0.2); color: white;"> <a class="btn" href="reservation.php?invoiceID=<?php echo $invoice; ?>" >Click here to Reserve Table Now</a></td>
+                        </tr>
+                        <?php } ?>
 
                         </tbody>
                     </table>

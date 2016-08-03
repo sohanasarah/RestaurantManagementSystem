@@ -131,7 +131,8 @@ $title = strtoupper($title)."-RESTAURANT";
 
                                 <?php  if(isset($_SESSION['message']) )  if($_SESSION['message']!=""){ ?>
 
-                                    <div  id="message" class="form button"   style="font-size: smaller  " >
+                                    <div class="alert success">
+                                        <span class="closebtn">&times;</span>
                                         <center>
                                             <?php if((array_key_exists('message',$_SESSION)&& (!empty($_SESSION['message'])))) {
                                                 echo "&nbsp;".Message::message();
@@ -146,6 +147,14 @@ $title = strtoupper($title)."-RESTAURANT";
 
 
          </td>
+        <td>
+            <!-- Searching  START  -->
+            <form action="searchItem.php">
+                <label></label>
+                <input type="text" name="search" value="" placeholder="Search Food Item" id="itemname">
+                <button type="submit">Search</button>
+            </form><br>
+        </td>
 
 <?php
 
@@ -159,14 +168,7 @@ $title = strtoupper($title)."-RESTAURANT";
              <td height="">Welcome <?php echo $singleUser->first_name." ". $singleUser->last_name?>!</td><td width='50'><a href='User/Authentication/logout.php'><input type='button' value='Logout'></a></td><td width='50'><a href='User/Profile/edit.php'><input type='button' value='Edit Profile'></a></td></tr></table>
 
                     <td width="50"> </td>
-                    <td>
-                        <!-- Searching  START  -->
-                        <form action="searchItem.php">
-                            <label>Search Foor Item</label>
-                            <input type="text" name="search" value="" id="itemname">
-                            <button type="submit">Search</button>
-                        </form><br>
-                    </td>
+
 
 <?php
          }

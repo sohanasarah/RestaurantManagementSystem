@@ -51,13 +51,13 @@ class Reservation extends DB{
         $result= mysqli_query($this->conn,$query);
         if ($result) {
             Message::message("
-                <div class=\"alert alert-success\">
+                <div class=\"alert success\">
                             <strong>Success!</strong> $this->table_info has been reserved successfully.
                 </div>");
            return Utility::redirect('');
         } else {
             Message::message("
-                <div class=\"alert alert-danger\">
+                <div class=\"alert danger\">
                             <strong>Fail!</strong> Data has not been stored successfully.
                 </div>");
             

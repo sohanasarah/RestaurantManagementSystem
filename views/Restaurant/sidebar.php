@@ -1,3 +1,25 @@
+<?php
+include_once ('../../vendor/autoload.php');
+
+use App\User\User;
+use App\User\Auth;
+
+use App\GlobalClasses\Message;
+use App\GlobalClasses\Utility;
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
 <div class="grid_4 preffix_1">
     <h2>Categories</h2>
     <ul class="list">
@@ -15,24 +37,6 @@
             </div>Rehoncus. Aliquam nibh tegestas id ictum ado. Praesentertoaucibus maleada faucibusnec <a href="#" class="color1">[...]</a>
         </div>
     </div>
-    <div class="block3">
-        <img src="../../resource/images/page4_img5.jpg" alt="" class="img_inner noresize fleft">
-        <div class="extra_wrapper">
-            <div class="text1 color1">
-                <time datetime="2014-01-01">25-05-2014</time>
-                <a href="#">Livamus aot magte </a>
-            </div>Tehoncus. Aliquam nibh tegestas id ictum ado. Praesentertoaucibus maleada faucibusnece <a href="#" class="color1">[...]</a>
-        </div>
-    </div>
-    <div class="block3">
-        <img src="../../resource/images/page4_img6.jpg" alt="" class="img_inner noresize fleft">
-        <div class="extra_wrapper">
-            <div class="text1 color1">
-                <time datetime="2014-01-01">28-05-2014</time>
-                <a href="#">Kivamus aagnateme </a>
-            </div>
-            Mehoncusiquam nibh tegestas id ictum ado. Praesentertoaucibus maleada faucibusnec dert <a href="#" class="color1">[...]</a>
-        </div>
-    </div>
+    
 </div>
 </div>
