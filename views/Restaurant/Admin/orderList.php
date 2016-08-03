@@ -66,7 +66,7 @@ $previous="<li><a href='orderList.php?pageNumber=$prev'>Prev</a></li>";
 $next="<li><a href='orderList.php?pageNumber=$next'>Next</a></li>";
 
 $allOrder=$order->orderPaginator($pageStartFrom,$itemPerPage);
-//Utility::d($allOrder);
+//Utility::dd($allOrder);
 foreach ($allOrder as $order){
     $singleOrder[] = $order["order_id"];
     $date[] = $order["current_date"];
@@ -195,6 +195,8 @@ if(count($_POST) > 0) {
                             <th>Food Item</th>
                             <th>Quantity</th>
                             <th>User Name</th>
+                            <th>Payment System</th>
+                            <th>Transaction ID</th>
                             <th>Address</th>
 
                         </tr>
@@ -210,10 +212,14 @@ if(count($_POST) > 0) {
 
                                     <td><?php echo $order['food_code']?></td>
                                     <td><?php echo $order['food_name']?></td>
-                                    <td><?php echo $order['quantity']?></td>
+                                    <td align="center"><?php echo $order['quantity']?></td>
                                 <?php if($count == 0) {?>
-                                    <td><?php echo $order['first_name']?></td>
+                                    <td align="center"><?php echo $order['first_name']?></td>
+                                    <td><?php echo $order['payment']?></td>
+                                    <td><?php echo $order['transaction_id']?></td>
                                     <td><?php echo $order['address']?></td>
+
+
                                         <?php }
                                 $count++?>
 
