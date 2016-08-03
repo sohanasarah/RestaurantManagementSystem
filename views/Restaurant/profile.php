@@ -52,7 +52,7 @@ $item_total = 0;
 <!--=====================
           Content
           ======================-->
-<section class="content"><div class="ic"></div>
+<section class="content" xmlns="http://www.w3.org/1999/html"><div class="ic"></div>
     <div class="container">
         <div class="row">
             <div class="grid_7">
@@ -146,7 +146,7 @@ $item_total = 0;
                     <table cellpadding="10" cellspacing="1">
                         <tbody>
                         <tr>
-                            <th colspan="2" align=center ><strong>Invoice Id: <?php echo $invoice; ?> </strong></th>
+                            <th colspan="2" align=center ><strong>Invoice Id: <?php echo $invoice; ?> </strong>   <a href="reservation.php?invoiceID=<?php echo $invoice; ?>" > <input type="button" value="Reserve Table"> </input</a> </th>
                             <th colspan="2" align=center ><strong>Date: <?php
                                     $date = explode(" ",$date);
 

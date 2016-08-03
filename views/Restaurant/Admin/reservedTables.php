@@ -127,20 +127,20 @@ $reservation= new Reservation();
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#1</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#1 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
 
 
@@ -150,20 +150,20 @@ $reservation= new Reservation();
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#2</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#2 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
 
         </tr>
@@ -171,20 +171,20 @@ $reservation= new Reservation();
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#3</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#3 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
 
         </tr>
@@ -192,20 +192,20 @@ $reservation= new Reservation();
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#4</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#4 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
 
         </tr>
@@ -213,20 +213,20 @@ $reservation= new Reservation();
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#5</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#5 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
 
         </tr>
@@ -234,20 +234,20 @@ $reservation= new Reservation();
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#6</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#6 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
 
         </tr>
@@ -255,20 +255,20 @@ $reservation= new Reservation();
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#7</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#7 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
 
         </tr>
@@ -276,20 +276,20 @@ $reservation= new Reservation();
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#8</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#8 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
 
         </tr>
@@ -297,20 +297,20 @@ $reservation= new Reservation();
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#9</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#9 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
 
         </tr>
@@ -318,20 +318,20 @@ $reservation= new Reservation();
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#10</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#10 - 4 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
 
         </tr>
@@ -339,140 +339,140 @@ $reservation= new Reservation();
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#11</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#11 - 13 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
         </tr>
         <tr>
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#12</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#12 - 10 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
         </tr>
         <tr>
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#13</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#13 - 10 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
         </tr>
         <tr>
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#14</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#14 - 10 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
         </tr>
         <tr>
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#15</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#15 - 6 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
         </tr>
         <tr>
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#16</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#16 - 6 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
         </tr>
         <tr>
             <td style="text-align: center; background-color: purple;">
                 <p><span style="color: white;"><strong>TABLE#17</strong></span></p>
             </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
-            <td style="text-align: center;"> <?php echo "".$reservation->getOrderID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "10:00am-10:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "11:00am-11:59am"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "12:00pm-12:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "1:00pm-1:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "2:00pm-2:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "3:00pm-3:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "4:00pm-4:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "5:00pm-5:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "6:00pm-6:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "7:00pm-7:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "8:00pm-8:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "9:00pm-9:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "10:00pm-10:59pm"); ?>  </td>
+            <td style="text-align: center;"> <?php echo "".$reservation->getInvoiceID("Table#17 - 6 Seated", $_REQUEST['reservationDate'], "11:00pm-11:59pm"); ?>  </td>
 
         </tr>
         </tbody>

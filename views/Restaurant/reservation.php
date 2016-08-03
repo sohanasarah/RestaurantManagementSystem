@@ -58,6 +58,7 @@ include ('header.php');
             <div class="clear"></div>
 
 
+            <input type="hidden" name="test" value="<?php echo $_REQUEST['invoiceID'] ?>">
 
 
 
@@ -101,6 +102,7 @@ if(isset($_GET['reservationDate'])&& isset($_GET['reservationTimeSlot']) && ($_G
     ?>
 
     <form action="" method="post" id="bookingForm">
+        <input type="hidden" name="invoiceID" value="<?php echo $_REQUEST['invoiceID'] ?>">
 
         <input type="hidden" name="reservationDate" value="<?php echo $_REQUEST['reservationDate'] ?>">
         <input type="hidden" name="reservationTimeSlot" value="<?php echo $_REQUEST['reservationTimeSlot'] ?>">
