@@ -44,20 +44,20 @@ class Reservation extends DB{
 
 
     }
-
+ 
     public function store(){
         $query="INSERT INTO `restaurant`.`reservation` (`date`, `time_slot`, `invoice_id`, `table_info`) VALUES ('".$this->date."', '".$this->time_slot."', '".$this->invoice_id."', '".$this->table_info."')";
 
         $result= mysqli_query($this->conn,$query);
         if ($result) {
             Message::message("
-                <div class=\"alert alert-success\">
+                <div class=\"alert success\">
                             <strong>Success!</strong> $this->table_info has been reserved successfully.
                 </div>");
            return Utility::redirect('');
         } else {
             Message::message("
-                <div class=\"alert alert-danger\">
+                <div class=\"alert danger\">
                             <strong>Fail!</strong> Data has not been stored successfully.
                 </div>");
             

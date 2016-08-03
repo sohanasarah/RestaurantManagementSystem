@@ -253,6 +253,8 @@ include ('header.php');
                   </table>
                   <div class="clear f_sep1"></div><div class="clear f_sep1"></div><div class="clear f_sep1"></div><div class="clear f_sep1"></div>
                   <div class="blog_title"><a href="#">Payment Method</a></div>
+
+                  <!--                  Cash Payment Message Form-->
                     <div id="cashOn" hidden>
                         <form id="bookingForm" class="cash" action="OrderSystem/orderFinal.php">
                   <table cellpadding="10" cellspacing="1" style="margin-top: 50px">
@@ -265,6 +267,11 @@ include ('header.php');
                   </table>
                             </form>
                     </div>
+                  <!--                  Cash Payment Message-->
+
+
+
+<!--                  Card Payment Message-->
                   <div id="card" hidden>
                       <form id="bookingForm" class="card" action="OrderSystem/orderFinal.php">
                           <table cellpadding="10" cellspacing="1" style="margin-top: 50px">
@@ -277,6 +284,21 @@ include ('header.php');
                           </table>
                       </form>
                   </div>
+                  <!--                  Card Payment Message-->
+                  <!--                  Reserve  Message-->
+                  <div id="reserve" hidden>
+                      <form id="bookingForm" class="reserve" action="OrderSystem/orderFinal.php">
+                          <table cellpadding="10" cellspacing="1" style="margin-top: 50px">
+                              <tr>
+                                  <td><strong>Thank You for your payment. Now Click Proceed.</strong>
+                                      <input name="reserve" value="true" hidden>
+                                  </td>
+
+                              </tr>
+                          </table>
+                      </form>
+                  </div>
+                  <!--                  Reserve  Message-->
 
                   <table cellpadding="10" cellspacing="1" style="margin-top: 50px" id="payment" class="order">
                       <tbody>
@@ -319,6 +341,7 @@ include ('header.php');
 
 
                   </table>
+<!--                  Mobile Payment Form-->
                   <form id="bookingForm" class="mobileInfos" action="OrderSystem/orderFinal.php">
                   <table id="mobileInfo" hidden class="order">
 
@@ -360,6 +383,7 @@ include ('header.php');
 
 
                   </form>
+<!--                  Mobile Payment Form-->
 
 
 
@@ -367,13 +391,13 @@ include ('header.php');
 
                   <a type="button" href="#" class="btn" id="checkoutback"><< Checkout</a>
                   <?php if ($loggedIn) { ?>
-                      <button class="btn" type="button" id="proceedbutton">Proceed >></button>
+                      <button class="btn" type="button" id="proceedbutton">Home Delivery >></button>
                       <button class="btn" type="button" id="proceedCash">Proceed >></button>
-                      <button class="btn" type="button" id="proceedCard">Proceed >></button>
+                      <button class="btn" type="button" id="proceedCard">Home Delivery >></button>
 
 <!--                      for reservation-->
 
-                      <button class="btn" type="button" id="proceedCard">Proceed >></button>
+                      <button class="btn" href="OrderSystem/orderFinal.php?reservation=true" type="submit" id="proceedReserve">Reserve Table >></button>
                       
  <!--                      for reservation-->
 
@@ -399,10 +423,16 @@ include ('header.php');
         $('button#proceedbutton').hide();
         $('button#proceedCash').hide();
         $('button#proceedCard').hide();
+        $('button#proceedReserve').hide();
     });
     $('#proceedbutton').on('click',function () {
-        document.forms[4].action= "OrderSystem/orderFinal.php";
+        document.forms[5].action= "OrderSystem/orderFinal.php";
         $('.mobileInfos').submit();
+
+    });
+    $('#proceedReserve').on('click',function () {
+        document.forms[4].action= "OrderSystem/orderFinal.php";
+        $('.reserve').submit();
 
     });
     $('#proceedCash').on('click',function () {
@@ -427,6 +457,7 @@ include ('header.php');
         $('table#payment').hide();
         $('table#mobileInfo').show(1000);
         $('button#proceedbutton').show(1000);
+        $('button#proceedReserve').show(1000);
 
 
     });
@@ -434,6 +465,7 @@ include ('header.php');
         $('table#payment').hide(1000);
         $('div#card').show(1000);
         $('button#proceedCard').show(1000);
+        $('button#proceedReserve').show(1000);
     });
 
 

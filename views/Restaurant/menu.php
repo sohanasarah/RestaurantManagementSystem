@@ -44,10 +44,7 @@ if(!empty($_REQUEST["action"])) {
 
 
 
-                Message::message("<div class=\"alert success\">
-                  <span class=\"closebtn\"></span>
-                  <strong>Success!</strong> Item added to cart.
-                                </div>");
+                Message::message("Success!</strong> Item added to cart.");
 
             }
 

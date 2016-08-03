@@ -25,6 +25,10 @@ if ($_GET['card'] == true){
     $_SESSION['paymentNumber'] = "Card";
     $_SESSION['transactionId'] = "Check Account";
 }
+if ($_GET['reserve'] == true){
+    $_SESSION['paymentNumber'] = "Reserve Table";
+    $_SESSION['transactionId'] = "Successful";
+}
 $order=new OrderSystem();
 
 $id=$order->prepare($_SESSION)->getUserID();
