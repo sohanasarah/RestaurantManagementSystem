@@ -2,7 +2,6 @@
 namespace App\Reservation;
 use App\GlobalClasses\Message;
 use App\GlobalClasses\Utility;
-//include_once('../../vendor/autoload.php');
 
 use App\Model\Database as DB;
 
@@ -53,18 +52,38 @@ class Reservation extends DB{
         if ($result) {
             Message::message("
                 <div class=\"alert alert-success\">
-                            <strong>Success!</strong> Data has been stored successfully.
+                            <strong>Success!</strong> $this->table_info has been reserved successfully.
                 </div>");
-           // return Utility::redirect('');
+           return Utility::redirect('');
         } else {
             Message::message("
                 <div class=\"alert alert-danger\">
                             <strong>Fail!</strong> Data has not been stored successfully.
                 </div>");
-            //return Utility::redirect('');
+            
+            return Utility::redirect('');
         }
 
     }
+
+
+
+    public function getOrderID($table_info, $date, $time_slot){
+
+
+        $query="SELECT * FROM `restaurant`.`reservation` WHERE `table_info`='".$table_info."'". " AND `date`='".$date."'". " AND `time_slot`='".$time_slot."'";
+
+        $result= mysqli_query($this->conn,$query);
+        $row= mysqli_fetch_object($result);
+
+        $countRows= mysqli_num_rows($result);
+
+        if($countRows>0)
+            return $row->order_id;
+        else
+            return "";
+        
+    }// end of view()
 
 
 

@@ -96,6 +96,13 @@ $total = $admin->orderCount();
                 <li>
                     <a href="totalMenu.php">View All Item</a>
                 </li>
+
+                <li>
+                    <a href="reservedTables.php?reservationDate=<?php echo date("Y-m-d");?>">Reserved Tables</a>
+                </li>
+
+
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
 

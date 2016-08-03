@@ -23,6 +23,13 @@
 
 
 <script>
+    $('#message').show().delay(15).fadeIn();
+    $('#message').show().delay(15).fadeOut();
+    $('#message').show().delay(15).fadeIn();
+    $('#message').show().delay(15).fadeOut();
+    $('#message').show().delay(15).fadeIn();
+    $('#message').show().delay(15).fadeOut();
+    $('#message').show().delay(15).fadeIn();
     $('#message').show().delay(1500).fadeOut();
 </script>
 

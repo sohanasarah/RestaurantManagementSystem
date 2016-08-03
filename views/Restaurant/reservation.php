@@ -4,7 +4,6 @@ use App\Reservation\Reservation;
 
 
 
-include ('header.php');
 if(!isset($_SESSION)){
     session_start();
 }
@@ -22,6 +21,7 @@ if(isset($_REQUEST['reservationTable']))
     $reservation->store();
 
 }
+include ('header.php');
 
 
 ?>
@@ -41,7 +41,7 @@ if(isset($_REQUEST['reservationTable']))
       <div class="grid_4">
           <h2>Reserve Your Table</h2>
         <div class="form_title color1">
-        We are open 7 days a week - 10:00 AM to 11:59 PM <br>+880 1700 000 000</div>
+        We are open 7 days a week 10:00AM to 11:59PM <br>+880 1700 000 000</div>
 
 
 
