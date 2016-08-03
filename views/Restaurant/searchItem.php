@@ -150,7 +150,7 @@ include ('header.php');
                                         src="../../resource/FoodImage/<?php echo $item['food_image'] ?>" alt=""
                                         height="300" width="150"></a>
                                 <div class="gall_bot">
-                                    <form action="<?php echo  $actual_link ?>" method="post">
+                                    <form action="#" method="post">
                                         <input hidden type="text" name="action" value="add">
                                         <input hidden type="text" name="id" value="<?php echo $item['id'] ?>">
                                         <input hidden type="number" name="quantity" value="1"/>
@@ -187,58 +187,6 @@ include ('header.php');
               =================================-->
 <?php include ('footer.php');?>
 <script>
-    $(document).ready(function () {
-        $('button#proceedbutton').hide();
-        $('button#proceedCash').hide();
-        $('button#proceedCard').hide();
-    });
-    $('#proceedbutton').on('click',function () {
-        document.forms[4].action= "OrderSystem/orderFinal.php";
-        $('.mobileInfos').submit();
-
-    });
-    $('#proceedCash').on('click',function () {
-        document.forms[2].action= "OrderSystem/orderFinal.php";
-        $('.cash').submit();
-    });
-    $('#proceedCard').on('click',function () {
-        document.forms[3].action= "OrderSystem/orderFinal.php";
-        $('.card').submit();
-    });
-
-    $("button#cash").click(function() {
-        $('table#payment').hide(1000);
-        $('div#cashOn').show(1000);
-        $('button#proceedCash').show(1000);
-
-
-
-    });
-
-    $("button#mobile").click(function() {
-        $('table#payment').hide();
-        $('table#mobileInfo').show(1000);
-        $('button#proceedbutton').show(1000);
-
-
-    });
-    $("button#card").click(function() {
-        $('table#payment').hide(1000);
-        $('div#card').show(1000);
-        $('button#proceedCard').show(1000);
-    });
-
-
-
-    $("a#checkoutback").click(function() {
-        $('div#proceed').hide(1000);
-        $('div#checkout').show(2000);
-    });
-    $("a#checkoutbutton").click(function() {
-        $('div#checkout').hide(1000);
-        $('div#proceed').delay(1000).slideDown(1000);
-    });
-
     $(document).ready(function () {
         $("button#quantity").click(function(){
             $.ajax({
