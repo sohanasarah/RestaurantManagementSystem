@@ -1,114 +1,97 @@
 <?php
-error_reporting(0);
-include_once ("../../../vendor/autoload.php");
-use App\Bitm\SEIP133704\Profile\Picture;
-use App\Bitm\SEIP133704\Profile\Uses;
-use App\Bitm\SEIP133704\GlobalClasses\Utility;
-use App\Bitm\SEIP133704\GlobalClasses\Message;
+include_once ('../../../vendor/autoload.php');
 
-if (isset($_POST['receiverName'])) {
-    $name = $_POST['receiverName'];
-    $email = $_POST['receiverEmail'];
+use App\User\User;
+use App\User\Auth;
+use App\Restaurant\Restaurant;
+use App\GlobalClasses\Message;
+use App\GlobalClasses\Utility;
+
+$auth= new Auth();
+$status= $auth->logged_in();
+
+if($status== FALSE) {
+    Message::message("You have to log in before enter this page");
+    Utility::redirect('index.php');
 }
 
-$newMail = new Picture();
-if(!empty($_POST['id'])) {
-    $newMail->prepare($_POST);
-    $singleItem = $newMail->view();
+$email = $_SESSION['user_email'];
+$name = "";
 
-    $id = $singleItem->id;
-    $itemName = $singleItem->name;
-    $itemData = $singleItem->email_address;
-
-
-    $tableColumn = array("SL","ID","User Name","Thumbnail","","");
-    $title =  Uses::siteName();
-    $keyword =  Uses::siteKeyword();
-
-
-    $tableDynamicData = "";
-    $sl = 1;
-        $tableDynamicData .= "<tr>";
-        $tableDynamicData .= "<td>$sl</td>";
-        $tableDynamicData .= "<td>$id</td>";
-        $tableDynamicData .= "<td>$itemName</td>";
-    $tableDynamicData .= "<td><img src=\"../../../resource/images/$singleItem->images\" height=\"50px\" width=\"50px\"></td>";
-        $tableDynamicData .= "</tr>";
-$html = <<<ATOMIC
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../resource/bootstrap-3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../resource/CustomDesign/css/style.css">
-    <script src="../../../resource/jquery/1.12.0/jquery.min.js"></script>
-    <script src="../../../resource/bootstrap-3.3.6/js/bootstrap.min.js"></script>
-
-    <title>$title</title>
-
-</head>
-<body>
-<center><h1>$title</h1></center>
-<div>
-<h2>$keyword List</h2>
-<table class="table table-bordered table-responsive table-hover" >
-
-        <thead>
-        <tr>
-<!--            table heads are taken from array-->
-            <th>$tableColumn[0]</th>
-            <th>$tableColumn[1]</th>
-            <th>$tableColumn[2]</th>
-            <th>$tableColumn[3]</th>
-            
-        </tr>
-        </thead>
-        <tbody>
-         $tableDynamicData
-
-        </tbody>
-    </table>
-   
-    <footer class="text-center">
-            <p>&copy; Copyright Ashfak Md. Shibli & Atomic Projects 2016</p>
-    </footer>
-    </div>
-
-</body>
-
-</html>
-
-
-ATOMIC;
+$user = new Restaurant();
+$userOrders = $user->userOrders($_SESSION['user_email']);
+$invoices=array();
+$dates= array();
+foreach ($userOrders as $orders){
+    $invoices[] = $orders["invoice_id"];
+    $dates[]  = $orders["current_date"];
 
 
 }
-else {
-    include ('pdf.php');
-    $allItems = $newMail->index();
+$invoices = array_unique($invoices);
+$dates = array_unique($dates);
 
+$invoiceInfo = array_combine($invoices,$dates);
 
+$user= new User();
+$user->prepare($_SESSION);
+$singleUser=$user->view();
+if($singleUser==NULL)   return Utility::redirect('../../index.php');
 
-    $tableColumn = array("SL","ID","User Name","Thumbnail","","");
-$title =  Uses::siteName();
-$keyword =  Uses::siteKeyword();
-
-
+$sl = 1;
+$item_total = 0;
 $tableDynamicData = "";
-$sl = 0;
+
+foreach ($invoiceInfo as $invoice => $date ):
+    if(!($sl == 1) ) break;
+
+    $date = explode(" ",$date);
+    $tableDynamicData .="<div class=\"blog_title\">SL: ".$sl++."</div>";
+
+    $tableDynamicData .="<table cellpadding=\"10\" cellspacing=\"1\" class=\"order\">
+    <tbody>
+    <tr>
+        <th colspan=\"2\" align=center ><strong>Invoice Id: ".$invoice."</strong></th>
+        <th colspan=\"2\" align=center ><strong>";
+
+    $tableDynamicData .=$date[0]."</strong></th>
+        <th colspan=\"2\" align=center ><strong>Time:".$date[1]."</strong></th>
+    </tr>
+    <tr>
+        <th colspan=\"2\"><strong>Food Name</strong></th>
+        <th><strong>Quantity</strong></th>
+        <th align=center><strong>Unit Price</strong></th>
+        <th align=center><strong>Subtotal</strong></th>
+
+    </tr>";
+    
+    foreach ($userOrders as $item ):
+        if($item['invoice_id'] == $invoice):
+
+                $tableDynamicData .="<tr>
+
+                <td colspan=\"2\">".$item["food_name"]."</td>
+                <td align=center id=\"price\">
+                    <label >".$item["quantity"]."</label>
+                </td>
+                <td align=center>৳".$item["price"]."</td>
+                <td align=center >৳".$item["price"]*$item["quantity"]."</td>
+            </tr>";
+            
+
+            $item_total += $item['price'] * $item['quantity'];
+        endif;
+     endforeach;
+    $item_total = $item_total + 100;
+    $tableDynamicData .= "<tr>
+                          <td colspan=\"5\" align=right><strong>Flat Service Charge: </strong>৳100</td>
+                      </tr>";
 
 
-foreach ($allItems as $item ):
-    $sl++;
+     $tableDynamicData .= "<tr><td colspan=\"6\" align=right><strong>Total:</strong>৳".$item_total."</td></tr></tbody></table>";
+            $item_total = 0;
 
-    $tableDynamicData .= "<tr>";
-    $tableDynamicData .= "<td>$sl</td>";
-    $tableDynamicData .= "<td>$item->ID</td>";
-    $tableDynamicData .= "<td>$item->name</td>";
-    $tableDynamicData .= "<td><img src=\"../../../resource/images/$item->images\" height=\"50px\" width=\"50px\"></td>";
-    $tableDynamicData .= "</tr>";
-
+$sl++;
 endforeach;
 
 
@@ -119,39 +102,47 @@ $html = <<<ATOMIC
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../../../resource/bootstrap-3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../resource/CustomDesign/css/style.css">
-    <script src="../../../resource/jquery/1.12.0/jquery.min.js"></script>
-    <script src="../../../resource/bootstrap-3.3.6/js/bootstrap.min.js"></script>
-
-    <title>$title</title>
+    <meta name = "format-detection" content = "telephone=no" />
+    <link rel="icon" href="../../resource/images/favicon.ico">
+    <link rel="shortcut icon" href="../../resource/images/favicon.ico" />
+    <link rel="stylesheet" href="../../resource/css/form.css">
+    <link rel="stylesheet" href="../../resource/css/stuck.css">
+    <link rel="stylesheet" href="../../resource/css/style.css">
+    <link rel="stylesheet" href="../../resource/formResource/css/booking.css">
+    <script src="../../resource/jquery/1.12.0/jquery.min.js"></script>
+    <script src="../../resource/js/jquery.js"></script>
+    <script src="../../resource/js/jquery-migrate-1.1.1.js"></script>
+    <script src="../../resource/js/script.js"></script>
+    <script src="../../resource/js/superfish.js"></script>
+    <script src="../../resource/js/jquery.equalheights.js"></script>
+    <script src="../../resource/js/jquery.mobilemenu.js"></script>
+    <script src="../../resource/js/jquery.easing.1.3.js"></script>
+    <script src="../../resource/js/tmStickUp.js"></script>
+    <script src="../../resource/js/jquery.ui.totop.js"></script>
+    <script src="../../resource/js/TMForm.js"></script>
+    <script src="../../resource/js/modal.js"></script>
+    <script src="../../resource/js/touchTouch.jquery.js"></script>
+    
+    <link rel="stylesheet" href="../../resource/Custom/style.css">
+    <script src="../../resource/formResource/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../../resource/formResource/js/booking.js"></script>
+   <title>Invoice</title>
 
 </head>
 <body>
-<center><h1>$title</h1></center>
+<center><h1>Invoice</h1></center>
 <div>
-<h2>$keyword List</h2>
-<table class="table table-bordered table-responsive table-hover" >
-
-        <thead>
-        <tr>
-<!--            table heads are taken from array-->
-            <th>$tableColumn[0]</th>
-            <th>$tableColumn[1]</th>
-            <th>$tableColumn[2]</th>
-            <th>$tableColumn[3]</th>
-            
-        </tr>
-        </thead>
-        <tbody>
-         $tableDynamicData
-
-        </tbody>
-    </table>
+<h2>Order List</h2>
+<table cellpadding="10" cellspacing="1" style="border: #edeb82 solid; " class="order">
+                      <tbody>
+                      
+                      $tableDynamicData
+                      
+                      </tbody>
+                  </table>
    
     <footer class="text-center">
-            <p>&copy; Copyright Ashfak Md. Shibli & Atomic Projects 2016</p>
+            <p>&copy; Copyright The Entree Restaurant 2016</p>
     </footer>
     </div>
 
@@ -161,8 +152,9 @@ $html = <<<ATOMIC
 
 
 ATOMIC;
-}
+
 include_once ('../../../vendor/phpmailer/phpmailer/class.phpmailer.php');
+include_once ('../../../vendor/phpmailer/phpmailer/class.smtp.php');
 
 /**
  * This example shows settings to use when sending via Google's Gmail servers.
@@ -204,7 +196,7 @@ $mail->addReplyTo('shibli.emon@gmail.com', 'First Last');
 //Set who the message is to be sent to
 $mail->addAddress($email, $name);
 //Set the subject line
-$mail->Subject = $title;
+$mail->Subject = "The Entree Invoice Info";
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 $file = fopen("mailBody.html","w");
@@ -215,25 +207,13 @@ $mail->msgHTML(file_get_contents('mailBody.html'), dirname(__FILE__));
 $mail->AltBody = 'This is a plain-text message body';
 //$mail->Body= $html;
 //Attach an image file
-if(isset($_SESSION['attach'])){
-    $mail->addAttachment($_SESSION['attach']);
-    unset($_SESSION['attach']);
-}
-else {
-    $mail->addAttachment('../../../resource/images/'.$singleItem->images);
-}
+
 //send the message, check for errors
 if (!$mail->send()) {
     echo Message::message("Mailer Error: " . $mail->ErrorInfo);
-    Utility::redirect('index.php');
+    Utility::redirect('../profile.php');
 } else {
-    echo Message::message("
-                        <div id=\"message\" class=\"alert alert-info\">
-                                <strong>Successfully Sent email!</strong> 
-                        </div>
-                        <script>
-                            $('#message').show().delay(2000).fadeOut();
-                        </script>");
-    Utility::redirect('index.php');
+    echo Message::message("Please Check your email for Invoice");
+    Utility::redirect('../profile.php');
 }
 ?>

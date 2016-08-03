@@ -84,7 +84,7 @@ class Restaurant
     {
         $_data = array();
         $query = "SELECT users.first_name,
-                  orderfood.invoice_id,orderfood.current_date,orderfood.total, orderfood.delivery_status,
+                  orderfood.invoice_id,orderfood.current_date,orderfood.total, orderfood.delivery_status, orderfood.payment,
                   mappingorder.quantity ,
                   fooditem.food_name,fooditem.price, fooditem.category
                   FROM users

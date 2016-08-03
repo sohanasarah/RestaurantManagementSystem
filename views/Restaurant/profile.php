@@ -146,13 +146,14 @@ $item_total = 0;
                     ?>
                     <table cellpadding="10" cellspacing="1" class="order">
                         <tbody>
-                        <tr>
-                            <th colspan="2" align=center ><strong>Invoice Id: <?php echo $invoice; ?> </strong>   <a href="reservation.php?invoiceID=<?php echo $invoice; ?>" > <input type="button" value="Reserve Table"> </input</a> </th>
-                            <th colspan="2" align=center ><strong>Date: <?php
+                        <tr >
+                            
+                            <th colspan="2" align=center style="background-color: #1cc1bf; color: white;"><strong>Invoice Id: <?php echo $invoice; ?> </strong>   </th>
+                            <th colspan="2"  align=center style="background-color: #1cc1bf; color: white;"><strong>Date: <?php
                                     $date = explode(" ",$date);
 
                                     echo $date[0]; ?> </strong></th>
-                            <th colspan="2" align=center ><strong>Time: <?php echo $date[1]; ?> </strong></th>
+                            <th colspan="2" align=center style="background-color: #1cc1bf; color: white;"><strong>Time: <?php echo $date[1]; ?> </strong></th>
                         </tr>
                         <tr>
                             <th colspan="2"><strong>Food Name</strong></th>
@@ -176,10 +177,13 @@ $item_total = 0;
                                     </td>
                                     <td align=center id="price"><?php echo "৳".$item["price"]; ?></td>
                                     <td align=center id="price"><?php echo "৳".$item["price"]*$item["quantity"]; ?></td>
+
                             </tr>
                             <?php
 
                             $item_total += ($item["price"]*$item["quantity"]);
+                                $payment = $item["payment"];
+                                $deliveryStatus = $item["delivery_status"];
                         }
                         ?>
 
@@ -189,6 +193,11 @@ $item_total = 0;
                             <td colspan="6" align=right><strong>Total:</strong> <?php echo "৳".$item_total;
                                 $item_total = 0;?></td>
                         </tr>
+                        <tr>
+                            <td colspan="3" align=center style="background-color: #a0c1bb; color: white;"><strong>Payment Method:</strong> <?php if(is_numeric($payment)) echo "Mobile Payment"; else echo $payment?></td>
+                            <td colspan="3" align=center style="background-color: #a0c1bb; color: white;"><strong>Delivery Status:</strong> <?php if($deliveryStatus == NULL) echo 'Pending'; else echo $deliveryStatus?></td>
+                        </tr>
+
                         </tbody>
                     </table>
                         <div class="clear f_sep1"></div>

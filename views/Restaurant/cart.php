@@ -371,6 +371,12 @@ include ('header.php');
                       <button class="btn" type="button" id="proceedCash">Proceed >></button>
                       <button class="btn" type="button" id="proceedCard">Proceed >></button>
 
+<!--                      for reservation-->
+
+                      <button class="btn" type="button" id="proceedCard">Proceed >></button>
+                      
+ <!--                      for reservation-->
+
 
 
 

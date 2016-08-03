@@ -1,0 +1,5 @@
+Add this two line to php.ini
+
+
+[curl]
+curl.cainfo=c:/xampp/php/cacert.pem
