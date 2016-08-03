@@ -243,7 +243,7 @@ $title = strtoupper($title)."-RESTAURANT";
 
                                 <li class= "<?php getActiveCurrent("index.php") ?>"><a href="index.php">home</a></li>
                                 <li class="<?php getActiveCurrent("menu.php") ?>"><a href="menu.php">menu</a></li>
-                                <li class="<?php getActiveCurrent("reservation.php") ?>"><a href="reservation.php">reservation</a></li>
+<!--                     <li class="<?php // getActiveCurrent("reservation.php") ?>"><a href="reservation.php">reservation</a></li>  -->
 <!--                                <li class="--><?php //getActiveCurrent("blog.php") ?><!--"><a href="blog.php">blog</a></li>-->
                                 <li class="<?php getActiveCurrent("contact.php") ?>"><a href="contact.php">contacts</a></li>
 
