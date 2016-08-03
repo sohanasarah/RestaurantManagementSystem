@@ -188,11 +188,11 @@ $mail->SMTPAuth = true;
 //Username to use for SMTP authentication - use full email address for gmail
 $mail->Username = "the.entree.restaurant@gmail.com";
 //Password to use for SMTP authentication
-$mail->Password = "emON#744254";
+$mail->Password = "abcd#1234";
 //Set who the message is to be sent from
-$mail->setFrom('atomicproject@shibliemon.com', 'Ashfak Md. Shibli');
+$mail->setFrom('The Entree', 'The Entree');
 //Set an alternative reply-to address
-$mail->addReplyTo('shibli.emon@gmail.com', 'First Last');
+$mail->addReplyTo('the.entree.restaurant@gmail.com', 'The Entree');
 //Set who the message is to be sent to
 $mail->addAddress($email, $name);
 //Set the subject line
