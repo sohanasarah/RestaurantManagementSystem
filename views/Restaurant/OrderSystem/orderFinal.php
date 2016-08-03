@@ -39,7 +39,7 @@ $itemCodeArray=array_keys($_SESSION['cart_list']);
 
 $_SESSION['food_code']=implode(',',$itemCodeArray);
 
-Utility::d($_SESSION['food_code']);
+//Utility::d($_SESSION['food_code']);
 
     $OrderList=$order->prepare($_SESSION)->storeOrder();
 

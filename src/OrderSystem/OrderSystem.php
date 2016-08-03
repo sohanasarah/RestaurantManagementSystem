@@ -104,6 +104,7 @@ class OrderSystem extends DB
         if($result)
         {
            $_SESSION['cart_list']="";
+            Message::message("Your Order Has been Placed Successfully check your email plz");
             Utility::redirect('../profile.php');
 
         }
