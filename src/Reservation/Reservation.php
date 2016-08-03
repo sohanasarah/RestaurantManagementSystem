@@ -44,7 +44,7 @@ class Reservation extends DB{
 
 
     }
-
+ 
     public function store(){
         $query="INSERT INTO `restaurant`.`reservation` (`date`, `time_slot`, `invoice_id`, `table_info`) VALUES ('".$this->date."', '".$this->time_slot."', '".$this->invoice_id."', '".$this->table_info."')";
 
