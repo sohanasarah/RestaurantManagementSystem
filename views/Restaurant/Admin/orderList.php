@@ -8,7 +8,9 @@ use App\GlobalClasses\Utility;
 
 
 
-if(!isset($_SESSION) )session_start();
+if(!isset($_SESSION) ) {
+    session_start();
+}
 
 use App\Admin\Auth;
 
@@ -19,12 +21,6 @@ $loggedIn = $auth->logged_in();
 if(!$loggedIn) {
     return Utility::redirect('Profile/admin-login.php');
 }
-
-
-
-
-
-
 
 
 
@@ -42,10 +38,11 @@ else{
 $itemPerPage=$_SESSION['itemPerPage'];
 //Utility::d($itemPerPage);
 $totalItem=$order->orderCount();
-//Utility::dd($totalItem);
+//Utility::d($totalItem);
 
 $totalPage=ceil($totalItem/$itemPerPage);
 
+//Utility::d($totalPage);
 $pagination="";
 //Utility::d($_GET);
 
@@ -60,10 +57,8 @@ for($i=1;$i<=$totalPage;$i++){
 }
 
 $pageStartFrom=$itemPerPage*($pageNumber-1);
-$prev=$pageNumber-1;
-$next=$pageNumber+1;
-$previous="<li><a href='orderList.php?pageNumber=$prev'>Prev</a></li>";
-$next="<li><a href='orderList.php?pageNumber=$next'>Next</a></li>";
+$prevPage=$pageNumber-1;
+$nextPage=$pageNumber+1;
 
 $allOrder=$order->orderPaginator($pageStartFrom,$itemPerPage);
 //Utility::dd($allOrder);
@@ -144,7 +139,6 @@ if(count($_POST) > 0) {
         <div class="form-group">
             <label for="sel1">Select Orders per page:</label>
             <select class="form-control" id="sel1" name="itemPerPage">
-                <option <?php if($itemPerPage==5){?> selected="selected" <?php } ?> >5</option>
                 <option <?php if($itemPerPage==10){?> selected="selected" <?php } ?>>10</option>
                 <option <?php if($itemPerPage==15){?> selected="selected" <?php } ?>>15</option>
                 <option <?php if($itemPerPage==20){?> selected="selected" <?php } ?>>20</option>
@@ -238,15 +232,19 @@ if(count($_POST) > 0) {
 
     </form>
 
-    <div class="text-center">
 
-        <ul class="pagination">
-            <?php if($pageNumber>1) echo $previous?>
-            <?php echo $pagination?>
-            <?php if($pageNumber!=$totalPage) echo $next?>
-        </ul>
+        <div>
+            <center><ul class="pagination">
+                    <?php if($pageNumber>1){?>
+                        <li><a href="totalMenu.php?pageNumber=<?php echo $prevPage?>">Prev</a></li>
+                    <?php }?>
+                    <?php echo $pagination?>
+                    <?php if($pageNumber<$totalPage){?>
+                        <li><a href="totalMenu.php?pageNumber=<?php echo $nextPage?>">Next</a></li>
+                    <?php }?>
+                </ul></center>
+        </div>
 
-    </div>
     <hr>
     <!-- Footer -->
     <footer>
