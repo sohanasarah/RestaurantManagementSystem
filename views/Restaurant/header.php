@@ -120,6 +120,8 @@ $title = strtoupper($title)."-RESTAURANT";
 
 
 
+
+
 <table>
     <tr>
 
@@ -156,6 +158,15 @@ $title = strtoupper($title)."-RESTAURANT";
 
              <td height="">Welcome <?php echo $singleUser->first_name." ". $singleUser->last_name?>!</td><td width='50'><a href='User/Authentication/logout.php'><input type='button' value='Logout'></a></td><td width='50'><a href='User/Profile/edit.php'><input type='button' value='Edit Profile'></a></td></tr></table>
 
+                    <td width="50"> </td>
+                    <td>
+                        <!-- Searching  START  -->
+                        <form action="searchItem.php">
+                            <label>Search Foor Item</label>
+                            <input type="text" name="search" value="" id="itemname">
+                            <button type="submit">Search</button>
+                        </form><br>
+                    </td>
 
 <?php
          }
@@ -202,6 +213,8 @@ $title = strtoupper($title)."-RESTAURANT";
                                 </td>
                             </tr>
 
+
+
                             <tr>
                                 <td width="100"></td><td width="100"></td><td width="100"></td><td width="100"></td>
 
@@ -209,6 +222,7 @@ $title = strtoupper($title)."-RESTAURANT";
                                 <td class="login_form_label_field">
                                     <a href="forgotten.php">Forgotten account?</a>
                                 </td>
+
                             </tr>
                         </tbody>
                     </table>
@@ -219,9 +233,12 @@ $title = strtoupper($title)."-RESTAURANT";
 
 
 
+
+
                     <div class="navigation ">
                         <nav>
                             <ul class="sf-menu">
+
                                 <li class= "<?php getActiveCurrent("index.php") ?>"><a href="index.php">home</a></li>
                                 <li class="<?php getActiveCurrent("menu.php") ?>"><a href="menu.php">menu</a></li>
                                 <li class="<?php getActiveCurrent("reservation.php") ?>"><a href="reservation.php">reservation</a></li>
