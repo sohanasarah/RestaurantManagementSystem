@@ -45,54 +45,36 @@ include ('header.php');
     <div class="row">
       <div class="grid_11">
         <h2>Contact Form</h2>
-        <form id="form" >
-        <div class="form_spinner">
-        <img src="../../resource/images/Preloader_4.gif" alt="">
-        </div>
-        <div class="modal fade response-message">
-        <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Modal title</h4>
-        </div>
-        <div class="modal-body">
-        asfasfasf
-        </div>      
-        </div>
-        </div>
-        </div>
-        <div class="response-error-message"></div>
-        <label class="name">
-        <input type="text" name="name" placeholder="Name:" value="" data-constraints="@Required @JustLetters" />
-        <span class="empty-message">*This field is required.</span>
-        <span class="error-message">*This is not a valid name.</span>
-        </label>         
-        <label class="email">
-        <input type="text" name="email" placeholder="E-mail:" value="" data-constraints="@Required @Email" />
-        <span class="empty-message">*This field is required.</span>
-        <span class="error-message">*This is not a valid email.</span>
-        </label>
-        <label class="phone">
-        <input type="text" name="phone" placeholder="Phone:" value="" data-constraints="@Required @JustNumbers"/>
-        <span class="empty-message">*This field is required.</span>
-        <span class="error-message">*This is not a valid phone.</span>
-        </label>
-        <label class="message">
-        <textarea name="message" placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
-        <span class="empty-message">*This field is required.</span>
-        <span class="error-message">*The message is too short.</span>
-        </label>
-        <div class="clear"></div>
-        <div class="btns">
-        <a href="#" data-type="reset" class="btn">clear</a>
-        <a href="#" data-type="submit" class="btn">send</a>
-        </div>
-        </form>   
+        <form id="bookingForm" method="post" action="mail/contactmail.php">
+          <strong><label for="first_name">Name :</label></strong>
+          <input id="Name" class="tmInput" value="" type="text" name="name" >
+
+          <div class="clear f_sep1"></div>
+          <strong>Email :</strong>
+          <input class="tmInput" value="" type="email" name="email">
+
+          <div class="clear f_sep1"></div>
+          <strong class="dt">Phone :</strong>
+          <input class="tmInput" value="" type="text" name="phone">
+          <div class="clear f_sep1"></div>
+          <strong class="dt">Message :</strong>
+          <div class="clear f_sep1"></div>
+          <textarea name="message" ></textarea>
+          <button class="btn" href="#" type="reset">cancel</button>
+          <button class="btn" type="submit" id="contact">send</button>
+
+        </form>
       </div>
     </div>
   </div>
 </div>
+<script>
+  $('#contact').on('click',function () {
+    document.form[0].action= "mail/contactmail.php";
+    $('#form').submit();
+
+  });
+</script>
 <!--==============================
               footer
 =================================-->
