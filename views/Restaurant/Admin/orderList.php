@@ -139,10 +139,11 @@ if(count($_POST) > 0) {
 
 
 <div class="container">
+    <center><h2>Order List</h2></center>
 
     <?php include("messageBox.php"); ?>
 
-    <center><h2>Order List</h2></center>
+
 
 
     <a href="pdf.php" class="btn btn-primary" role="button">Download Order List as PDF</a>
@@ -250,11 +251,11 @@ if(count($_POST) > 0) {
         <div>
             <center><ul class="pagination">
                     <?php if($pageNumber>1){?>
-                        <li><a href="totalMenu.php?pageNumber=<?php echo $prevPage?>">Prev</a></li>
+                        <li><a href="orderList.php?pageNumber=<?php echo $prevPage?>">Prev</a></li>
                     <?php }?>
                     <?php echo $pagination?>
                     <?php if($pageNumber<$totalPage){?>
-                        <li><a href="totalMenu.php?pageNumber=<?php echo $nextPage?>">Next</a></li>
+                        <li><a href="orderList.php?pageNumber=<?php echo $nextPage?>">Next</a></li>
                     <?php }?>
                 </ul></center>
         </div>
