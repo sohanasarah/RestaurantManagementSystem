@@ -1,6 +1,4 @@
 <?php
-
-
 include_once ('../../../vendor/autoload.php');
 use App\Admin\Auth;
 use App\Admin\Admin;

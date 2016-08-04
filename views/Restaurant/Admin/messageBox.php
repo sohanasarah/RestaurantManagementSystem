@@ -6,7 +6,7 @@
         include_once('../../../vendor/autoload.php');
         use App\GlobalClasses\Message;
         if(!isset($_SESSION)) session_start();
-
+       // $_SESSION['message'] = 'sdjfklsjfklsjf';
 
         ?>
 
