@@ -13,8 +13,6 @@ $email = $_POST['email'];
 $phone = $_POST['phone'];
 $message = $_POST['message'];
 
-
-
 $html = <<<ATOMIC
 <!DOCTYPE html>
 <html lang="en">
