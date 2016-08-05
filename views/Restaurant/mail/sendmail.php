@@ -64,11 +64,11 @@ foreach ($invoiceInfo as $invoice => $date ):
         <th align=center><strong>Subtotal</strong></th>
 
     </tr>";
-    
+
     foreach ($userOrders as $item ):
         if($item['invoice_id'] == $invoice):
 
-                $tableDynamicData .="<tr>
+            $tableDynamicData .="<tr>
 
                 <td colspan=\"2\">".$item["food_name"]."</td>
                 <td align=center id=\"price\">
@@ -77,21 +77,21 @@ foreach ($invoiceInfo as $invoice => $date ):
                 <td align=center>৳".$item["price"]."</td>
                 <td align=center >৳".$item["price"]*$item["quantity"]."</td>
             </tr>";
-            
+
 
             $item_total += $item['price'] * $item['quantity'];
         endif;
-     endforeach;
+    endforeach;
     $item_total = $item_total + 100;
     $tableDynamicData .= "<tr>
                           <td colspan=\"5\" align=right><strong>Flat Service Charge: </strong>৳100</td>
                       </tr>";
 
 
-     $tableDynamicData .= "<tr><td colspan=\"6\" align=right><strong>Total:</strong>৳".$item_total."</td></tr></tbody></table>";
-            $item_total = 0;
+    $tableDynamicData .= "<tr><td colspan=\"6\" align=right><strong>Total:</strong>৳".$item_total."</td></tr></tbody></table>";
+    $item_total = 0;
 
-$sl++;
+    $sl++;
 endforeach;
 
 

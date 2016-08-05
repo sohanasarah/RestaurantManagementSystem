@@ -6,6 +6,8 @@ use App\Restaurant\Restaurant;
 use App\User\User;
 use App\Admin\Admin;
 use App\GlobalClasses\Utility;
+use App\GlobalClasses\Message;
+
 
 if(!isset($_SESSION)){
     session_start();
